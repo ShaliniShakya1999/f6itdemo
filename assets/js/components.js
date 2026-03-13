@@ -205,17 +205,17 @@
     return productCategories
       .map(
         (col) => `
-          <div class="space-y-3">
-            <div class="flex items-center gap-2 pb-1 border-b border-slate-200">
+          <div class="mega-col space-y-2.5 border-r border-slate-100 last:border-r-0 pr-4 last:pr-0">
+            <div class="flex items-center gap-2 pb-2 border-b border-slate-100">
               ${getIcon(col.icon)}
-              <span class="text-sm font-semibold text-[#0f172a]">${col.title}</span>
+              <span class="text-sm font-bold text-slate-900">${col.title}</span>
             </div>
-            <ul class="space-y-1">
+            <ul class="space-y-0.5 pt-0.5">
               ${col.items
                 .map(
                   (label) => `
                 <li>
-                  <a href="${productHref(label)}" class="block rounded-lg px-2 py-1.5 text-xs text-slate-600 hover:bg-[#f8fafc] hover:text-[#2563EB] transition">${label}</a>
+                  <a href="${productHref(label)}" class="mega-item block rounded-md px-2.5 py-2 text-xs text-slate-600 hover:bg-[#eff6ff] hover:text-[#2563EB] transition-colors duration-150">${label}</a>
                 </li>
               `
                 )
@@ -263,79 +263,74 @@
     const productsActive = active === "products.html";
 
     return `
-      <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur-sm">
+      <header class="nav-header sticky top-0 z-50 bg-white border-b border-slate-200/60 shadow-sm shadow-slate-200/30">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div class="flex h-16 items-center justify-between gap-4">
-            <a href="index.html" class="flex items-center gap-3 shrink-0">
-              <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[#2563EB] text-white shadow-sm">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <div class="flex h-14 lg:h-16 items-center justify-between gap-4">
+            <a href="index.html" class="flex items-center gap-2.5 shrink-0 transition opacity-90 hover:opacity-100">
+              <span class="inline-flex h-9 w-9 lg:h-10 lg:w-10 items-center justify-center rounded-xl bg-[#2563EB] text-white shadow-sm">
+                <svg width="20" height="20" class="lg:w-[22px] lg:h-[22px]" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                   <path d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5v-9Z" stroke="currentColor" stroke-width="1.6"/>
                   <path d="M8 9.2 12 7l4 2.2v5.6L12 17l-4-2.2V9.2Z" stroke="currentColor" stroke-width="1.6"/>
                 </svg>
               </span>
               <div class="leading-tight">
-                <div class="text-sm font-semibold tracking-wide text-[#0f172a]">F6IT</div>
-                <div class="text-xs text-slate-500">Fintech & IT Solutions</div>
+                <div class="text-sm font-semibold tracking-tight text-slate-900">F6IT</div>
+                <div class="text-xs text-slate-500 hidden sm:block">Fintech & IT Solutions</div>
               </div>
             </a>
 
-            <nav class="hidden lg:flex items-center gap-1" aria-label="Primary">
+            <nav class="hidden lg:flex items-center gap-0.5" aria-label="Primary">
               <a href="index.html" class="${linkClass(homeActive)}">Home</a>
-              <a href="about.html" class="${linkClass(aboutActive)}">About</a>
-
               <div class="relative" data-mega>
-                <button type="button" class="${linkClass(false)} inline-flex items-center gap-1" data-mega-trigger="industries" aria-expanded="false">
+                <button type="button" class="${linkClass(false)} nav-link inline-flex items-center gap-1" data-mega-trigger="industries" aria-expanded="false">
                   Industries
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <svg class="nav-chevron transition-transform" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                     <path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                 </button>
               </div>
-
-              <div class="relative" data-mega>
-                <button type="button" class="${linkClass(productsActive)} inline-flex items-center gap-1" data-mega-trigger="products" aria-expanded="false">
+              <div class="relative mega-hover-zone" data-mega data-mega-hover="products">
+                <button type="button" class="${linkClass(productsActive)} nav-link inline-flex items-center gap-1" data-mega-trigger="products" aria-expanded="false">
                   Products
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <svg class="nav-chevron transition-transform duration-200" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                     <path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                 </button>
               </div>
-
               <div class="relative" data-mega>
-                <button type="button" class="${linkClass(servicesActive)} inline-flex items-center gap-1" data-mega-trigger="services" aria-expanded="false">
+                <button type="button" class="${linkClass(servicesActive)} nav-link inline-flex items-center gap-1" data-mega-trigger="services" aria-expanded="false">
                   Services
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <svg class="nav-chevron transition-transform" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                     <path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                 </button>
               </div>
-
               <div class="relative" data-mega>
-                <button type="button" class="${linkClass(false)} inline-flex items-center gap-1" data-mega-trigger="erp" aria-expanded="false">
+                <button type="button" class="${linkClass(false)} nav-link inline-flex items-center gap-1" data-mega-trigger="erp" aria-expanded="false">
                   ERP System
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <svg class="nav-chevron transition-transform" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                     <path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                 </button>
               </div>
               <div class="relative" data-mega>
-                <button type="button" class="${linkClass(false)} inline-flex items-center gap-1" data-mega-trigger="more" aria-expanded="false">
+                <button type="button" class="${linkClass(false)} nav-link inline-flex items-center gap-1" data-mega-trigger="more" aria-expanded="false">
                   More
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <svg class="nav-chevron transition-transform" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                     <path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                 </button>
               </div>
             </nav>
 
-            <div class="hidden lg:flex items-center gap-2 shrink-0">
-              <button type="button" class="p-2 rounded-lg text-slate-600 hover:bg-[#f1f5f9] hover:text-[#0f172a] transition" aria-label="Search">
+            <div class="hidden lg:flex items-center gap-1 shrink-0">
+              <button type="button" class="p-2.5 rounded-lg text-slate-500 hover:bg-slate-100 hover:text-slate-700 transition-colors duration-200" aria-label="Search">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                   <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
                 </svg>
               </button>
-              <a href="contact.html" class="btn-primary rounded-xl px-4 py-2 text-sm font-semibold text-white transition focus-ring">
-                Talk to expert
+              <a href="contact.html" class="btn-primary rounded-lg px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 focus-ring hover:shadow-md">
+                Talk to Expert
               </a>
             </div>
 
@@ -364,14 +359,14 @@
                 </div>
               </div>
 
-              <div id="mega-products" data-mega-panel="products" class="pointer-events-none absolute left-1/2 -translate-x-1/2 top-0 w-full max-w-[1200px] hidden pt-2">
-                <div class="pointer-events-auto megamenu p-6 max-h-[70vh] overflow-auto">
-                  <div class="text-base font-semibold text-[#0f172a] mb-5">Products & Solutions</div>
-                  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+              <div id="mega-products" data-mega-panel="products" class="mega-hover-panel pointer-events-none absolute left-1/2 -translate-x-1/2 top-0 w-full max-w-[1200px] hidden pt-3">
+                <div class="pointer-events-auto megamenu megamenu-products p-6 max-h-[70vh] overflow-auto">
+                  <div class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-4">Products & Solutions</div>
+                  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-0">
                     ${renderProductsMegaMenu()}
                   </div>
                   <div class="mt-5 pt-4 border-t border-slate-100 flex justify-end">
-                    <a href="products.html" class="text-sm font-semibold text-[#2563EB] hover:text-[#1d4ed8]">View catalog →</a>
+                    <a href="products.html" class="text-sm font-semibold text-[#2563EB] hover:text-[#1d4ed8] transition-colors">View catalog →</a>
                   </div>
                 </div>
               </div>
@@ -401,7 +396,7 @@
                 <div class="pointer-events-auto megamenu p-5 w-56">
                   <div class="text-sm font-semibold text-[#0f172a] mb-3">More</div>
                   <ul class="space-y-1">
-                    ${moreMenuItems.map((x) => `<li><a href="${x.href}" class="block rounded-lg px-3 py-2 text-sm text-slate-600 hover:bg-[#f8fafc] hover:text-[#2563EB] transition">${x.label}</a></li>`).join("")}
+                    ${moreMenuItems.map((x) => `<li><a href="${x.href}" class="block rounded-lg px-3 py-2 text-sm text-slate-600 hover:bg-[#eff6ff] hover:text-[#2563EB] transition-colors duration-150">${x.label}</a></li>`).join("")}
                   </ul>
                 </div>
               </div>
@@ -412,8 +407,6 @@
         <div id="mobileMenu" class="lg:hidden hidden border-t border-slate-200 bg-white">
           <div class="mx-auto max-w-7xl px-4 py-4 space-y-1">
             <a href="index.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium ${homeActive ? "bg-[#eff6ff] text-[#2563EB]" : "text-[#0f172a] hover:bg-[#f8fafc]"}">Home</a>
-            <a href="about.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium ${aboutActive ? "bg-[#eff6ff] text-[#2563EB]" : "text-[#0f172a] hover:bg-[#f8fafc]"}">About</a>
-
             <button type="button" class="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium text-[#0f172a] hover:bg-[#f8fafc] transition" data-accordion-trigger="m-industries" aria-expanded="false">
               <span>Industries</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -480,7 +473,7 @@
             </div>
 
             <div class="mt-4 pt-4 border-t border-slate-200 flex gap-3">
-              <a href="contact.html" class="btn-primary flex-1 rounded-xl px-4 py-2.5 text-center text-sm font-semibold text-white">Talk to expert</a>
+              <a href="contact.html" class="btn-primary flex-1 rounded-lg px-4 py-2.5 text-center text-sm font-semibold text-white">Talk to Expert</a>
             </div>
           </div>
         </div>

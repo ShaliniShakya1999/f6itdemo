@@ -77,8 +77,25 @@
 
     const closeAll = () => {
       triggers.forEach((t) => t.setAttribute("aria-expanded", "false"));
-      panels.forEach((p) => p.classList.add("hidden"));
+      panels.forEach((p) => {
+        p.classList.add("hidden");
+        p.style.left = "";
+        p.style.transform = "";
+      });
       setBackdrop(false);
+    };
+
+    const positionPanelUnderTrigger = (trigger, panel) => {
+      const container = panel.parentElement;
+      if (!container) return;
+      const triggerRect = trigger.getBoundingClientRect();
+      const containerRect = container.getBoundingClientRect();
+      const panelRect = panel.getBoundingClientRect();
+      let left = triggerRect.left - containerRect.left;
+      const maxLeft = containerRect.width - panelRect.width;
+      left = Math.max(0, Math.min(left, maxLeft));
+      panel.style.left = left + "px";
+      panel.style.transform = "translateY(0)";
     };
 
     const open = (key) => {
@@ -90,13 +107,49 @@
       p.classList.remove("hidden");
       if (openClass) p.classList.add(openClass);
       window.setTimeout(() => p.classList.remove(openClass), 200);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => positionPanelUnderTrigger(t, p));
+      });
       setBackdrop(true);
     };
 
     const isOpen = (key) => document.querySelector(`[data-mega-trigger="${key}"]`)?.getAttribute("aria-expanded") === "true";
 
+    const HOVER_CLOSE_DELAY = 120;
+    const productsTrigger = document.querySelector('[data-mega-trigger="products"]');
+    const productsPanel = document.querySelector('[data-mega-panel="products"]');
+    if (productsTrigger && productsPanel) {
+      let hoverCloseTimer = null;
+      const cancelHoverClose = () => {
+        if (hoverCloseTimer) clearTimeout(hoverCloseTimer);
+        hoverCloseTimer = null;
+      };
+      const scheduleHoverClose = () => {
+        cancelHoverClose();
+        hoverCloseTimer = setTimeout(() => {
+          if (isOpen("products")) closeAll();
+          hoverCloseTimer = null;
+        }, HOVER_CLOSE_DELAY);
+      };
+      productsTrigger.addEventListener("mouseenter", () => {
+        cancelHoverClose();
+        if (!isOpen("products")) open("products");
+      });
+      productsTrigger.addEventListener("mouseleave", scheduleHoverClose);
+      const panelCard = productsPanel.querySelector(".megamenu-products");
+      if (panelCard) {
+        panelCard.addEventListener("mouseenter", cancelHoverClose);
+        panelCard.addEventListener("mouseleave", scheduleHoverClose);
+      }
+      productsTrigger.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (isOpen("products")) closeAll();
+      });
+    }
+
     triggers.forEach((t) => {
       const key = t.getAttribute("data-mega-trigger");
+      if (key === "products") return;
       t.addEventListener("click", (e) => {
         e.preventDefault();
         if (isOpen(key)) closeAll();
@@ -104,7 +157,6 @@
       });
     });
 
-    // Click-to-open only (cleaner UI). Backdrop handles dismissal.
     backdrop.addEventListener("click", closeAll);
 
     // Close on outside click / escape
