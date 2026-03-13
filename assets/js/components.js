@@ -4,40 +4,129 @@
     { label: "Insurance", href: "products.html#catalog", icon: "shield" },
     { label: "Education", href: "services.html#it", icon: "graduation" },
     { label: "Healthcare", href: "services.html#it", icon: "heart" },
-    { label: "E‑Commerce", href: "products.html#catalog", icon: "cart" },
+    { label: "E-Commerce", href: "products.html#catalog", icon: "cart" },
+    { label: "E-Governance", href: "products.html#smart-products", icon: "building" },
     { label: "Retail", href: "products.html#catalog", icon: "store" },
     { label: "Agriculture", href: "products.html#catalog", icon: "leaf" },
-    { label: "Manufacturing", href: "services.html#cloud", icon: "factory" },
-    { label: "E‑Governance", href: "products.html#smart-products", icon: "building" },
     { label: "Real Estate", href: "products.html#catalog", icon: "building" },
+    { label: "Manufacturing", href: "services.html#cloud", icon: "factory" },
     { label: "Oil & Gas", href: "services.html#cloud", icon: "factory" },
     { label: "Mining", href: "services.html#cloud", icon: "factory" },
   ];
 
-  const products = [
-    { label: "Core Banking", href: "products.html#smart-products", icon: "bank" },
-    { label: "Core Insurance", href: "products.html#smart-products", icon: "shield" },
-    { label: "ERP", href: "products.html#smart-products", icon: "layout" },
-    { label: "DMS", href: "products.html#smart-products", icon: "file" },
-    { label: "HPMS", href: "products.html#smart-products", icon: "heart" },
-    { label: "E‑Auction", href: "products.html#smart-products", icon: "gavel" },
-    { label: "CRM", href: "products.html#smart-products", icon: "users" },
-    { label: "eAudit", href: "products.html#smart-products", icon: "clipboard" },
-    { label: "PMS", href: "products.html#smart-products", icon: "bar-chart" },
-    { label: "B2B & Sales App", href: "products.html#smart-products", icon: "shopping-bag" },
-    { label: "E‑Governance", href: "products.html#smart-products", icon: "building" },
-    { label: "WhatsApp Solution", href: "products.html#smart-products", icon: "message" },
+  const productCategories = [
+    {
+      title: "Digital Banking",
+      icon: "bank",
+      items: [
+        "Core Banking Software", "Microfinance Solutions", "Forex Treasury Banking", "Wallet Solution",
+        "Virtual Banking", "Switching Solution", "Agent Banking", "ATM Solutions", "USSD Banking",
+      ],
+    },
+    {
+      title: "MIS",
+      icon: "bar-chart",
+      items: [
+        "Business Intelligence", "Fund Management", "DSS", "Ratio Analysis / Budgeting",
+        "Performance Management", "Day End MIS",
+      ],
+    },
+    {
+      title: "Core Insurance Solutions",
+      icon: "shield",
+      items: [
+        "Motor", "Medical", "Fire", "Health", "Marine Cargo", "Travel",
+        "Engineering All Risk", "Property All Risk", "Liability",
+      ],
+    },
+    {
+      title: "Regulatory Channels",
+      icon: "clipboard",
+      items: [
+        "Asset Liability Management", "Loan Origination System", "Recovery Management",
+        "Anti-Money Laundering", "Legal Recovery Management", "Risk Based Internal Management",
+      ],
+    },
+    {
+      title: "Operational Channels",
+      icon: "layout",
+      items: [
+        "Loan Origination System", "Loan Management System", "Legal Recovery System",
+        "Fixed Asset Management", "Credit & Recovery Monitoring System", "NPA / Overdue Management",
+        "Debt Collection Management",
+      ],
+    },
+    {
+      title: "Stand-Alone Products",
+      icon: "server",
+      items: [
+        "eAuction", "E-Serve", "E-Commerce", "eAudit", "Document Management System",
+        "Project Management System", "Property Management System", "WhatsApp Solutions",
+        "Construction ERP", "Campus Software", "Enterprise ERP", "E-Learning", "E-Governance",
+        "E-Procurement", "ERDMS", "Hospital Management System", "Clinique Management System",
+        "Pharmaceuticals Management System", "Taxi Management System", "MyOffice", "CRM",
+        "HPMS", "EBPAS", "Performance Management System", "Telecom Revenue Management",
+      ],
+    },
   ];
 
-  const services = [
-    { label: "Digital Transformation", href: "services.html#digital", icon: "trending" },
-    { label: "IT Solutions", href: "services.html#it", icon: "server" },
-    { label: "Banking Software", href: "services.html#banking", icon: "bank" },
-    { label: "Cloud Solutions", href: "services.html#cloud", icon: "cloud" },
-    { label: "UI/UX & Dashboards", href: "services.html#it", icon: "layout" },
-    { label: "DevOps & CI/CD", href: "services.html#it", icon: "git-branch" },
-    { label: "Security Hardening", href: "services.html#it", icon: "shield" },
-    { label: "Observability / SRE", href: "services.html#it", icon: "activity" },
+  const productsBaseHref = "products.html";
+  function productHref(slug) {
+    return slug ? `${productsBaseHref}#${slug.toLowerCase().replace(/\s+/g, "-").replace(/\//g, "-")}` : productsBaseHref;
+  }
+
+  const serviceCategories = [
+    {
+      title: "Technology Service",
+      icon: "server",
+      items: [
+        "Blockchain", "Artificial Intelligence", "Internet of Things", "Metaverse",
+        "Augmented Reality", "Virtual Reality", "Machine Learning", "Robotic Process Automation",
+        "Business Intelligence", "Website Development", "iOS/Mobile App Development",
+        "Cloud System (AWS & Azure)", "IT Auditing & ISO Auditing", "IT Infrastructure",
+        "Enterprise Security", "Open Source Solutions", "Cyber Insurance & Cyber Security",
+        "Natural Language Processing", "Robotics",
+      ],
+    },
+    {
+      title: "Business Service",
+      icon: "activity",
+      items: [
+        "Business Process Management", "Business Leadership Acceleration Program",
+        "Business Consulting & Project Management", "Digital Marketing", "MS Dynamic",
+        "Big Data & Analytics",
+      ],
+    },
+    {
+      title: "Consulting Service",
+      icon: "trending",
+      items: [
+        "Digital Transformation", "Strategy & Architecture", "Business Transformation",
+        "Enterprise Process & Application",
+      ],
+    },
+  ];
+
+  const servicesBaseHref = "services.html";
+  function serviceHref(label) {
+    return label ? `${servicesBaseHref}#${label.toLowerCase().replace(/\s+/g, "-").replace(/[&/]/g, "-").replace(/[()]/g, "")}` : servicesBaseHref;
+  }
+
+  const erpSystems = [
+    { label: "ERP System", href: "products.html#erp-system" },
+    { label: "Safety Vault", href: "products.html#safety-vault" },
+    { label: "ERP Nxt", href: "products.html#erp-nxt" },
+  ];
+
+  const moreMenuItems = [
+    { label: "Careers", href: "careers.html" },
+    { label: "Insights", href: "about.html#story" },
+    { label: "Awards & Recognition", href: "about.html#awards" },
+    { label: "Webinars", href: "about.html#webinars" },
+    { label: "Videos", href: "about.html#videos" },
+    { label: "Testimonials", href: "index.html#testimonials" },
+    { label: "Blog", href: "about.html#blog" },
+    { label: "Contact Us", href: "contact.html" },
   ];
 
   const iconSvg = {
@@ -100,23 +189,65 @@
   }
 
   function renderIndustriesGrid() {
-    const items = [
-      { label: "Banking & Finance", href: "services.html#banking", icon: "bank" },
-      { label: "Insurance", href: "products.html#catalog", icon: "shield" },
-      { label: "Education", href: "services.html#it", icon: "graduation" },
-      { label: "Healthcare", href: "services.html#it", icon: "heart" },
-      { label: "E‑Commerce", href: "products.html#catalog", icon: "cart" },
-      { label: "Retail", href: "products.html#catalog", icon: "store" },
-      { label: "Agriculture", href: "products.html#catalog", icon: "leaf" },
-      { label: "Manufacturing", href: "services.html#cloud", icon: "factory" },
-    ];
-    return items
+    return industries
       .map(
         (x) => `
           <a href="${x.href}" class="group flex items-center gap-3 rounded-xl px-3 py-2.5 transition hover:bg-[#f8fafc]">
             ${getIcon(x.icon)}
             <span class="text-sm font-medium text-[#0f172a] group-hover:text-[#2563EB]">${x.label}</span>
           </a>
+        `
+      )
+      .join("");
+  }
+
+  function renderProductsMegaMenu() {
+    return productCategories
+      .map(
+        (col) => `
+          <div class="space-y-3">
+            <div class="flex items-center gap-2 pb-1 border-b border-slate-200">
+              ${getIcon(col.icon)}
+              <span class="text-sm font-semibold text-[#0f172a]">${col.title}</span>
+            </div>
+            <ul class="space-y-1">
+              ${col.items
+                .map(
+                  (label) => `
+                <li>
+                  <a href="${productHref(label)}" class="block rounded-lg px-2 py-1.5 text-xs text-slate-600 hover:bg-[#f8fafc] hover:text-[#2563EB] transition">${label}</a>
+                </li>
+              `
+                )
+                .join("")}
+            </ul>
+          </div>
+        `
+      )
+      .join("");
+  }
+
+  function renderServicesMegaMenu() {
+    return serviceCategories
+      .map(
+        (col) => `
+          <div class="space-y-3">
+            <div class="flex items-center gap-2 pb-1 border-b border-slate-200">
+              ${getIcon(col.icon)}
+              <span class="text-sm font-semibold text-[#0f172a]">${col.title}</span>
+            </div>
+            <ul class="space-y-1">
+              ${col.items
+                .map(
+                  (label) => `
+                <li>
+                  <a href="${serviceHref(label)}" class="block rounded-lg px-2 py-1.5 text-xs text-slate-600 hover:bg-[#f8fafc] hover:text-[#2563EB] transition">${label}</a>
+                </li>
+              `
+                )
+                .join("")}
+            </ul>
+          </div>
         `
       )
       .join("");
@@ -179,10 +310,22 @@
                 </button>
               </div>
 
-              <a href="products.html#smart-products" class="${linkClass(false)}">ERP System</a>
-              <a href="about.html#story" class="${linkClass(false)}">Insights</a>
-              <a href="careers.html" class="${linkClass(careersActive)}">Careers</a>
-              <a href="contact.html" class="${linkClass(contactActive)}">Contact</a>
+              <div class="relative" data-mega>
+                <button type="button" class="${linkClass(false)} inline-flex items-center gap-1" data-mega-trigger="erp" aria-expanded="false">
+                  ERP System
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="relative" data-mega>
+                <button type="button" class="${linkClass(false)} inline-flex items-center gap-1" data-mega-trigger="more" aria-expanded="false">
+                  More
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
             </nav>
 
             <div class="hidden lg:flex items-center gap-2 shrink-0">
@@ -212,7 +355,7 @@
               <div id="mega-industries" data-mega-panel="industries" class="pointer-events-none absolute left-1/2 -translate-x-1/2 top-0 w-full max-w-[1200px] hidden pt-2">
                 <div class="pointer-events-auto megamenu p-6 max-h-[70vh] overflow-auto">
                   <div class="text-sm font-semibold text-[#0f172a] mb-4">Industries</div>
-                  <div class="grid grid-cols-2 gap-4 sm:gap-6">
+                  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
                     ${renderIndustriesGrid()}
                   </div>
                   <div class="mt-5 pt-4 border-t border-slate-100 flex justify-end">
@@ -223,9 +366,9 @@
 
               <div id="mega-products" data-mega-panel="products" class="pointer-events-none absolute left-1/2 -translate-x-1/2 top-0 w-full max-w-[1200px] hidden pt-2">
                 <div class="pointer-events-auto megamenu p-6 max-h-[70vh] overflow-auto">
-                  <div class="text-sm font-semibold text-[#0f172a] mb-4">Products</div>
-                  <div class="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
-                    ${renderMegaList(products)}
+                  <div class="text-base font-semibold text-[#0f172a] mb-5">Products & Solutions</div>
+                  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+                    ${renderProductsMegaMenu()}
                   </div>
                   <div class="mt-5 pt-4 border-t border-slate-100 flex justify-end">
                     <a href="products.html" class="text-sm font-semibold text-[#2563EB] hover:text-[#1d4ed8]">View catalog →</a>
@@ -235,13 +378,31 @@
 
               <div id="mega-services" data-mega-panel="services" class="pointer-events-none absolute left-1/2 -translate-x-1/2 top-0 w-full max-w-[1200px] hidden pt-2">
                 <div class="pointer-events-auto megamenu p-6 max-h-[70vh] overflow-auto">
-                  <div class="text-sm font-semibold text-[#0f172a] mb-4">Services</div>
-                  <div class="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
-                    ${renderMegaList(services)}
+                  <div class="text-base font-semibold text-[#0f172a] mb-5">Services</div>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    ${renderServicesMegaMenu()}
                   </div>
                   <div class="mt-5 pt-4 border-t border-slate-100 flex justify-end">
                     <a href="services.html" class="text-sm font-semibold text-[#2563EB] hover:text-[#1d4ed8]">See all services →</a>
                   </div>
+                </div>
+              </div>
+
+              <div id="mega-erp" data-mega-panel="erp" class="pointer-events-none absolute left-1/2 -translate-x-1/2 top-0 w-full max-w-[1200px] hidden pt-2">
+                <div class="pointer-events-auto megamenu p-5 w-56">
+                  <div class="text-sm font-semibold text-[#0f172a] mb-3">ERP System</div>
+                  <ul class="space-y-1">
+                    ${erpSystems.map((x) => `<li><a href="${x.href}" class="block rounded-lg px-3 py-2 text-sm text-slate-600 hover:bg-[#f8fafc] hover:text-[#2563EB] transition">${x.label}</a></li>`).join("")}
+                  </ul>
+                </div>
+              </div>
+
+              <div id="mega-more" data-mega-panel="more" class="pointer-events-none absolute left-1/2 -translate-x-1/2 top-0 w-full max-w-[1200px] hidden pt-2">
+                <div class="pointer-events-auto megamenu p-5 w-56">
+                  <div class="text-sm font-semibold text-[#0f172a] mb-3">More</div>
+                  <ul class="space-y-1">
+                    ${moreMenuItems.map((x) => `<li><a href="${x.href}" class="block rounded-lg px-3 py-2 text-sm text-slate-600 hover:bg-[#f8fafc] hover:text-[#2563EB] transition">${x.label}</a></li>`).join("")}
+                  </ul>
                 </div>
               </div>
             </div>
@@ -268,8 +429,19 @@
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="hidden pl-2" data-accordion-panel="m-products">
-              <div class="grid gap-1 py-2">
-                ${products.map((x) => `<a href="${x.href}" class="block px-3 py-2 rounded-lg text-sm text-slate-600 hover:text-[#2563EB] hover:bg-[#f8fafc]">${x.label}</a>`).join("")}
+              <div class="py-2 space-y-4 max-h-[60vh] overflow-y-auto">
+                ${productCategories
+                  .map(
+                    (col) => `
+                  <div>
+                    <div class="flex items-center gap-2 px-3 py-1.5 text-xs font-semibold text-[#2563EB]">${col.title}</div>
+                    <div class="space-y-0.5">
+                      ${col.items.map((label) => `<a href="${productHref(label)}" class="block px-3 py-2 rounded-lg text-sm text-slate-600 hover:text-[#2563EB] hover:bg-[#f8fafc]">${label}</a>`).join("")}
+                    </div>
+                  </div>
+                `
+                  )
+                  .join("")}
               </div>
             </div>
 
@@ -278,15 +450,34 @@
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="hidden pl-2" data-accordion-panel="m-services">
-              <div class="grid gap-1 py-2">
-                ${services.map((x) => `<a href="${x.href}" class="block px-3 py-2 rounded-lg text-sm text-slate-600 hover:text-[#2563EB] hover:bg-[#f8fafc]">${x.label}</a>`).join("")}
+              <div class="py-2 space-y-4 max-h-[60vh] overflow-y-auto">
+                ${serviceCategories
+                  .map(
+                    (col) => `
+                  <div>
+                    <div class="flex items-center gap-2 px-3 py-1.5 text-xs font-semibold text-[#2563EB]">${col.title}</div>
+                    <div class="space-y-0.5">
+                      ${col.items.map((label) => `<a href="${serviceHref(label)}" class="block px-3 py-2 rounded-lg text-sm text-slate-600 hover:text-[#2563EB] hover:bg-[#f8fafc]">${label}</a>`).join("")}
+                    </div>
+                  </div>
+                `
+                  )
+                  .join("")}
               </div>
             </div>
 
-            <a href="products.html#smart-products" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-[#0f172a] hover:bg-[#f8fafc]">ERP System</a>
-            <a href="about.html#story" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-[#0f172a] hover:bg-[#f8fafc]">Insights</a>
-            <a href="careers.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium ${careersActive ? "bg-[#eff6ff] text-[#2563EB]" : "text-[#0f172a] hover:bg-[#f8fafc]"}">Careers</a>
-            <a href="contact.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium ${contactActive ? "bg-[#eff6ff] text-[#2563EB]" : "text-[#0f172a] hover:bg-[#f8fafc]"}">Contact</a>
+            <div class="px-3 py-1.5 text-xs font-semibold text-[#2563EB]">ERP System</div>
+            ${erpSystems.map((x) => `<a href="${x.href}" class="block px-3 py-2 rounded-lg text-sm text-slate-600 hover:text-[#2563EB] hover:bg-[#f8fafc]">${x.label}</a>`).join("")}
+
+            <button type="button" class="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium text-[#0f172a] hover:bg-[#f8fafc] transition" data-accordion-trigger="m-more" aria-expanded="false">
+              <span>More</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="hidden pl-2" data-accordion-panel="m-more">
+              <div class="space-y-0.5 py-2">
+                ${moreMenuItems.map((x) => `<a href="${x.href}" class="block px-3 py-2 rounded-lg text-sm text-slate-600 hover:text-[#2563EB] hover:bg-[#f8fafc]">${x.label}</a>`).join("")}
+              </div>
+            </div>
 
             <div class="mt-4 pt-4 border-t border-slate-200 flex gap-3">
               <a href="contact.html" class="btn-primary flex-1 rounded-xl px-4 py-2.5 text-center text-sm font-semibold text-white">Talk to expert</a>
