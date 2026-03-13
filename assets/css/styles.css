@@ -1,0 +1,247 @@
+/* Small custom layer on top of Tailwind CDN */
+
+:root{
+  --bg-0:#070A18;
+  --bg-1:#0A1330;
+  --card: rgba(255,255,255,.075);
+  --card2: rgba(255,255,255,.10);
+  --stroke: rgba(255,255,255,.13);
+  --text: rgba(255,255,255,.88);
+  --muted: rgba(255,255,255,.70);
+  --brand:#3B82F6; /* blue-500 */
+  --brand2:#22D3EE; /* cyan-400 */
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background:
+    radial-gradient(900px 480px at 12% -10%, rgba(99,102,241,.30), transparent 55%),
+    radial-gradient(1100px 650px at 85% -15%, rgba(59,130,246,.34), transparent 60%),
+    radial-gradient(900px 520px at 70% 35%, rgba(34,211,238,.18), transparent 60%),
+    linear-gradient(180deg, var(--bg-0), var(--bg-1));
+  color: var(--text);
+}
+
+/* Subtle noise for depth (no asset needed) */
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  pointer-events:none;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(255,255,255,.035) 1px, transparent 0);
+  background-size: 22px 22px;
+  opacity:.35;
+  mix-blend-mode: overlay;
+}
+
+/* Mega menu backdrop (when dropdown open) */
+.mega-backdrop{
+  position: fixed;
+  inset: 0;
+  z-index: 40; /* header is 50 */
+  background: rgba(2,6,23,.55);
+  backdrop-filter: blur(6px);
+}
+
+/* Tech grid background */
+.tech-grid{
+  position: relative;
+  overflow: hidden;
+}
+.tech-grid::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background:
+    linear-gradient(to right, rgba(255,255,255,.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.06) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(350px 250px at 20% 25%, black 0%, transparent 65%),
+              radial-gradient(450px 300px at 80% 30%, black 0%, transparent 70%),
+              radial-gradient(650px 450px at 50% 75%, black 0%, transparent 75%);
+  opacity:.55;
+  pointer-events:none;
+}
+.tech-grid::after{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background:
+    radial-gradient(720px 320px at 30% 10%, rgba(59,130,246,.26), transparent 62%),
+    radial-gradient(600px 300px at 78% 0%, rgba(34,211,238,.22), transparent 58%),
+    radial-gradient(820px 420px at 50% 92%, rgba(99,102,241,.16), transparent 62%);
+  filter: blur(1px);
+  pointer-events:none;
+}
+
+.glass{
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.11), rgba(255,255,255,.06));
+  border: 1px solid var(--stroke);
+  box-shadow:
+    0 22px 60px rgba(0,0,0,.38),
+    0 0 0 1px rgba(59,130,246,.06) inset;
+  backdrop-filter: blur(12px);
+}
+
+.btn-primary{
+  background: linear-gradient(90deg, rgba(59,130,246,1), rgba(34,211,238,1));
+  box-shadow:
+    0 18px 35px rgba(59,130,246,.22),
+    0 0 0 1px rgba(255,255,255,.18) inset;
+}
+.btn-primary:hover{ filter: brightness(1.05); transform: translateY(-1px); }
+.btn-secondary{
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.14);
+  box-shadow: 0 0 0 1px rgba(34,211,238,.06) inset;
+}
+.btn-secondary:hover{ background: rgba(255,255,255,.09); transform: translateY(-1px); }
+
+/* Premium hover glow for cards/blocks */
+.glass:hover{
+  box-shadow:
+    0 26px 70px rgba(0,0,0,.42),
+    0 0 0 1px rgba(34,211,238,.09) inset,
+    0 0 38px rgba(59,130,246,.12);
+}
+
+/* Reveal animation (IntersectionObserver) */
+[data-reveal]{
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .7s ease, transform .7s ease;
+  will-change: opacity, transform;
+}
+[data-reveal].is-visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fancy gradient text */
+.text-gradient{
+  background: linear-gradient(90deg, #60A5FA, #22D3EE, #A78BFA);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Hero slider */
+.hero-slider{
+  position: relative;
+  overflow: hidden;
+}
+.hero-slider .slide{
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.02);
+  transition: opacity .6s ease, transform 1.4s ease;
+}
+.hero-slider .slide.is-active{
+  opacity: 1;
+  transform: scale(1);
+}
+.hero-slider .slide::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg, rgba(7,10,24,.88) 0%, rgba(7,10,24,.72) 42%, rgba(7,10,24,.22) 72%, rgba(7,10,24,.10) 100%),
+    radial-gradient(900px 420px at 30% 30%, rgba(59,130,246,.22), transparent 60%);
+}
+.hero-slider .bg{
+  position:absolute;
+  inset:0;
+  background-position: center;
+  background-size: cover;
+  filter: saturate(1.1) contrast(1.02);
+  transform: translateZ(0);
+}
+.hero-slider .controls{
+  position:absolute;
+  inset: 0;
+  pointer-events:none;
+}
+.hero-slider .controls button{
+  pointer-events:auto;
+}
+.hero-slider .dot{
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.35);
+  border: 1px solid rgba(255,255,255,.22);
+  transition: transform .2s ease, background .2s ease, width .2s ease;
+}
+.hero-slider .dot.is-active{
+  background: rgba(34,211,238,.9);
+  width: 22px;
+}
+
+/* Focus ring matches brand */
+.focus-ring:focus{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59,130,246,.35);
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior: auto; }
+  [data-reveal]{ transition: none; transform:none; opacity: 1; }
+  .btn-primary:hover, .btn-secondary:hover { transform:none; }
+}
+
+/* Mega menu entrance */
+@keyframes f6itMegaIn {
+  from { opacity: 0; transform: translateY(-6px) scale(.99); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Hero slider */
+.slider{
+  position: relative;
+  overflow: hidden;
+  min-height: 520px;
+}
+.slider-track{
+  display:flex;
+  width:100%;
+  transform: translateX(0%);
+  transition: transform .7s cubic-bezier(.2,.85,.2,1);
+  will-change: transform;
+}
+.slider-slide{
+  min-width: 100%;
+  position: relative;
+}
+.slider-bg{
+  position:absolute;
+  inset:0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.03);
+}
+.slider-overlay{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg, rgba(6,10,20,.92) 0%, rgba(6,10,20,.70) 40%, rgba(6,10,20,.15) 70%, rgba(6,10,20,0) 100%),
+    radial-gradient(900px 420px at 20% 20%, rgba(59,130,246,.24), transparent 60%),
+    radial-gradient(900px 420px at 55% 70%, rgba(34,211,238,.14), transparent 60%);
+}
+.slider-controls{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+}
+.slider-btn{
+  pointer-events:auto;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .slider-track{ transition:none; }
+  .slider-bg{ transform:none; }
+}
+

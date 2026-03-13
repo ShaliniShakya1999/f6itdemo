@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#061026"/>
+      <stop offset="0.55" stop-color="#062a64"/>
+      <stop offset="1" stop-color="#040a16"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="72%" cy="45%" r="60%">
+      <stop offset="0" stop-color="#3b82f6" stop-opacity="0.30"/>
+      <stop offset="0.55" stop-color="#22d3ee" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+
+  <!-- abstract monitor -->
+  <g transform="translate(980 230)" opacity="0.95">
+    <rect x="40" y="40" width="520" height="340" rx="28" fill="#071a3f" stroke="#22d3ee" stroke-opacity="0.18" stroke-width="3"/>
+    <rect x="70" y="75" width="460" height="240" rx="18" fill="#06122c"/>
+    <rect x="250" y="390" width="100" height="20" rx="10" fill="#0b1f4c"/>
+    <rect x="205" y="410" width="190" height="18" rx="9" fill="#081a3d"/>
+
+    <!-- screen nodes -->
+    <g transform="translate(95 100)">
+      <circle cx="70" cy="70" r="36" fill="#0b2150" stroke="#60a5fa" stroke-opacity="0.4" stroke-width="2"/>
+      <circle cx="230" cy="70" r="36" fill="#0b2150" stroke="#22d3ee" stroke-opacity="0.35" stroke-width="2"/>
+      <circle cx="150" cy="160" r="36" fill="#0b2150" stroke="#a78bfa" stroke-opacity="0.32" stroke-width="2"/>
+      <path d="M106 70h88M150 106v18M194 70h0" stroke="#9ae6ff" stroke-opacity="0.35" stroke-width="2" stroke-linecap="round"/>
+      <path d="M150 124 150 124" stroke="#9ae6ff" stroke-width="2"/>
+      <path d="M116 92 150 124 184 92" fill="none" stroke="#9ae6ff" stroke-opacity="0.25" stroke-width="2"/>
+    </g>
+  </g>
+
+  <!-- blockchain hex chain -->
+  <g transform="translate(980 260)" opacity="0.95">
+    <g fill="none" stroke="#9ae6ff" stroke-opacity="0.45" stroke-width="2">
+      <path d="M165 90 220 60l55 30v65l-55 30-55-30V90Z"/>
+      <path d="M285 160 340 130l55 30v65l-55 30-55-30v-65Z"/>
+      <path d="M405 90 460 60l55 30v65l-55 30-55-30V90Z"/>
+      <path d="M405 230 460 200l55 30v65l-55 30-55-30v-65Z"/>
+      <path d="M285 300 340 270l55 30v65l-55 30-55-30v-65Z"/>
+      <path d="M165 230 220 200l55 30v65l-55 30-55-30v-65Z"/>
+      <path d="M220 155 285 190M340 245 405 210M340 165 405 130M275 130 220 160" stroke-opacity="0.28"/>
+    </g>
+    <g font-family="Arial, sans-serif" font-size="14" fill="#ffffff" fill-opacity="0.88">
+      <text x="190" y="128">WALLET</text>
+      <text x="302" y="198">DApps</text>
+      <text x="420" y="128">NFT</text>
+      <text x="415" y="268">BLOCK</text>
+      <text x="300" y="338">CHAIN</text>
+      <text x="185" y="268">CRYPTO</text>
+    </g>
+    <g fill="#22d3ee" opacity="0.9">
+      <circle cx="165" cy="90" r="4"/><circle cx="285" cy="160" r="4"/><circle cx="405" cy="90" r="4"/>
+      <circle cx="405" cy="230" r="4"/><circle cx="285" cy="300" r="4"/><circle cx="165" cy="230" r="4"/>
+    </g>
+  </g>
+
+  <!-- left soft vignette -->
+  <rect width="900" height="900" fill="#000000" opacity="0.28"/>
+  <rect width="900" height="900" fill="#0b3a86" opacity="0.14" filter="url(#blur)"/>
+</svg>
+

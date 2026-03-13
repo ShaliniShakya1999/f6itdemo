@@ -1,0 +1,726 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>F6IT — Fintech & IT Solutions</title>
+    <meta name="description" content="Modern corporate IT & fintech solutions: digital transformation, banking software, cloud platforms, and enterprise IT services." />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body class="min-h-screen antialiased">
+    <div id="site-header"></div>
+
+    <main>
+      <!-- Hero -->
+      <section class="slider" data-hero-slider data-interval="6500" tabindex="0" aria-label="Hero slider">
+        <div class="slider-track" data-slider-track>
+          <!-- Slide 1 -->
+          <div class="slider-slide" data-slide aria-hidden="false" data-title="Banking Experience">
+            <div class="slider-bg" style="background-image:url('assets/img/hero-banking.svg');"></div>
+            <div class="slider-overlay"></div>
+            <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div class="py-16 lg:py-24">
+                <div class="max-w-2xl">
+                  <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/75" data-reveal>
+                    <span class="h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_20px_rgba(34,211,238,.55)]"></span>
+                    Fintech • Banking • Integrations
+                  </div>
+                  <h1 class="mt-6 text-4xl font-semibold tracking-tight text-white sm:text-5xl" data-reveal data-reveal-delay="80">
+                    Offering seamless
+                    <span class="text-gradient">banking experience</span>
+                  </h1>
+                  <p class="mt-5 max-w-xl text-base text-white/75 sm:text-lg" data-reveal data-reveal-delay="140">
+                    Modern digital banking workflows, secure onboarding, and integration-ready services to stay ahead of the curve.
+                  </p>
+                  <div class="mt-8 flex flex-col gap-3 sm:flex-row" data-reveal data-reveal-delay="210">
+                    <a href="services.html#banking" class="btn-primary rounded-2xl px-6 py-3 text-center text-sm font-semibold text-[#070B18] transition focus-ring">
+                      Read more
+                    </a>
+                    <a href="contact.html" class="btn-secondary rounded-2xl px-6 py-3 text-center text-sm font-semibold text-white/90 transition focus-ring">
+                      Get a proposal
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="slider-slide" data-slide aria-hidden="true" data-title="Blockchain Solutions">
+            <div class="slider-bg" style="background-image:url('assets/img/hero-blockchain.svg');"></div>
+            <div class="slider-overlay"></div>
+            <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div class="py-16 lg:py-24">
+                <div class="max-w-2xl">
+                  <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/75">
+                    <span class="h-2 w-2 rounded-full bg-blue-300 shadow-[0_0_20px_rgba(59,130,246,.55)]"></span>
+                    Blockchain • Wallet • DApps
+                  </div>
+                  <h2 class="mt-6 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+                    SAFE'ly chained with
+                    <span class="text-gradient">blockchain</span>
+                  </h2>
+                  <p class="mt-5 max-w-xl text-base text-white/75 sm:text-lg">
+                    Explore digitally secured products and services with modern blockchain tech—built for performance and safety.
+                  </p>
+                  <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+                    <a href="services.html#it" class="btn-primary rounded-2xl px-6 py-3 text-center text-sm font-semibold text-[#070B18] transition focus-ring">Read more</a>
+                    <a href="products.html#catalog" class="btn-secondary rounded-2xl px-6 py-3 text-center text-sm font-semibold text-white/90 transition focus-ring">View products</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="slider-slide" data-slide aria-hidden="true" data-title="Business Process Management">
+            <div class="slider-bg" style="background-image:url('assets/img/hero-bpm.svg');"></div>
+            <div class="slider-overlay"></div>
+            <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div class="py-16 lg:py-24">
+                <div class="max-w-2xl">
+                  <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/75">
+                    <span class="h-2 w-2 rounded-full bg-amber-300 shadow-[0_0_20px_rgba(251,191,36,.45)]"></span>
+                    BPM • Automation • Productivity
+                  </div>
+                  <h2 class="mt-6 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+                    Safe & smart
+                    <span class="text-gradient">process management</span>
+                  </h2>
+                  <p class="mt-5 max-w-xl text-base text-white/75 sm:text-lg">
+                    Improve workforce efficiency and ROI with automation, dashboards, and measurable operations.
+                  </p>
+                  <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+                    <a href="services.html#digital" class="btn-primary rounded-2xl px-6 py-3 text-center text-sm font-semibold text-[#070B18] transition focus-ring">Read more</a>
+                    <a href="#services" class="btn-secondary rounded-2xl px-6 py-3 text-center text-sm font-semibold text-white/90 transition focus-ring">Our services</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="slider-slide" data-slide aria-hidden="true" data-title="Metaverse Technology">
+            <div class="slider-bg" style="background-image:url('assets/img/hero-metaverse.svg');"></div>
+            <div class="slider-overlay"></div>
+            <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div class="py-16 lg:py-24">
+                <div class="max-w-2xl">
+                  <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/75">
+                    <span class="h-2 w-2 rounded-full bg-fuchsia-300 shadow-[0_0_20px_rgba(167,139,250,.45)]"></span>
+                    Next‑gen • XR • Platforms
+                  </div>
+                  <h2 class="mt-6 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+                    To the
+                    <span class="text-gradient">metaverse</span>
+                  </h2>
+                  <p class="mt-5 max-w-xl text-base text-white/75 sm:text-lg">
+                    Power your solutions with next‑gen technology—secure foundations, modern UI, and scalable delivery.
+                  </p>
+                  <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+                    <a href="products.html#smart-products" class="btn-primary rounded-2xl px-6 py-3 text-center text-sm font-semibold text-[#070B18] transition focus-ring">Read more</a>
+                    <a href="contact.html" class="btn-secondary rounded-2xl px-6 py-3 text-center text-sm font-semibold text-white/90 transition focus-ring">Talk to us</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="slider-controls">
+          <div class="absolute left-4 top-1/2 -translate-y-1/2">
+            <button type="button" class="slider-btn rounded-2xl border border-white/15 bg-white/5 px-3 py-3 text-white/90 backdrop-blur focus-ring hover:bg-white/10 transition" data-prev aria-label="Previous slide">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M15 6 9 12l6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+          <div class="absolute right-4 top-1/2 -translate-y-1/2">
+            <button type="button" class="slider-btn rounded-2xl border border-white/15 bg-white/5 px-3 py-3 text-white/90 backdrop-blur focus-ring hover:bg-white/10 transition" data-next aria-label="Next slide">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Dots -->
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2">
+          <div class="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2 backdrop-blur">
+            <button type="button" class="h-2.5 w-6 rounded-full bg-white/80 transition" data-dot="0" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" class="h-2.5 w-6 rounded-full bg-white/30 transition" data-dot="1" aria-current="false" aria-label="Slide 2"></button>
+            <button type="button" class="h-2.5 w-6 rounded-full bg-white/30 transition" data-dot="2" aria-current="false" aria-label="Slide 3"></button>
+            <button type="button" class="h-2.5 w-6 rounded-full bg-white/30 transition" data-dot="3" aria-current="false" aria-label="Slide 4"></button>
+          </div>
+        </div>
+
+        <div class="sr-only" aria-live="polite" data-live></div>
+      </section>
+
+      <!-- Company introduction -->
+      <section class="py-16">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="grid gap-10 lg:grid-cols-12">
+            <div class="lg:col-span-5" data-reveal>
+              <div class="text-sm font-semibold text-cyan-200/90">Corporate IT company</div>
+              <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white">Modern engineering for high‑trust systems</h2>
+              <p class="mt-4 text-sm text-white/70">
+                From cloud platforms to core banking integrations, we design reliable architectures and ship clean code with
+                a professional delivery model—built for speed without compromising security.
+              </p>
+              <div class="mt-7 grid gap-3">
+                <div class="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <div class="mt-0.5 h-9 w-9 rounded-xl bg-blue-500/20 flex items-center justify-center">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M12 2 4 6v6c0 5 3.5 9.7 8 10 4.5-.3 8-5 8-10V6l-8-4Z" stroke="rgba(255,255,255,.9)" stroke-width="1.6" stroke-linejoin="round"/>
+                      <path d="M9.5 12l1.8 1.8L15 10" stroke="rgba(34,211,238,.95)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-sm font-semibold text-white">Security by design</div>
+                    <div class="mt-1 text-xs text-white/60">Threat modeling, secure SDLC, and best-practice hardening.</div>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <div class="mt-0.5 h-9 w-9 rounded-xl bg-cyan-400/15 flex items-center justify-center">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M4 14c2-2 4-3 8-3s6 1 8 3" stroke="rgba(255,255,255,.85)" stroke-width="1.6" stroke-linecap="round"/>
+                      <path d="M6 17c1.5-1.5 3.5-2.2 6-2.2s4.5.7 6 2.2" stroke="rgba(34,211,238,.95)" stroke-width="1.6" stroke-linecap="round"/>
+                      <path d="M8.5 19.5c1-1 2.2-1.5 3.5-1.5s2.5.5 3.5 1.5" stroke="rgba(59,130,246,.95)" stroke-width="1.6" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-sm font-semibold text-white">Reliable delivery</div>
+                    <div class="mt-1 text-xs text-white/60">CI/CD, automated testing, and measurable quality gates.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:col-span-7" data-reveal data-reveal-delay="90">
+              <div class="glass rounded-3xl p-7">
+                <div class="flex items-center justify-between">
+                  <div class="text-sm font-semibold text-white">Reference Architecture</div>
+                  <div class="text-xs text-white/60">Cloud • Banking • Analytics</div>
+                </div>
+                <div class="mt-6 grid gap-3 sm:grid-cols-3">
+                  <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                    <div class="text-xs text-white/60">Channels</div>
+                    <div class="mt-1 text-sm font-semibold text-white">Web / Mobile</div>
+                    <div class="mt-3 h-2 w-full rounded-full bg-white/10">
+                      <div class="h-2 w-[80%] rounded-full bg-blue-500/70"></div>
+                    </div>
+                  </div>
+                  <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                    <div class="text-xs text-white/60">Core services</div>
+                    <div class="mt-1 text-sm font-semibold text-white">APIs & Microservices</div>
+                    <div class="mt-3 h-2 w-full rounded-full bg-white/10">
+                      <div class="h-2 w-[64%] rounded-full bg-cyan-400/70"></div>
+                    </div>
+                  </div>
+                  <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                    <div class="text-xs text-white/60">Data</div>
+                    <div class="mt-1 text-sm font-semibold text-white">Analytics & AI</div>
+                    <div class="mt-3 h-2 w-full rounded-full bg-white/10">
+                      <div class="h-2 w-[72%] rounded-full bg-indigo-400/70"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-6 rounded-2xl border border-white/10 bg-gradient-to-r from-blue-500/15 to-cyan-400/10 p-5">
+                  <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                      <div class="text-sm font-semibold text-white">Need a modernization roadmap?</div>
+                      <div class="mt-1 text-xs text-white/60">We’ll map systems, risks, and a phased delivery plan.</div>
+                    </div>
+                    <a href="about.html" class="btn-secondary rounded-2xl px-5 py-2.5 text-center text-sm font-semibold text-white/90 transition focus-ring">
+                      Learn more
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section id="services" class="py-16">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between" data-reveal>
+            <div>
+              <div class="text-sm font-semibold text-cyan-200/90">Our services</div>
+              <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white">What we deliver</h2>
+              <p class="mt-3 max-w-2xl text-sm text-white/70">
+                Clean architecture, modern UI, scalable infrastructure, and professional delivery—tailored for enterprise and fintech.
+              </p>
+            </div>
+            <a href="services.html" class="btn-secondary rounded-2xl px-5 py-2.5 text-sm font-semibold text-white/90 transition focus-ring">
+              See all services
+            </a>
+          </div>
+
+          <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            <!-- Card -->
+            <a href="services.html#digital" class="glass group rounded-3xl p-6 transition hover:-translate-y-1" data-reveal data-reveal-delay="60">
+              <div class="flex items-center justify-between">
+                <div class="h-11 w-11 rounded-2xl bg-blue-500/20 flex items-center justify-center">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M4 7h16v10H4V7Z" stroke="rgba(255,255,255,.9)" stroke-width="1.6" />
+                    <path d="M8 21h8" stroke="rgba(34,211,238,.95)" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M9 17v4M15 17v4" stroke="rgba(255,255,255,.5)" stroke-width="1.6" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <span class="text-xs text-white/55 group-hover:text-white/80">Learn →</span>
+              </div>
+              <div class="mt-4 text-sm font-semibold text-white">Digital Transformation</div>
+              <div class="mt-2 text-xs text-white/65">
+                Strategy, roadmaps, process redesign, and modernization programs aligned to measurable outcomes.
+              </div>
+            </a>
+
+            <a href="services.html#it" class="glass group rounded-3xl p-6 transition hover:-translate-y-1" data-reveal data-reveal-delay="110">
+              <div class="flex items-center justify-between">
+                <div class="h-11 w-11 rounded-2xl bg-cyan-400/15 flex items-center justify-center">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M7 7h10v10H7V7Z" stroke="rgba(255,255,255,.9)" stroke-width="1.6" />
+                    <path d="M4 12h3M17 12h3" stroke="rgba(34,211,238,.95)" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M12 4v3M12 17v3" stroke="rgba(59,130,246,.9)" stroke-width="1.8" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <span class="text-xs text-white/55 group-hover:text-white/80">Learn →</span>
+              </div>
+              <div class="mt-4 text-sm font-semibold text-white">IT Solutions</div>
+              <div class="mt-2 text-xs text-white/65">
+                Enterprise apps, integrations, DevOps, observability, performance tuning, and maintenance.
+              </div>
+            </a>
+
+            <a href="services.html#banking" class="glass group rounded-3xl p-6 transition hover:-translate-y-1" data-reveal data-reveal-delay="160">
+              <div class="flex items-center justify-between">
+                <div class="h-11 w-11 rounded-2xl bg-indigo-400/15 flex items-center justify-center">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M4 10 12 5l8 5" stroke="rgba(255,255,255,.9)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 10v9M10 10v9M14 10v9M18 10v9" stroke="rgba(34,211,238,.7)" stroke-width="1.6" stroke-linecap="round"/>
+                    <path d="M5 19h14" stroke="rgba(255,255,255,.65)" stroke-width="1.6" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <span class="text-xs text-white/55 group-hover:text-white/80">Learn →</span>
+              </div>
+              <div class="mt-4 text-sm font-semibold text-white">Banking Software</div>
+              <div class="mt-2 text-xs text-white/65">
+                Digital onboarding, payments, AML-ready workflows, and integrations with core banking systems.
+              </div>
+            </a>
+
+            <a href="services.html#cloud" class="glass group rounded-3xl p-6 transition hover:-translate-y-1" data-reveal data-reveal-delay="210">
+              <div class="flex items-center justify-between">
+                <div class="h-11 w-11 rounded-2xl bg-blue-500/20 flex items-center justify-center">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M7 18h10a4 4 0 0 0 0-8 5 5 0 0 0-9.7 1.6A3.5 3.5 0 0 0 7 18Z" stroke="rgba(255,255,255,.9)" stroke-width="1.6" stroke-linejoin="round"/>
+                    <path d="M9 18v3M12 18v3M15 18v3" stroke="rgba(34,211,238,.9)" stroke-width="1.6" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <span class="text-xs text-white/55 group-hover:text-white/80">Learn →</span>
+              </div>
+              <div class="mt-4 text-sm font-semibold text-white">Cloud Solutions</div>
+              <div class="mt-2 text-xs text-white/65">
+                Cloud-native builds, migration, governance, and secure multi-environment deployment patterns.
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Products (icon grid) -->
+      <section id="products" class="py-16">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between" data-reveal>
+            <div>
+              <div class="text-sm font-semibold text-cyan-200/90">Products</div>
+              <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white">Safe & smart products</h2>
+              <p class="mt-3 max-w-2xl text-sm text-white/70">
+                Icon-based product grid inspired by your reference layout—original styling, placeholder product names.
+              </p>
+            </div>
+            <a href="products.html#smart-products" class="btn-secondary rounded-2xl px-5 py-2.5 text-sm font-semibold text-white/90 transition focus-ring">
+              View all products
+            </a>
+          </div>
+
+          <div class="mt-10 grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            <!-- item -->
+            <a href="products.html#smart-products" class="glass group rounded-3xl p-6 text-center transition hover:-translate-y-1" data-reveal data-reveal-delay="60">
+              <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/5">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 10 12 5l8 5" stroke="rgba(34,211,238,.95)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M6 10v9M10 10v9M14 10v9M18 10v9" stroke="rgba(255,255,255,.75)" stroke-width="1.6" stroke-linecap="round"/>
+                  <path d="M5 19h14" stroke="rgba(255,255,255,.75)" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="mt-4 text-sm font-semibold text-white">Core Banking</div>
+              <div class="mt-3 mx-auto h-px w-10 bg-white/15 group-hover:bg-cyan-300/40"></div>
+            </a>
+
+            <a href="products.html#smart-products" class="glass group rounded-3xl p-6 text-center transition hover:-translate-y-1" data-reveal data-reveal-delay="90">
+              <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/5">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 2 4 6v6c0 5 3.5 9.7 8 10 4.5-.3 8-5 8-10V6l-8-4Z" stroke="rgba(34,211,238,.95)" stroke-width="1.7" stroke-linejoin="round"/>
+                  <path d="M9.5 12l1.8 1.8L15 10" stroke="rgba(255,255,255,.85)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="mt-4 text-sm font-semibold text-white">Core Insurance</div>
+              <div class="mt-3 mx-auto h-px w-10 bg-white/15 group-hover:bg-cyan-300/40"></div>
+            </a>
+
+            <a href="products.html#smart-products" class="glass group rounded-3xl p-6 text-center transition hover:-translate-y-1" data-reveal data-reveal-delay="120">
+              <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/5">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 7h16v10H4V7Z" stroke="rgba(34,211,238,.95)" stroke-width="1.7"/>
+                  <path d="M7 10h5M7 13h7" stroke="rgba(255,255,255,.8)" stroke-width="1.7" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="mt-4 text-sm font-semibold text-white">ERP</div>
+              <div class="mt-3 mx-auto h-px w-10 bg-white/15 group-hover:bg-cyan-300/40"></div>
+            </a>
+
+            <a href="products.html#smart-products" class="glass group rounded-3xl p-6 text-center transition hover:-translate-y-1" data-reveal data-reveal-delay="150">
+              <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/5">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M7 3h7l3 3v15H7V3Z" stroke="rgba(34,211,238,.95)" stroke-width="1.7" stroke-linejoin="round"/>
+                  <path d="M10 11h7M10 15h7" stroke="rgba(255,255,255,.8)" stroke-width="1.7" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="mt-4 text-sm font-semibold text-white">DMS</div>
+              <div class="mt-3 mx-auto h-px w-10 bg-white/15 group-hover:bg-cyan-300/40"></div>
+            </a>
+
+            <a href="products.html#smart-products" class="glass group rounded-3xl p-6 text-center transition hover:-translate-y-1" data-reveal data-reveal-delay="180">
+              <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/5">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 7h16v10H4V7Z" stroke="rgba(34,211,238,.95)" stroke-width="1.7"/>
+                  <path d="M8 21h8" stroke="rgba(255,255,255,.75)" stroke-width="1.7" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="mt-4 text-sm font-semibold text-white">HPMS</div>
+              <div class="mt-3 mx-auto h-px w-10 bg-white/15 group-hover:bg-cyan-300/40"></div>
+            </a>
+
+            <a href="products.html#smart-products" class="glass group rounded-3xl p-6 text-center transition hover:-translate-y-1" data-reveal data-reveal-delay="210">
+              <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/5">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M6 8h12M6 12h12M6 16h12" stroke="rgba(255,255,255,.75)" stroke-width="1.7" stroke-linecap="round"/>
+                  <path d="M8 6h8v12H8V6Z" stroke="rgba(34,211,238,.95)" stroke-width="1.7" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="mt-4 text-sm font-semibold text-white">E‑Auction</div>
+              <div class="mt-3 mx-auto h-px w-10 bg-white/15 group-hover:bg-cyan-300/40"></div>
+            </a>
+
+            <a href="products.html#smart-products" class="glass group rounded-3xl p-6 text-center transition hover:-translate-y-1" data-reveal data-reveal-delay="240">
+              <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/5">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M7 17c2-2 4-3 5-3s3 1 5 3" stroke="rgba(255,255,255,.75)" stroke-width="1.7" stroke-linecap="round"/>
+                  <path d="M12 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="rgba(34,211,238,.95)" stroke-width="1.7"/>
+                </svg>
+              </div>
+              <div class="mt-4 text-sm font-semibold text-white">CRM</div>
+              <div class="mt-3 mx-auto h-px w-10 bg-white/15 group-hover:bg-cyan-300/40"></div>
+            </a>
+
+            <a href="products.html#smart-products" class="glass group rounded-3xl p-6 text-center transition hover:-translate-y-1" data-reveal data-reveal-delay="270">
+              <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/5">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M7 3h10v18H7V3Z" stroke="rgba(34,211,238,.95)" stroke-width="1.7"/>
+                  <path d="M9 7h6M9 11h6M9 15h6" stroke="rgba(255,255,255,.8)" stroke-width="1.7" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="mt-4 text-sm font-semibold text-white">eAudit</div>
+              <div class="mt-3 mx-auto h-px w-10 bg-white/15 group-hover:bg-cyan-300/40"></div>
+            </a>
+
+            <a href="products.html#smart-products" class="glass group rounded-3xl p-6 text-center transition hover:-translate-y-1" data-reveal data-reveal-delay="300">
+              <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/5">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 2v4M12 18v4" stroke="rgba(255,255,255,.8)" stroke-width="1.7" stroke-linecap="round"/>
+                  <path d="M7 7h10v10H7V7Z" stroke="rgba(34,211,238,.95)" stroke-width="1.7"/>
+                </svg>
+              </div>
+              <div class="mt-4 text-sm font-semibold text-white">PMS</div>
+              <div class="mt-3 mx-auto h-px w-10 bg-white/15 group-hover:bg-cyan-300/40"></div>
+            </a>
+
+            <a href="products.html#smart-products" class="glass group rounded-3xl p-6 text-center transition hover:-translate-y-1" data-reveal data-reveal-delay="330">
+              <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/5">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M7 8h10M7 12h10M7 16h10" stroke="rgba(255,255,255,.8)" stroke-width="1.7" stroke-linecap="round"/>
+                  <path d="M5 6h14v14H5V6Z" stroke="rgba(34,211,238,.95)" stroke-width="1.7"/>
+                </svg>
+              </div>
+              <div class="mt-4 text-sm font-semibold text-white">B2B & Sales App</div>
+              <div class="mt-3 mx-auto h-px w-10 bg-white/15 group-hover:bg-cyan-300/40"></div>
+            </a>
+
+            <a href="products.html#smart-products" class="glass group rounded-3xl p-6 text-center transition hover:-translate-y-1" data-reveal data-reveal-delay="360">
+              <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/5">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 10 12 5l8 5" stroke="rgba(255,255,255,.8)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M8 10v9M16 10v9" stroke="rgba(34,211,238,.95)" stroke-width="1.7" stroke-linecap="round"/>
+                  <path d="M6 19h12" stroke="rgba(255,255,255,.8)" stroke-width="1.7" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="mt-4 text-sm font-semibold text-white">E‑Governance</div>
+              <div class="mt-3 mx-auto h-px w-10 bg-white/15 group-hover:bg-cyan-300/40"></div>
+            </a>
+
+            <a href="products.html#smart-products" class="glass group rounded-3xl p-6 text-center transition hover:-translate-y-1" data-reveal data-reveal-delay="390">
+              <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/5">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M7 20c1.5 1 3.2 1.5 5 1.5 5.3 0 9.5-4 9.5-9 0-4.6-3.8-8.3-8.6-8.9" stroke="rgba(34,211,238,.95)" stroke-width="1.7" stroke-linecap="round"/>
+                  <path d="M7 7c-2 1.4-3.3 3.6-3.3 6.1 0 2 .8 3.9 2.2 5.2" stroke="rgba(255,255,255,.8)" stroke-width="1.7" stroke-linecap="round"/>
+                  <path d="M9 9.5h.01M12 9.5h.01M15 9.5h.01" stroke="rgba(255,255,255,.9)" stroke-width="2.2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="mt-4 text-sm font-semibold text-white">WhatsApp Solution</div>
+              <div class="mt-3 mx-auto h-px w-10 bg-white/15 group-hover:bg-cyan-300/40"></div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why choose us -->
+      <section class="py-16">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="grid gap-10 lg:grid-cols-12">
+            <div class="lg:col-span-5" data-reveal>
+              <div class="text-sm font-semibold text-cyan-200/90">Why choose us</div>
+              <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white">A delivery model built for trust</h2>
+              <p class="mt-4 text-sm text-white/70">
+                Fintech and enterprise IT require disciplined engineering. We ship with clarity: scoped milestones,
+                transparent reporting, and production-ready quality.
+              </p>
+              <div class="mt-7 flex flex-col gap-3">
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <div class="text-sm font-semibold text-white">Architecture-first approach</div>
+                  <div class="mt-1 text-xs text-white/60">Modular systems that scale cleanly and reduce long-term cost.</div>
+                </div>
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <div class="text-sm font-semibold text-white">Compliance-aware engineering</div>
+                  <div class="mt-1 text-xs text-white/60">Audit-friendly logs, access controls, and data protection patterns.</div>
+                </div>
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <div class="text-sm font-semibold text-white">Modern UI and UX</div>
+                  <div class="mt-1 text-xs text-white/60">Smooth interactions, clean visuals, and accessible components.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:col-span-7" data-reveal data-reveal-delay="90">
+              <div class="glass rounded-3xl p-7">
+                <div class="grid gap-4 sm:grid-cols-2">
+                  <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+                    <div class="text-xs text-white/60">Delivery</div>
+                    <div class="mt-2 text-sm font-semibold text-white">Agile milestones & reporting</div>
+                    <div class="mt-2 text-xs text-white/60">Weekly demos, issue tracking, release notes.</div>
+                  </div>
+                  <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+                    <div class="text-xs text-white/60">Quality</div>
+                    <div class="mt-2 text-sm font-semibold text-white">Automated tests & CI/CD</div>
+                    <div class="mt-2 text-xs text-white/60">Static checks, pipelines, deployment automation.</div>
+                  </div>
+                  <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+                    <div class="text-xs text-white/60">Operations</div>
+                    <div class="mt-2 text-sm font-semibold text-white">Observability & SRE practices</div>
+                    <div class="mt-2 text-xs text-white/60">Logs, metrics, traces, alerts, runbooks.</div>
+                  </div>
+                  <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+                    <div class="text-xs text-white/60">Security</div>
+                    <div class="mt-2 text-sm font-semibold text-white">Hardening & access controls</div>
+                    <div class="mt-2 text-xs text-white/60">Secrets, IAM patterns, secure reviews.</div>
+                  </div>
+                </div>
+
+                <div class="mt-6 rounded-2xl border border-white/10 bg-gradient-to-r from-blue-500/15 to-cyan-400/10 p-5">
+                  <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                      <div class="text-sm font-semibold text-white">Want a proposal?</div>
+                      <div class="mt-1 text-xs text-white/60">Share your goals—get a high-level plan and timeline.</div>
+                    </div>
+                    <a href="contact.html" class="btn-primary rounded-2xl px-5 py-2.5 text-center text-sm font-semibold text-[#070B18] transition focus-ring">
+                      Contact us
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Clients / Achievements -->
+      <section class="py-16">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between" data-reveal>
+            <div>
+              <div class="text-sm font-semibold text-cyan-200/90">Clients & achievements</div>
+              <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white">Trusted outcomes</h2>
+              <p class="mt-3 max-w-2xl text-sm text-white/70">
+                Placeholder metrics and logos—swap in your real achievements and client list.
+              </p>
+            </div>
+            <a href="products.html" class="btn-secondary rounded-2xl px-5 py-2.5 text-sm font-semibold text-white/90 transition focus-ring">View products</a>
+          </div>
+
+          <div class="mt-10 grid gap-5 lg:grid-cols-12">
+            <div class="glass rounded-3xl p-7 lg:col-span-5" data-reveal data-reveal-delay="80">
+              <div class="text-sm font-semibold text-white">Achievements</div>
+              <div class="mt-6 grid grid-cols-2 gap-4">
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <div class="text-2xl font-semibold text-white">25%</div>
+                  <div class="mt-1 text-xs text-white/60">Infra cost optimization</div>
+                </div>
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <div class="text-2xl font-semibold text-white">3–6x</div>
+                  <div class="mt-1 text-xs text-white/60">Faster releases</div>
+                </div>
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <div class="text-2xl font-semibold text-white">48h</div>
+                  <div class="mt-1 text-xs text-white/60">Incident resolution SLA</div>
+                </div>
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <div class="text-2xl font-semibold text-white">0‑trust</div>
+                  <div class="mt-1 text-xs text-white/60">Security model adoption</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass rounded-3xl p-7 lg:col-span-7" data-reveal data-reveal-delay="120">
+              <div class="text-sm font-semibold text-white">Client logos (placeholder)</div>
+              <div class="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-3">
+                <div class="flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 p-6 text-xs text-white/60">BankCo</div>
+                <div class="flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 p-6 text-xs text-white/60">FinHub</div>
+                <div class="flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 p-6 text-xs text-white/60">CloudX</div>
+                <div class="flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 p-6 text-xs text-white/60">RetailPay</div>
+                <div class="flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 p-6 text-xs text-white/60">GovSecure</div>
+                <div class="flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 p-6 text-xs text-white/60">InsureIT</div>
+              </div>
+
+              <div class="mt-6 rounded-2xl border border-white/10 bg-gradient-to-r from-blue-500/15 to-cyan-400/10 p-5">
+                <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                  <div class="text-sm font-semibold text-white">Want a tailored case study?</div>
+                  <a href="about.html#story" class="text-sm font-semibold text-cyan-200 hover:text-cyan-100">Our story →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section class="py-16">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div data-reveal>
+            <div class="text-sm font-semibold text-cyan-200/90">Testimonials</div>
+            <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white">What partners say</h2>
+          </div>
+
+          <div class="mt-10 grid gap-5 md:grid-cols-3">
+            <div class="glass rounded-3xl p-7" data-reveal data-reveal-delay="70">
+              <div class="text-sm font-semibold text-white">“Professional delivery”</div>
+              <p class="mt-3 text-sm text-white/70">
+                The team brought structure and clarity to a complex modernization program. Releases became predictable
+                without sacrificing quality.
+              </p>
+              <div class="mt-6 flex items-center gap-3">
+                <div class="h-10 w-10 rounded-full bg-gradient-to-br from-blue-500/70 to-cyan-400/60"></div>
+                <div>
+                  <div class="text-sm font-semibold text-white">Operations Lead</div>
+                  <div class="text-xs text-white/60">Enterprise Finance (placeholder)</div>
+                </div>
+              </div>
+            </div>
+            <div class="glass rounded-3xl p-7" data-reveal data-reveal-delay="130">
+              <div class="text-sm font-semibold text-white">“Security-first mindset”</div>
+              <p class="mt-3 text-sm text-white/70">
+                Strong security practices and clean architecture. They helped us tighten controls while improving performance.
+              </p>
+              <div class="mt-6 flex items-center gap-3">
+                <div class="h-10 w-10 rounded-full bg-gradient-to-br from-cyan-400/60 to-indigo-400/60"></div>
+                <div>
+                  <div class="text-sm font-semibold text-white">CTO</div>
+                  <div class="text-xs text-white/60">Fintech Startup (placeholder)</div>
+                </div>
+              </div>
+            </div>
+            <div class="glass rounded-3xl p-7" data-reveal data-reveal-delay="190">
+              <div class="text-sm font-semibold text-white">“Modern UI that users love”</div>
+              <p class="mt-3 text-sm text-white/70">
+                The interface feels premium and fast across devices. The rollout was smooth and the team stayed responsive.
+              </p>
+              <div class="mt-6 flex items-center gap-3">
+                <div class="h-10 w-10 rounded-full bg-gradient-to-br from-blue-500/70 to-indigo-400/60"></div>
+                <div>
+                  <div class="text-sm font-semibold text-white">Product Manager</div>
+                  <div class="text-xs text-white/60">Digital Banking (placeholder)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact CTA -->
+      <section class="py-16">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="glass relative overflow-hidden rounded-3xl p-8 sm:p-10">
+            <div class="absolute -top-20 -right-20 h-72 w-72 rounded-full bg-blue-500/18 blur-3xl"></div>
+            <div class="absolute -bottom-20 -left-20 h-72 w-72 rounded-full bg-cyan-400/14 blur-3xl"></div>
+
+            <div class="relative grid gap-8 lg:grid-cols-12" data-reveal>
+              <div class="lg:col-span-7">
+                <div class="text-sm font-semibold text-cyan-200/90">Contact</div>
+                <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white">Let’s design a solution for your business</h2>
+                <p class="mt-3 max-w-2xl text-sm text-white/70">
+                  Share your goals and constraints. We’ll respond with next steps, a suggested approach, and a realistic timeline.
+                </p>
+                <div class="mt-7 flex flex-col gap-3 sm:flex-row">
+                  <a href="contact.html" class="btn-primary rounded-2xl px-6 py-3 text-center text-sm font-semibold text-[#070B18] transition focus-ring">Get in touch</a>
+                  <a href="careers.html" class="btn-secondary rounded-2xl px-6 py-3 text-center text-sm font-semibold text-white/90 transition focus-ring">Join the team</a>
+                </div>
+              </div>
+              <div class="lg:col-span-5">
+                <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+                  <div class="text-sm font-semibold text-white">Quick contact</div>
+                  <div class="mt-4 grid gap-3 text-sm">
+                    <div class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+                      <div class="text-xs text-white/60">Email</div>
+                      <div class="mt-1 font-semibold text-white">hello@f6it.example</div>
+                    </div>
+                    <div class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+                      <div class="text-xs text-white/60">Phone</div>
+                      <div class="mt-1 font-semibold text-white">+1 (000) 000‑0000</div>
+                    </div>
+                    <div class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+                      <div class="text-xs text-white/60">Location</div>
+                      <div class="mt-1 font-semibold text-white">Your City • Global delivery</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/slider.js"></script>
+  </body>
+  </html>
+
