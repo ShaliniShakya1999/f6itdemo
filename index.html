@@ -13,148 +13,80 @@
     <div id="site-header"></div>
 
     <main>
-      <!-- Hero -->
-      <section class="slider" data-hero-slider data-interval="6500" tabindex="0" aria-label="Hero slider">
+      <!-- Hero Slider: light gradient, left text + right illustration, 3 slides, fade, 5s autoplay -->
+      <section class="slider hero-light" data-hero-slider data-interval="5000" tabindex="0" aria-label="Hero slider">
         <div class="slider-track" data-slider-track>
-          <!-- Slide 1 -->
-          <div class="slider-slide" data-slide aria-hidden="false" data-title="Banking Experience">
-            <div class="slider-bg" style="background-image:url('assets/img/hero-banking.svg');"></div>
-            <div class="slider-overlay"></div>
-            <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <div class="py-16 lg:py-24">
-                <div class="max-w-2xl">
-                  <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/75" data-reveal>
-                    <span class="h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_20px_rgba(34,211,238,.55)]"></span>
-                    Fintech • Banking • Integrations
-                  </div>
-                  <h1 class="mt-6 text-4xl font-semibold tracking-tight text-white sm:text-5xl" data-reveal data-reveal-delay="80">
-                    Offering seamless
-                    <span class="text-gradient">banking experience</span>
-                  </h1>
-                  <p class="mt-5 max-w-xl text-base text-white/75 sm:text-lg" data-reveal data-reveal-delay="140">
-                    Modern digital banking workflows, secure onboarding, and integration-ready services to stay ahead of the curve.
-                  </p>
-                  <div class="mt-8 flex flex-col gap-3 sm:flex-row" data-reveal data-reveal-delay="210">
-                    <a href="products.html" class="btn-primary rounded-2xl px-6 py-3 text-center text-sm font-semibold text-white transition focus-ring">
-                      Explore Products
-                    </a>
-                    <a href="contact.html" class="btn-secondary rounded-2xl px-6 py-3 text-center text-sm font-semibold text-[#0f172a] transition focus-ring border-white/30 text-white hover:bg-white/15">
-                      Contact Us
-                    </a>
-                  </div>
+          <!-- Slide 1: Digital Banking & Enterprise -->
+          <div class="slider-slide" data-slide aria-hidden="false" data-title="Digital Banking & Enterprise Software">
+            <div class="hero-slide-inner">
+              <div class="hero-slide-content">
+                <h1 class="hero-title">Digital Banking &amp; Enterprise Software</h1>
+                <p class="hero-subtitle">Empowering financial institutions and enterprises with secure, scalable and innovative technology solutions.</p>
+                <div class="hero-buttons">
+                  <a href="products.html" class="btn-primary rounded-xl px-6 py-3 text-sm font-semibold text-white transition focus-ring">Explore Products</a>
+                  <a href="contact.html" class="btn-secondary rounded-xl px-6 py-3 text-sm font-semibold text-[#0f172a] border border-slate-200 transition focus-ring hover:bg-[#f8fafc]">Contact Us</a>
+                </div>
+              </div>
+              <div class="hero-slide-illus" aria-hidden="true">
+                <div class="hero-illus-placeholder hero-illus-banking">
+                  <svg class="w-full h-full text-[#2563EB]/20" viewBox="0 0 280 200" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="20" y="20" width="240" height="160" rx="8"/><path d="M20 60h240M20 100h240M60 60v100M140 60v100M220 60v100"/><circle cx="70" cy="140" r="12"/><circle cx="150" cy="140" r="12"/><circle cx="230" cy="140" r="12"/></svg>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Slide 2 -->
-          <div class="slider-slide" data-slide aria-hidden="true" data-title="Blockchain Solutions">
-            <div class="slider-bg" style="background-image:url('assets/img/hero-blockchain.svg');"></div>
-            <div class="slider-overlay"></div>
-            <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <div class="py-16 lg:py-24">
-                <div class="max-w-2xl">
-                  <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/75">
-                    <span class="h-2 w-2 rounded-full bg-blue-300 shadow-[0_0_20px_rgba(59,130,246,.55)]"></span>
-                    Blockchain • Wallet • DApps
-                  </div>
-                  <h2 class="mt-6 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-                    SAFE'ly chained with
-                    <span class="text-gradient">blockchain</span>
-                  </h2>
-                  <p class="mt-5 max-w-xl text-base text-white/75 sm:text-lg">
-                    Explore digitally secured products and services with modern blockchain tech—built for performance and safety.
-                  </p>
-                  <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-                    <a href="services.html#it" class="btn-primary rounded-2xl px-6 py-3 text-center text-sm font-semibold text-[#070B18] transition focus-ring">Read more</a>
-                    <a href="products.html#catalog" class="btn-secondary rounded-2xl px-6 py-3 text-center text-sm font-semibold text-white/90 transition focus-ring">View products</a>
-                  </div>
+          <!-- Slide 2: ERP & Business Automation -->
+          <div class="slider-slide" data-slide aria-hidden="true" data-title="ERP & Business Automation">
+            <div class="hero-slide-inner">
+              <div class="hero-slide-content">
+                <h2 class="hero-title">Powerful ERP &amp; Business Automation Systems</h2>
+                <p class="hero-subtitle">Streamline operations, manage resources and boost productivity with our enterprise ERP platforms.</p>
+                <div class="hero-buttons">
+                  <a href="products.html#smart-products" class="btn-primary rounded-xl px-6 py-3 text-sm font-semibold text-white transition focus-ring">View ERP Solutions</a>
+                  <a href="getintouche.html" class="btn-secondary rounded-xl px-6 py-3 text-sm font-semibold text-[#0f172a] border border-slate-200 transition focus-ring hover:bg-[#f8fafc]">Book Demo</a>
+                </div>
+              </div>
+              <div class="hero-slide-illus" aria-hidden="true">
+                <div class="hero-illus-placeholder hero-illus-erp">
+                  <svg class="w-full h-full text-[#2563EB]/20" viewBox="0 0 280 200" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="20" y="30" width="110" height="140" rx="6"/><rect x="150" y="30" width="110" height="50" rx="4"/><rect x="150" y="95" width="110" height="75" rx="4"/><path d="M30 55h90M30 85h60M30 115h70"/></svg>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Slide 3 -->
-          <div class="slider-slide" data-slide aria-hidden="true" data-title="Business Process Management">
-            <div class="slider-bg" style="background-image:url('assets/img/hero-bpm.svg');"></div>
-            <div class="slider-overlay"></div>
-            <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <div class="py-16 lg:py-24">
-                <div class="max-w-2xl">
-                  <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/75">
-                    <span class="h-2 w-2 rounded-full bg-amber-300 shadow-[0_0_20px_rgba(251,191,36,.45)]"></span>
-                    BPM • Automation • Productivity
-                  </div>
-                  <h2 class="mt-6 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-                    Safe & smart
-                    <span class="text-gradient">process management</span>
-                  </h2>
-                  <p class="mt-5 max-w-xl text-base text-white/75 sm:text-lg">
-                    Improve workforce efficiency and ROI with automation, dashboards, and measurable operations.
-                  </p>
-                  <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-                    <a href="services.html#digital" class="btn-primary rounded-2xl px-6 py-3 text-center text-sm font-semibold text-[#070B18] transition focus-ring">Read more</a>
-                    <a href="#services" class="btn-secondary rounded-2xl px-6 py-3 text-center text-sm font-semibold text-white/90 transition focus-ring">Our services</a>
-                  </div>
+          <!-- Slide 3: AI Powered Solutions -->
+          <div class="slider-slide" data-slide aria-hidden="true" data-title="AI Powered Technology">
+            <div class="hero-slide-inner">
+              <div class="hero-slide-content">
+                <h2 class="hero-title">AI Powered Technology Solutions</h2>
+                <p class="hero-subtitle">Leverage Artificial Intelligence, automation and data analytics to transform your business digitally.</p>
+                <div class="hero-buttons">
+                  <a href="services.html" class="btn-primary rounded-xl px-6 py-3 text-sm font-semibold text-white transition focus-ring">Explore Services</a>
+                  <a href="contact.html" class="btn-secondary rounded-xl px-6 py-3 text-sm font-semibold text-[#0f172a] border border-slate-200 transition focus-ring hover:bg-[#f8fafc]">Get Started</a>
                 </div>
               </div>
-            </div>
-          </div>
-
-          <!-- Slide 4 -->
-          <div class="slider-slide" data-slide aria-hidden="true" data-title="Metaverse Technology">
-            <div class="slider-bg" style="background-image:url('assets/img/hero-metaverse.svg');"></div>
-            <div class="slider-overlay"></div>
-            <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <div class="py-16 lg:py-24">
-                <div class="max-w-2xl">
-                  <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/75">
-                    <span class="h-2 w-2 rounded-full bg-fuchsia-300 shadow-[0_0_20px_rgba(167,139,250,.45)]"></span>
-                    Next‑gen • XR • Platforms
-                  </div>
-                  <h2 class="mt-6 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-                    To the
-                    <span class="text-gradient">metaverse</span>
-                  </h2>
-                  <p class="mt-5 max-w-xl text-base text-white/75 sm:text-lg">
-                    Power your solutions with next‑gen technology—secure foundations, modern UI, and scalable delivery.
-                  </p>
-                  <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-                    <a href="products.html#smart-products" class="btn-primary rounded-2xl px-6 py-3 text-center text-sm font-semibold text-[#070B18] transition focus-ring">Read more</a>
-                    <a href="contact.html" class="btn-secondary rounded-2xl px-6 py-3 text-center text-sm font-semibold text-white/90 transition focus-ring">Talk to us</a>
-                  </div>
+              <div class="hero-slide-illus" aria-hidden="true">
+                <div class="hero-illus-placeholder hero-illus-ai">
+                  <svg class="w-full h-full text-[#2563EB]/20" viewBox="0 0 280 200" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="140" cy="90" r="50"/><path d="M100 90a40 40 0 0 1 80 0"/><path d="M140 40v100M90 140h100M70 170h140"/><circle cx="140" cy="90" r="20"/></svg>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Controls -->
         <div class="slider-controls">
-          <div class="absolute left-4 top-1/2 -translate-y-1/2">
-            <button type="button" class="slider-btn rounded-2xl border border-white/15 bg-white/5 px-3 py-3 text-white/90 backdrop-blur focus-ring hover:bg-white/10 transition" data-prev aria-label="Previous slide">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M15 6 9 12l6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-          </div>
-          <div class="absolute right-4 top-1/2 -translate-y-1/2">
-            <button type="button" class="slider-btn rounded-2xl border border-white/15 bg-white/5 px-3 py-3 text-white/90 backdrop-blur focus-ring hover:bg-white/10 transition" data-next aria-label="Next slide">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-          </div>
+          <button type="button" class="slider-btn rounded-xl border border-slate-200 bg-white/90 px-3 py-3 text-[#0f172a] shadow-sm focus-ring hover:bg-white transition" data-prev aria-label="Previous slide">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 6 9 12l6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button type="button" class="slider-btn rounded-xl border border-slate-200 bg-white/90 px-3 py-3 text-[#0f172a] shadow-sm focus-ring hover:bg-white transition" data-next aria-label="Next slide">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
         </div>
 
-        <!-- Dots -->
-        <div class="absolute bottom-6 left-1/2 -translate-x-1/2">
-          <div class="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2 backdrop-blur">
-            <button type="button" class="h-2.5 w-6 rounded-full bg-white/80 transition" data-dot="0" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" class="h-2.5 w-6 rounded-full bg-white/30 transition" data-dot="1" aria-current="false" aria-label="Slide 2"></button>
-            <button type="button" class="h-2.5 w-6 rounded-full bg-white/30 transition" data-dot="2" aria-current="false" aria-label="Slide 3"></button>
-            <button type="button" class="h-2.5 w-6 rounded-full bg-white/30 transition" data-dot="3" aria-current="false" aria-label="Slide 4"></button>
-          </div>
+        <div class="slider-dots">
+          <button type="button" class="slider-dot rounded-full bg-[#2563EB] transition" data-dot="0" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" class="slider-dot rounded-full bg-slate-300 transition" data-dot="1" aria-current="false" aria-label="Slide 2"></button>
+          <button type="button" class="slider-dot rounded-full bg-slate-300 transition" data-dot="2" aria-current="false" aria-label="Slide 3"></button>
         </div>
 
         <div class="sr-only" aria-live="polite" data-live></div>
@@ -163,52 +95,53 @@
       <!-- Stats -->
       <section class="bg-white py-10 lg:py-14 border-b border-slate-100">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <p class="text-center text-sm text-[#334155] max-w-2xl mx-auto mb-8" data-reveal>Delivering reliable fintech, ERP and enterprise solutions worldwide.</p>
           <div class="grid grid-cols-2 gap-6 lg:grid-cols-4 lg:gap-8" data-reveal>
             <div class="text-center">
-              <div class="text-3xl font-bold text-[#2563EB] sm:text-4xl">20</div>
-              <div class="mt-1 text-sm font-medium text-slate-600">Years of Experience</div>
+              <div class="text-3xl font-bold text-[#2563EB] sm:text-4xl">20+</div>
+              <div class="mt-1 text-sm font-medium text-[#334155]">Years of Technology Excellence</div>
             </div>
             <div class="text-center">
-              <div class="text-3xl font-bold text-[#2563EB] sm:text-4xl">35</div>
-              <div class="mt-1 text-sm font-medium text-slate-600">Countries</div>
+              <div class="text-3xl font-bold text-[#2563EB] sm:text-4xl">35+</div>
+              <div class="mt-1 text-sm font-medium text-[#334155]">Countries Served</div>
             </div>
             <div class="text-center">
-              <div class="text-3xl font-bold text-[#2563EB] sm:text-4xl">1,000</div>
-              <div class="mt-1 text-sm font-medium text-slate-600">Clients</div>
+              <div class="text-3xl font-bold text-[#2563EB] sm:text-4xl">1000+</div>
+              <div class="mt-1 text-sm font-medium text-[#334155]">Enterprise Clients</div>
             </div>
             <div class="text-center">
-              <div class="text-3xl font-bold text-[#2563EB] sm:text-4xl">5,000</div>
-              <div class="mt-1 text-sm font-medium text-slate-600">Projects</div>
+              <div class="text-3xl font-bold text-[#2563EB] sm:text-4xl">5000+</div>
+              <div class="mt-1 text-sm font-medium text-[#334155]">Successful Projects Delivered</div>
             </div>
           </div>
         </div>
       </section>
 
       <!-- About Us -->
-      <section id="about" class="section py-16 lg:py-20">
+      <section id="about" class="section py-16 lg:py-20 bg-[#f8fafc]">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div data-reveal>
             <div class="text-sm font-semibold text-[#2563EB]">About Us</div>
-            <h2 class="mt-3 text-3xl font-semibold tracking-tight text-[#0f172a]">Safe Software And Integrated Solutions</h2>
-            <p class="mt-4 max-w-3xl text-sm text-slate-600 leading-relaxed">
-              Safe Software And Integrated Solutions Pvt Ltd made its initial presence 2 decades ago, when computerized banking support system was just a pipedream. Grown into an ISO 9001:2015, ISO 27001 certified company, we have been instrumental in supporting more than 850 enterprise clients around the globe. Our domain includes IT solutions, Technology products, and Business Analytics and Business Leadership programs.
+            <h2 class="mt-3 text-3xl font-semibold tracking-tight text-[#0f172a]">F6IT</h2>
+            <p class="mt-4 max-w-3xl text-sm text-[#334155] leading-relaxed">
+              F6IT is a global technology company delivering enterprise software, fintech platforms and digital transformation solutions. With more than 20 years of industry experience, we have supported over 1000 enterprise clients across 35+ countries. Our expertise spans financial technology, enterprise systems, business analytics and digital innovation, helping organizations grow faster in the modern digital economy.
             </p>
             <a href="about.html" class="mt-4 inline-block text-sm font-semibold text-[#2563EB] hover:text-[#1d4ed8]">Read More</a>
           </div>
           <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3" data-reveal data-reveal-delay="80">
-            <div class="glass rounded-3xl p-6">
+            <div class="glass rounded-3xl p-6 bg-white">
               <div class="text-sm font-semibold text-[#0f172a]">Vision</div>
-              <p class="mt-3 text-sm text-slate-600 leading-relaxed">"To be a Globally Recognized and Respected IT Company Which Offers End to End IT Solutions"</p>
+              <p class="mt-3 text-sm text-[#334155] leading-relaxed">To become a globally recognized technology company delivering innovative and reliable digital solutions for enterprises worldwide.</p>
               <a href="about.html#vision" class="mt-3 inline-block text-sm font-semibold text-[#2563EB] hover:text-[#1d4ed8]">Read More</a>
             </div>
-            <div class="glass rounded-3xl p-6">
+            <div class="glass rounded-3xl p-6 bg-white">
               <div class="text-sm font-semibold text-[#0f172a]">Mission</div>
-              <p class="mt-3 text-sm text-slate-600 leading-relaxed">To Reach Out 100+ Countries Through Various Partners and Customers, By Offering Them the Best of IT Solutions and Services.</p>
+              <p class="mt-3 text-sm text-[#334155] leading-relaxed">To expand our technology solutions to 100+ countries through strategic partnerships while delivering the highest standards of innovation, quality and customer satisfaction.</p>
               <a href="about.html#mission" class="mt-3 inline-block text-sm font-semibold text-[#2563EB] hover:text-[#1d4ed8]">Read More</a>
             </div>
-            <div class="glass rounded-3xl p-6 md:col-span-2 lg:col-span-1">
+            <div class="glass rounded-3xl p-6 bg-white md:col-span-2 lg:col-span-1">
               <div class="text-sm font-semibold text-[#0f172a]">Expertise</div>
-              <p class="mt-3 text-sm text-slate-600 leading-relaxed">IT solutions, Technology products, Business Analytics and Business Leadership programs—trusted by 850+ global clients.</p>
+              <p class="mt-3 text-sm text-[#334155] leading-relaxed">Financial technology, enterprise systems, business analytics and digital innovation—trusted by 1000+ global clients.</p>
               <a href="services.html" class="mt-3 inline-block text-sm font-semibold text-[#2563EB] hover:text-[#1d4ed8]">Our services</a>
             </div>
           </div>
@@ -216,60 +149,60 @@
       </section>
 
       <!-- Services -->
-      <section id="services" class="section py-16 lg:py-20">
+      <section id="services" class="section py-16 lg:py-20 bg-white">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between" data-reveal>
             <div>
-              <div class="text-sm font-semibold text-[#2563EB]">SERVICES</div>
-              <h2 class="mt-3 text-3xl font-semibold tracking-tight text-[#0f172a]">What we deliver</h2>
-              <p class="mt-3 max-w-2xl text-sm text-slate-600 leading-relaxed">
-                Empowering businesses with cutting-edge IT solutions, innovative technology products, and strategic business analytics, backed by two decades of expertise and trusted by over 850 global clients.
+              <div class="text-sm font-semibold text-[#2563EB]">Services</div>
+              <h2 class="mt-3 text-3xl font-semibold tracking-tight text-[#0f172a]">Technology Services That Drive Digital Growth</h2>
+              <p class="mt-3 max-w-2xl text-sm text-[#334155] leading-relaxed">
+                We empower businesses with modern IT solutions, enterprise software, and advanced analytics backed by more than two decades of industry expertise.
               </p>
             </div>
             <a href="services.html" class="btn-secondary rounded-2xl px-5 py-2.5 text-sm font-semibold text-[#0f172a] transition focus-ring">Read more</a>
           </div>
           <div class="mt-10 grid gap-5 md:grid-cols-3">
-            <a href="services.html#digital" class="glass group rounded-3xl p-6 transition hover:-translate-y-1" data-reveal data-reveal-delay="60">
+            <a href="services.html#digital" class="glass group rounded-3xl p-6 transition hover:-translate-y-1 bg-[#f8fafc] border-slate-200" data-reveal data-reveal-delay="60">
               <div class="flex items-center justify-between">
                 <div class="h-11 w-11 rounded-2xl bg-[#eff6ff] text-[#2563EB] flex items-center justify-center">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16v10H4V7Z"/><path d="M8 21h8M9 17v4M15 17v4" stroke-width="1.6" stroke-linecap="round"/></svg>
                 </div>
                 <span class="text-xs text-slate-500 group-hover:text-[#2563EB]">Read more</span>
               </div>
-              <div class="mt-4 text-sm font-semibold text-[#0f172a]">Digital Transformation</div>
-              <div class="mt-2 text-xs text-slate-600 leading-relaxed">With a comprehensive suite of services to help in digital transformation, we help support and accelerate your organization's journey to unlock productivity gains across all levels of your operations.</div>
+              <div class="mt-4 text-sm font-semibold text-[#0f172a]">1. Digital Transformation</div>
+              <div class="mt-2 text-xs text-[#334155] leading-relaxed">Accelerate your digital journey with scalable enterprise platforms, automation tools and modern cloud infrastructure. We help organizations modernize legacy systems and unlock productivity across all levels of operations.</div>
             </a>
-            <a href="services.html#business" class="glass group rounded-3xl p-6 transition hover:-translate-y-1" data-reveal data-reveal-delay="110">
+            <a href="services.html#business" class="glass group rounded-3xl p-6 transition hover:-translate-y-1 bg-[#f8fafc] border-slate-200" data-reveal data-reveal-delay="110">
               <div class="flex items-center justify-between">
                 <div class="h-11 w-11 rounded-2xl bg-[#eff6ff] text-[#2563EB] flex items-center justify-center">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 7h10v10H7V7Z"/><path d="M4 12h3M17 12h3M12 4v3M12 17v3" stroke-width="1.8" stroke-linecap="round"/></svg>
                 </div>
                 <span class="text-xs text-slate-500 group-hover:text-[#2563EB]">Read more</span>
               </div>
-              <div class="mt-4 text-sm font-semibold text-[#0f172a]">Business Transformation</div>
-              <div class="mt-2 text-xs text-slate-600 leading-relaxed">Business transformation is an umbrella term for creating fundamental changes in how a business or organization runs. This includes personnel, processes, and technology. These transformations help organizations compete more effectively.</div>
+              <div class="mt-4 text-sm font-semibold text-[#0f172a]">2. Business Transformation</div>
+              <div class="mt-2 text-xs text-[#334155] leading-relaxed">Transform how your organization operates with innovative technology, optimized processes and intelligent decision systems. Our solutions help businesses stay competitive in a rapidly changing digital economy.</div>
             </a>
-            <a href="services.html#ai" class="glass group rounded-3xl p-6 transition hover:-translate-y-1" data-reveal data-reveal-delay="160">
+            <a href="services.html#ai" class="glass group rounded-3xl p-6 transition hover:-translate-y-1 bg-[#f8fafc] border-slate-200" data-reveal data-reveal-delay="160">
               <div class="flex items-center justify-between">
                 <div class="h-11 w-11 rounded-2xl bg-[#eff6ff] text-[#2563EB] flex items-center justify-center">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2a4 4 0 0 0-4 4v2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4z"/></svg>
                 </div>
                 <span class="text-xs text-slate-500 group-hover:text-[#2563EB]">Read more</span>
               </div>
-              <div class="mt-4 text-sm font-semibold text-[#0f172a]">Artificial Intelligence</div>
-              <div class="mt-2 text-xs text-slate-600 leading-relaxed">Incorporating artificial intelligence into your business is unlike other technology. Safe software and integrated solutions help every enterprise to make ease and grow with the newest augmented and artificial intelligence.</div>
+              <div class="mt-4 text-sm font-semibold text-[#0f172a]">3. Artificial Intelligence</div>
+              <div class="mt-2 text-xs text-[#334155] leading-relaxed">Leverage the power of AI and Machine Learning to automate processes, analyze large datasets and create smarter business experiences. We integrate AI-driven solutions that help enterprises improve decision making and operational efficiency.</div>
             </a>
           </div>
         </div>
       </section>
 
-      <!-- Product showcase grid -->
+      <!-- Product showcase grid (teaser) -->
       <section id="product-showcase" class="py-16 lg:py-20 bg-white">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div data-reveal>
             <div class="text-sm font-semibold text-[#2563EB]">Products</div>
-            <h2 class="mt-3 text-3xl font-semibold tracking-tight text-[#0f172a]">Our core solutions</h2>
-            <p class="mt-3 max-w-2xl text-sm text-slate-600 leading-relaxed">Digital banking, insurance, ERP, and business intelligence—built for scale and compliance.</p>
+            <h2 class="mt-3 text-3xl font-semibold tracking-tight text-[#0f172a]">Core Banking • ERP • CRM • Analytics</h2>
+            <p class="mt-3 max-w-2xl text-sm text-[#334155] leading-relaxed">Digital banking, insurance, ERP, and business intelligence—built for scale and compliance.</p>
           </div>
           <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             <a href="products.html#smart-products" class="glass group rounded-2xl p-6 text-center transition hover:-translate-y-1" data-reveal data-reveal-delay="60">
@@ -304,94 +237,105 @@
         </div>
       </section>
 
-      <!-- Trust section -->
-      <section class="section py-12 lg:py-16">
+      <!-- Trust / Client logos -->
+      <section class="section py-12 lg:py-16 bg-[#f8fafc]">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p class="text-center text-sm font-medium text-slate-500" data-reveal>Trusted by 200+ institutions</p>
-          <div class="mt-8 flex flex-wrap items-center justify-center gap-8 sm:gap-12" data-reveal>
-            <div class="h-8 flex items-center text-slate-400 font-semibold text-lg">BankCo</div>
-            <div class="h-8 flex items-center text-slate-400 font-semibold text-lg">FinHub</div>
-            <div class="h-8 flex items-center text-slate-400 font-semibold text-lg">CloudX</div>
-            <div class="h-8 flex items-center text-slate-400 font-semibold text-lg">RetailPay</div>
-            <div class="h-8 flex items-center text-slate-400 font-semibold text-lg">GovSecure</div>
-            <div class="h-8 flex items-center text-slate-400 font-semibold text-lg">InsureIT</div>
+          <p class="text-center text-sm font-medium text-[#334155]" data-reveal>Trusted by 1000+ enterprises worldwide</p>
+          <div class="mt-8 overflow-hidden" data-reveal>
+            <div class="trust-logos-slider flex items-center gap-12">
+              <div class="h-10 flex shrink-0 items-center justify-center rounded-lg bg-white px-8 shadow-sm border border-slate-100 text-[#334155] font-semibold">BankCo</div>
+              <div class="h-10 flex shrink-0 items-center justify-center rounded-lg bg-white px-8 shadow-sm border border-slate-100 text-[#334155] font-semibold">FinHub</div>
+              <div class="h-10 flex shrink-0 items-center justify-center rounded-lg bg-white px-8 shadow-sm border border-slate-100 text-[#334155] font-semibold">CloudX</div>
+              <div class="h-10 flex shrink-0 items-center justify-center rounded-lg bg-white px-8 shadow-sm border border-slate-100 text-[#334155] font-semibold">RetailPay</div>
+              <div class="h-10 flex shrink-0 items-center justify-center rounded-lg bg-white px-8 shadow-sm border border-slate-100 text-[#334155] font-semibold">GovSecure</div>
+              <div class="h-10 flex shrink-0 items-center justify-center rounded-lg bg-white px-8 shadow-sm border border-slate-100 text-[#334155] font-semibold">InsureIT</div>
+              <div class="h-10 flex shrink-0 items-center justify-center rounded-lg bg-white px-8 shadow-sm border border-slate-100 text-[#334155] font-semibold">TechPartners</div>
+              <!-- duplicate set for seamless loop -->
+              <div class="h-10 flex shrink-0 items-center justify-center rounded-lg bg-white px-8 shadow-sm border border-slate-100 text-[#334155] font-semibold">BankCo</div>
+              <div class="h-10 flex shrink-0 items-center justify-center rounded-lg bg-white px-8 shadow-sm border border-slate-100 text-[#334155] font-semibold">FinHub</div>
+              <div class="h-10 flex shrink-0 items-center justify-center rounded-lg bg-white px-8 shadow-sm border border-slate-100 text-[#334155] font-semibold">CloudX</div>
+              <div class="h-10 flex shrink-0 items-center justify-center rounded-lg bg-white px-8 shadow-sm border border-slate-100 text-[#334155] font-semibold">RetailPay</div>
+              <div class="h-10 flex shrink-0 items-center justify-center rounded-lg bg-white px-8 shadow-sm border border-slate-100 text-[#334155] font-semibold">GovSecure</div>
+              <div class="h-10 flex shrink-0 items-center justify-center rounded-lg bg-white px-8 shadow-sm border border-slate-100 text-[#334155] font-semibold">InsureIT</div>
+              <div class="h-10 flex shrink-0 items-center justify-center rounded-lg bg-white px-8 shadow-sm border border-slate-100 text-[#334155] font-semibold">TechPartners</div>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- SAFE & SMART PRODUCTS -->
-      <section id="products" class="py-16 lg:py-20 bg-white">
+      <!-- Our Enterprise Solutions -->
+      <section id="products" class="py-16 lg:py-20 bg-[#f8fafc]">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between" data-reveal>
             <div>
               <div class="text-sm font-semibold text-[#2563EB]">Products</div>
-              <h2 class="mt-3 text-3xl font-semibold tracking-tight text-[#0f172a]">SAFE &amp; SMART PRODUCTS</h2>
-              <p class="mt-3 max-w-2xl text-sm text-slate-600 leading-relaxed">
-                Full suite of enterprise and fintech products—core banking, insurance, ERP, and more.
+              <h2 class="mt-3 text-3xl font-semibold tracking-tight text-[#0f172a]">Our Enterprise Solutions</h2>
+              <p class="mt-3 max-w-2xl text-sm text-[#334155] leading-relaxed">
+                Powerful digital platforms designed to help financial institutions, enterprises and government organizations streamline operations, improve efficiency and scale faster.
               </p>
             </div>
             <a href="products.html#smart-products" class="btn-secondary rounded-2xl px-5 py-2.5 text-sm font-semibold text-[#0f172a] transition focus-ring">View all products</a>
           </div>
 
           <div class="mt-10 grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            <a href="core-banking-solutions.html" class="glass group rounded-3xl p-6 text-center transition hover:-translate-y-1" data-reveal data-reveal-delay="60">
+            <a href="core-banking-solutions.html" class="glass group rounded-3xl p-6 text-center transition hover:-translate-y-1 bg-white" data-reveal data-reveal-delay="60">
               <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#eff6ff] text-[#2563EB]"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 10 12 5l8 5" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 10v9M10 10v9M14 10v9M18 10v9M5 19h14" stroke-linecap="round"/></svg></div>
-              <div class="mt-4 text-sm font-semibold text-[#0f172a]">CORE BANKING</div>
+              <div class="mt-4 text-sm font-semibold text-[#0f172a]">Core Banking</div>
               <div class="mt-3 mx-auto h-px w-10 bg-slate-200 group-hover:bg-[#2563EB]"></div>
             </a>
-            <a href="products.html#smart-products" class="glass group rounded-3xl p-6 text-center transition hover:-translate-y-1" data-reveal data-reveal-delay="90">
+            <a href="products.html#smart-products" class="glass group rounded-3xl p-6 text-center transition hover:-translate-y-1 bg-white" data-reveal data-reveal-delay="90">
               <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#eff6ff] text-[#2563EB]"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 7h16v10H4V7Z"/><path d="M8 21h8" stroke-linecap="round"/></svg></div>
               <div class="mt-4 text-sm font-semibold text-[#0f172a]">HPMS</div>
               <div class="mt-3 mx-auto h-px w-10 bg-slate-200 group-hover:bg-[#2563EB]"></div>
             </a>
-            <a href="products.html#smart-products" class="glass group rounded-3xl p-6 text-center transition hover:-translate-y-1" data-reveal data-reveal-delay="120">
-              <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#eff6ff] text-[#2563EB]"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 20V10M18 20V4M6 20v-4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-              <div class="mt-4 text-sm font-semibold text-[#0f172a]">PMS</div>
+            <a href="products.html#smart-products" class="glass group rounded-3xl p-6 text-center transition hover:-translate-y-1 bg-white" data-reveal data-reveal-delay="120">
+              <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#eff6ff] text-[#2563EB]"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10" stroke-linecap="round"/></svg></div>
+              <div class="mt-4 text-sm font-semibold text-[#0f172a]">Property Management System</div>
               <div class="mt-3 mx-auto h-px w-10 bg-slate-200 group-hover:bg-[#2563EB]"></div>
             </a>
-            <a href="products.html#smart-products" class="glass group rounded-3xl p-6 text-center transition hover:-translate-y-1" data-reveal data-reveal-delay="150">
+            <a href="products.html#smart-products" class="glass group rounded-3xl p-6 text-center transition hover:-translate-y-1 bg-white" data-reveal data-reveal-delay="150">
               <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#eff6ff] text-[#2563EB]"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2 4 6v6c0 5 3.5 9.7 8 10 4.5-.3 8-5 8-10V6l-8-4Z" stroke-linejoin="round"/><path d="M9.5 12l1.8 1.8L15 10" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-              <div class="mt-4 text-sm font-semibold text-[#0f172a]">CORE INSURANCE</div>
+              <div class="mt-4 text-sm font-semibold text-[#0f172a]">Core Insurance</div>
               <div class="mt-3 mx-auto h-px w-10 bg-slate-200 group-hover:bg-[#2563EB]"></div>
             </a>
-            <a href="products.html#smart-products" class="glass group rounded-3xl p-6 text-center transition hover:-translate-y-1" data-reveal data-reveal-delay="180">
+            <a href="products.html#smart-products" class="glass group rounded-3xl p-6 text-center transition hover:-translate-y-1 bg-white" data-reveal data-reveal-delay="180">
               <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#eff6ff] text-[#2563EB]"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 8h12M6 12h12M6 16h12" stroke-linecap="round"/><path d="M8 6h8v12H8V6Z" stroke-linejoin="round"/></svg></div>
-              <div class="mt-4 text-sm font-semibold text-[#0f172a]">E-AUCTION</div>
+              <div class="mt-4 text-sm font-semibold text-[#0f172a]">E-Auction</div>
               <div class="mt-3 mx-auto h-px w-10 bg-slate-200 group-hover:bg-[#2563EB]"></div>
             </a>
-            <a href="products.html#smart-products" class="glass group rounded-3xl p-6 text-center transition hover:-translate-y-1" data-reveal data-reveal-delay="210">
+            <a href="products.html#smart-products" class="glass group rounded-3xl p-6 text-center transition hover:-translate-y-1 bg-white" data-reveal data-reveal-delay="210">
               <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#eff6ff] text-[#2563EB]"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 8h10M7 12h10M7 16h10" stroke-linecap="round"/><path d="M5 6h14v14H5V6Z"/></svg></div>
-              <div class="mt-4 text-sm font-semibold text-[#0f172a]">B2B &amp; SALES APP</div>
+              <div class="mt-4 text-sm font-semibold text-[#0f172a]">B2B &amp; Sales App</div>
               <div class="mt-3 mx-auto h-px w-10 bg-slate-200 group-hover:bg-[#2563EB]"></div>
             </a>
-            <a href="products.html#smart-products" class="glass group rounded-3xl p-6 text-center transition hover:-translate-y-1" data-reveal data-reveal-delay="240">
-              <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#eff6ff] text-[#2563EB]"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 7h16v10H4V7Z"/><path d="M7 10h5M7 13h7" stroke-linecap="round"/></svg></div>
-              <div class="mt-4 text-sm font-semibold text-[#0f172a]">ERP</div>
+            <a href="products.html#smart-products" class="glass group rounded-3xl p-6 text-center transition hover:-translate-y-1 bg-white" data-reveal data-reveal-delay="240">
+              <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#eff6ff] text-[#2563EB]"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M18 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/><path d="M3 9h18M9 21V9" stroke-linecap="round"/></svg></div>
+              <div class="mt-4 text-sm font-semibold text-[#0f172a]">Enterprise ERP</div>
               <div class="mt-3 mx-auto h-px w-10 bg-slate-200 group-hover:bg-[#2563EB]"></div>
             </a>
-            <a href="products.html#smart-products" class="glass group rounded-3xl p-6 text-center transition hover:-translate-y-1" data-reveal data-reveal-delay="270">
+            <a href="products.html#smart-products" class="glass group rounded-3xl p-6 text-center transition hover:-translate-y-1 bg-white" data-reveal data-reveal-delay="270">
               <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#eff6ff] text-[#2563EB]"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
               <div class="mt-4 text-sm font-semibold text-[#0f172a]">CRM</div>
               <div class="mt-3 mx-auto h-px w-10 bg-slate-200 group-hover:bg-[#2563EB]"></div>
             </a>
-            <a href="products.html#smart-products" class="glass group rounded-3xl p-6 text-center transition hover:-translate-y-1" data-reveal data-reveal-delay="300">
+            <a href="products.html#smart-products" class="glass group rounded-3xl p-6 text-center transition hover:-translate-y-1 bg-white" data-reveal data-reveal-delay="300">
               <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#eff6ff] text-[#2563EB]"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 10 12 5l8 5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 10v9M16 10v9M6 19h12" stroke-linecap="round"/></svg></div>
-              <div class="mt-4 text-sm font-semibold text-[#0f172a]">E-GOVERNANCE</div>
+              <div class="mt-4 text-sm font-semibold text-[#0f172a]">E-Governance</div>
               <div class="mt-3 mx-auto h-px w-10 bg-slate-200 group-hover:bg-[#2563EB]"></div>
             </a>
-            <a href="products.html#smart-products" class="glass group rounded-3xl p-6 text-center transition hover:-translate-y-1" data-reveal data-reveal-delay="330">
+            <a href="products.html#smart-products" class="glass group rounded-3xl p-6 text-center transition hover:-translate-y-1 bg-white" data-reveal data-reveal-delay="330">
               <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#eff6ff] text-[#2563EB]"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 3h7l3 3v15H7V3Z" stroke-linejoin="round"/><path d="M10 11h7M10 15h7" stroke-linecap="round"/></svg></div>
-              <div class="mt-4 text-sm font-semibold text-[#0f172a]">DMS</div>
+              <div class="mt-4 text-sm font-semibold text-[#0f172a]">Document Management System</div>
               <div class="mt-3 mx-auto h-px w-10 bg-slate-200 group-hover:bg-[#2563EB]"></div>
             </a>
-            <a href="products.html#smart-products" class="glass group rounded-3xl p-6 text-center transition hover:-translate-y-1" data-reveal data-reveal-delay="360">
+            <a href="products.html#smart-products" class="glass group rounded-3xl p-6 text-center transition hover:-translate-y-1 bg-white" data-reveal data-reveal-delay="360">
               <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#eff6ff] text-[#2563EB]"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 3h10v18H7V3Z"/><path d="M9 7h6M9 11h6M9 15h6" stroke-linecap="round"/></svg></div>
-              <div class="mt-4 text-sm font-semibold text-[#0f172a]">eAUDIT</div>
+              <div class="mt-4 text-sm font-semibold text-[#0f172a]">eAudit</div>
               <div class="mt-3 mx-auto h-px w-10 bg-slate-200 group-hover:bg-[#2563EB]"></div>
             </a>
-            <a href="products.html#smart-products" class="glass group rounded-3xl p-6 text-center transition hover:-translate-y-1" data-reveal data-reveal-delay="390">
+            <a href="products.html#smart-products" class="glass group rounded-3xl p-6 text-center transition hover:-translate-y-1 bg-white" data-reveal data-reveal-delay="390">
               <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#eff6ff] text-[#2563EB]"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-              <div class="mt-4 text-sm font-semibold text-[#0f172a]">WHATSAPP SOLUTION</div>
+              <div class="mt-4 text-sm font-semibold text-[#0f172a]">WhatsApp Business Solution</div>
               <div class="mt-3 mx-auto h-px w-10 bg-slate-200 group-hover:bg-[#2563EB]"></div>
             </a>
           </div>
@@ -522,7 +466,8 @@
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div data-reveal>
             <div class="text-sm font-semibold text-[#2563EB]">Testimonials</div>
-            <h2 class="mt-3 text-3xl font-semibold tracking-tight text-[#0f172a]">Trusted By Over 1000 Global Businesses.</h2>
+            <h2 class="mt-3 text-3xl font-semibold tracking-tight text-[#0f172a]">Trusted by Global Enterprises</h2>
+            <p class="mt-2 text-sm text-[#334155] max-w-2xl">More than 1000 organizations trust our technology solutions to power their business operations.</p>
           </div>
 
           <div class="mt-10 grid gap-5 md:grid-cols-3">
@@ -572,25 +517,25 @@
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div data-reveal>
             <div class="text-sm font-semibold text-[#2563EB]">Blogs</div>
-            <h2 class="mt-3 text-3xl font-semibold tracking-tight text-[#0f172a]">Latest insights</h2>
+            <h2 class="mt-3 text-3xl font-semibold tracking-tight text-[#0f172a]">Latest Insights &amp; Technology Trends</h2>
           </div>
           <div class="mt-10 grid gap-5 md:grid-cols-3">
-            <a href="about.html#blog" class="glass group rounded-3xl p-6 transition hover:-translate-y-1" data-reveal data-reveal-delay="60">
-              <div class="text-xs font-medium text-slate-500">Banking &nbsp;|&nbsp; March 8, 2020</div>
-              <h3 class="mt-2 text-base font-semibold text-[#0f172a]">Mobile Banking Trends in 2020</h3>
-              <p class="mt-2 text-sm text-slate-600 leading-relaxed">Mobile banking is set to require over all other banking channels put together. The convenience of banking anywhere anytime has given mobile banking a competitive edge. According to Juniper Research,</p>
+            <a href="about.html#blog" class="glass group rounded-3xl p-6 transition hover:-translate-y-1 bg-white" data-reveal data-reveal-delay="60">
+              <div class="text-xs font-medium text-[#334155]">Banking &nbsp;|&nbsp; March 8, 2020</div>
+              <h3 class="mt-2 text-base font-semibold text-[#0f172a]">The Future of Digital Banking</h3>
+              <p class="mt-2 text-sm text-[#334155] leading-relaxed">Mobile banking is set to lead over all other banking channels. The convenience of banking anywhere anytime has given digital banking a competitive edge and is shaping the future of finance.</p>
               <span class="mt-3 inline-block text-sm font-semibold text-[#2563EB] group-hover:underline">Read more</span>
             </a>
-            <a href="about.html#blog" class="glass group rounded-3xl p-6 transition hover:-translate-y-1" data-reveal data-reveal-delay="110">
-              <div class="text-xs font-medium text-slate-500">Banking &nbsp;|&nbsp; March 8, 2020</div>
-              <h3 class="mt-2 text-base font-semibold text-[#0f172a]">Artificial Intelligence</h3>
-              <p class="mt-2 text-sm text-slate-600 leading-relaxed">Artificial Intelligence is rapidly transforming the financial industry more than the other technology in recent history and is becoming a serious disruptor. Banks are aiming to minimize costs, meet margins,</p>
+            <a href="about.html#blog" class="glass group rounded-3xl p-6 transition hover:-translate-y-1 bg-white" data-reveal data-reveal-delay="110">
+              <div class="text-xs font-medium text-[#334155]">Finance &nbsp;|&nbsp; March 8, 2020</div>
+              <h3 class="mt-2 text-base font-semibold text-[#0f172a]">How Artificial Intelligence is Transforming Finance</h3>
+              <p class="mt-2 text-sm text-[#334155] leading-relaxed">AI is rapidly transforming the financial industry. Banks are using AI to minimize costs, meet margins, improve customer experience and automate decision-making at scale.</p>
               <span class="mt-3 inline-block text-sm font-semibold text-[#2563EB] group-hover:underline">Read more</span>
             </a>
-            <a href="about.html#blog" class="glass group rounded-3xl p-6 transition hover:-translate-y-1" data-reveal data-reveal-delay="160">
-              <div class="text-xs font-medium text-slate-500">Banking &nbsp;|&nbsp; March 8, 2020</div>
-              <h3 class="mt-2 text-base font-semibold text-[#0f172a]">History of NBFC</h3>
-              <p class="mt-2 text-sm text-slate-600 leading-relaxed">Non-Banking Financial Companies are rising fast as an integral part of the Indian economic system. A non-banking financial organization or Non-Bank Financial Company (NBFC) does not have a full banking</p>
+            <a href="about.html#blog" class="glass group rounded-3xl p-6 transition hover:-translate-y-1 bg-white" data-reveal data-reveal-delay="160">
+              <div class="text-xs font-medium text-[#334155]">Banking &nbsp;|&nbsp; March 8, 2020</div>
+              <h3 class="mt-2 text-base font-semibold text-[#0f172a]">Understanding the Growth of NBFC in India</h3>
+              <p class="mt-2 text-sm text-[#334155] leading-relaxed">Non-Banking Financial Companies are rising fast as an integral part of the Indian economic system. Learn how NBFCs are reshaping credit and financial inclusion.</p>
               <span class="mt-3 inline-block text-sm font-semibold text-[#2563EB] group-hover:underline">Read more</span>
             </a>
           </div>
@@ -598,17 +543,18 @@
       </section>
 
       <!-- Partners -->
-      <section class="section py-16 lg:py-20">
+      <section class="section py-16 lg:py-20 bg-white">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div data-reveal>
             <div class="text-sm font-semibold text-[#2563EB]">Partners</div>
-            <h2 class="mt-3 text-3xl font-semibold tracking-tight text-[#0f172a]">Partners</h2>
+            <h2 class="mt-3 text-3xl font-semibold tracking-tight text-[#0f172a]">Our Strategic Partners</h2>
+            <p class="mt-2 text-sm text-[#334155] max-w-2xl">Collaborating with global technology leaders and trusted partners to deliver reliable and innovative digital solutions.</p>
           </div>
           <div class="mt-10 flex flex-wrap items-center justify-center gap-8 sm:gap-12" data-reveal>
-            <div class="h-12 w-32 rounded-xl border border-slate-200 bg-white flex items-center justify-center text-sm font-medium text-slate-500">Partner 1</div>
-            <div class="h-12 w-32 rounded-xl border border-slate-200 bg-white flex items-center justify-center text-sm font-medium text-slate-500">Partner 2</div>
-            <div class="h-12 w-32 rounded-xl border border-slate-200 bg-white flex items-center justify-center text-sm font-medium text-slate-500">Partner 3</div>
-            <div class="h-12 w-32 rounded-xl border border-slate-200 bg-white flex items-center justify-center text-sm font-medium text-slate-500">Partner 4</div>
+            <div class="h-14 w-36 rounded-xl border border-slate-200 bg-[#f8fafc] flex items-center justify-center text-sm font-medium text-[#334155]">Partner 1</div>
+            <div class="h-14 w-36 rounded-xl border border-slate-200 bg-[#f8fafc] flex items-center justify-center text-sm font-medium text-[#334155]">Partner 2</div>
+            <div class="h-14 w-36 rounded-xl border border-slate-200 bg-[#f8fafc] flex items-center justify-center text-sm font-medium text-[#334155]">Partner 3</div>
+            <div class="h-14 w-36 rounded-xl border border-slate-200 bg-[#f8fafc] flex items-center justify-center text-sm font-medium text-[#334155]">Partner 4</div>
           </div>
         </div>
       </section>
