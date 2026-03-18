@@ -1,14 +1,14 @@
 (() => {
   const industries = [
     { label: "Banking & Finance", href: "services.html#banking", icon: "bank" },
-    { label: "Insurance", href: "products.html#catalog", icon: "shield" },
+    { label: "Insurance", href: "catalog.html", icon: "shield" },
     { label: "Education", href: "services.html#it", icon: "graduation" },
     { label: "Healthcare", href: "services.html#it", icon: "heart" },
-    { label: "E-Commerce", href: "products.html#catalog", icon: "cart" },
+    { label: "E-Commerce", href: "catalog.html", icon: "cart" },
     { label: "E-Governance", href: "products.html#smart-products", icon: "building" },
-    { label: "Retail", href: "products.html#catalog", icon: "store" },
-    { label: "Agriculture", href: "products.html#catalog", icon: "leaf" },
-    { label: "Real Estate", href: "products.html#catalog", icon: "building" },
+    { label: "Retail", href: "catalog.html", icon: "store" },
+    { label: "Agriculture", href: "catalog.html", icon: "leaf" },
+    { label: "Real Estate", href: "catalog.html", icon: "building" },
     { label: "Manufacturing", href: "services.html#cloud", icon: "factory" },
     { label: "Oil & Gas", href: "services.html#cloud", icon: "factory" },
     { label: "Mining", href: "services.html#cloud", icon: "factory" },
@@ -260,7 +260,7 @@
     const careersActive = isActive("careers.html", active);
     const contactActive = isActive("contact.html", active);
     const servicesActive = active === "services.html";
-    const productsActive = active === "products.html";
+    const productsActive = active === "products.html" || active === "catalog.html";
 
     return `
       <header class="nav-header sticky top-0 z-50 bg-white border-b border-slate-200/60 shadow-sm shadow-slate-200/30">
@@ -366,7 +366,7 @@
                     ${renderProductsMegaMenu()}
                   </div>
                   <div class="mt-5 pt-4 border-t border-slate-100 flex justify-end">
-                    <a href="products.html" class="text-sm font-semibold text-[#2563EB] hover:text-[#1d4ed8] transition-colors">View catalog →</a>
+                    <a href="catalog.html" class="text-sm font-semibold text-[#2563EB] hover:text-[#1d4ed8] transition-colors">View catalog →</a>
                   </div>
                 </div>
               </div>
@@ -518,7 +518,7 @@
               <div>
                 <div class="text-sm font-semibold text-[#0f172a]">Products</div>
                 <div class="mt-3 grid gap-2 text-sm">
-                  <a class="text-slate-600 hover:text-[#2563EB]" href="products.html">All products</a>
+                  <a class="text-slate-600 hover:text-[#2563EB]" href="catalog.html">All products</a>
                   <a class="text-slate-600 hover:text-[#2563EB]" href="products.html#smart-products">Digital Banking</a>
                   <a class="text-slate-600 hover:text-[#2563EB]" href="products.html#smart-products">ERP Systems</a>
                 </div>
@@ -527,7 +527,7 @@
                 <div class="text-sm font-semibold text-[#0f172a]">Industries</div>
                 <div class="mt-3 grid gap-2 text-sm">
                   <a class="text-slate-600 hover:text-[#2563EB]" href="services.html#banking">Banking</a>
-                  <a class="text-slate-600 hover:text-[#2563EB]" href="products.html#catalog">Insurance</a>
+                  <a class="text-slate-600 hover:text-[#2563EB]" href="catalog.html">Insurance</a>
                   <a class="text-slate-600 hover:text-[#2563EB]" href="services.html#cloud">Manufacturing</a>
                 </div>
               </div>

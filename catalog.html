@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catalog — F6IT</title>
+    <meta name="description" content="Browse our product catalog with search, filters, and sorting." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <style>
+      :root { color-scheme: dark; }
+      body.catalog-dark { font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+      body.catalog-dark main section { background: transparent !important; }
+
+      .bg-premium {
+        background:
+          radial-gradient(900px 500px at 20% 15%, rgba(59,130,246,.24), transparent 60%),
+          radial-gradient(900px 500px at 85% 10%, rgba(139,92,246,.22), transparent 55%),
+          radial-gradient(900px 500px at 65% 85%, rgba(59,130,246,.12), transparent 60%),
+          linear-gradient(145deg, #0B1120 0%, #0B1120 35%, rgba(59,130,246,.08) 70%, rgba(139,92,246,.08) 100%);
+      }
+
+      .glass-card {
+        background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
+        border: 1px solid rgba(255,255,255,.10);
+        box-shadow: 0 18px 60px rgba(0,0,0,.35);
+        backdrop-filter: blur(10px);
+      }
+
+      .glow-btn {
+        box-shadow: 0 10px 30px rgba(59,130,246,.25);
+      }
+      .glow-btn:hover {
+        box-shadow: 0 14px 44px rgba(59,130,246,.35), 0 0 0 1px rgba(139,92,246,.22) inset;
+        transform: translateY(-1px);
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(16px);
+        transition: opacity .65s ease, transform .65s ease;
+      }
+      .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+      .skeleton {
+        background: linear-gradient(90deg, rgba(255,255,255,.06), rgba(255,255,255,.12), rgba(255,255,255,.06));
+        background-size: 200% 100%;
+        animation: shimmer 1.2s ease-in-out infinite;
+      }
+      @keyframes shimmer {
+        0% { background-position: 200% 0; }
+        100% { background-position: -200% 0; }
+      }
+    </style>
+  </head>
+  <body class="catalog-dark min-h-screen antialiased bg-premium text-white">
+    <div id="site-header"></div>
+
+    <main>
+      <!-- Hero -->
+      <section class="relative overflow-hidden">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+          <div class="grid gap-8 lg:grid-cols-12 lg:items-center">
+            <div class="lg:col-span-7 reveal">
+              <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+                Premium Product Catalog
+              </h1>
+              <p class="mt-4 max-w-2xl text-slate-200/90 text-sm sm:text-base leading-relaxed">
+                Search, filter and compare products fast—clean UI, high contrast, and smooth interactions designed for modern e‑commerce browsing.
+              </p>
+            </div>
+            <div class="lg:col-span-5 reveal">
+              <div class="glass-card rounded-2xl p-5">
+                <div class="flex items-center justify-between gap-3">
+                  <div>
+                    <div class="text-xs font-semibold text-slate-200/80">Quick search</div>
+                    <div class="mt-1 text-sm text-slate-200/90">Type to filter instantly</div>
+                  </div>
+                  <span class="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200/80">Live</span>
+                </div>
+                <div class="mt-4">
+                  <label class="sr-only" for="qTop">Search</label>
+                  <div class="relative">
+                    <input
+                      id="qTop"
+                      type="text"
+                      placeholder="Search products…"
+                      class="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#3B82F6]/60"
+                    />
+                    <div class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-slate-300/80">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M21 21l-4.3-4.3M10.8 18.2a7.4 7.4 0 1 1 0-14.8 7.4 7.4 0 0 1 0 14.8Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Content -->
+      <section class="pb-16">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="grid gap-6 lg:grid-cols-12">
+            <!-- Filters -->
+            <aside class="lg:col-span-3 reveal">
+              <div class="glass-card rounded-2xl p-5 sticky top-24">
+                <div class="flex items-center justify-between">
+                  <h2 class="text-sm font-semibold">Filters</h2>
+                  <button id="resetBtn" class="text-xs font-semibold text-slate-200/80 hover:text-white transition">Reset</button>
+                </div>
+
+                <div class="mt-4">
+                  <label class="text-xs font-semibold text-slate-200/80" for="q">Search</label>
+                  <input
+                    id="q"
+                    type="text"
+                    placeholder="Search…"
+                    class="mt-2 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#3B82F6]/60"
+                  />
+                </div>
+
+                <div class="mt-5">
+                  <label class="text-xs font-semibold text-slate-200/80" for="category">Category</label>
+                  <select
+                    id="category"
+                    class="mt-2 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white focus:outline-none focus:ring-2 focus:ring-[#8B5CF6]/55"
+                  >
+                    <option value="all">All</option>
+                    <option value="banking">Banking</option>
+                    <option value="erp">ERP</option>
+                    <option value="security">Security</option>
+                    <option value="analytics">Analytics</option>
+                    <option value="ecommerce">E‑Commerce</option>
+                  </select>
+                </div>
+
+                <div class="mt-5">
+                  <div class="flex items-center justify-between">
+                    <label class="text-xs font-semibold text-slate-200/80">Price</label>
+                    <div class="text-xs text-slate-200/80"><span id="priceMinLabel">$0</span> – <span id="priceMaxLabel">$999</span></div>
+                  </div>
+                  <div class="mt-3 grid grid-cols-2 gap-3">
+                    <input
+                      id="minPrice"
+                      type="number"
+                      min="0"
+                      placeholder="Min"
+                      class="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#3B82F6]/60"
+                    />
+                    <input
+                      id="maxPrice"
+                      type="number"
+                      min="0"
+                      placeholder="Max"
+                      class="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#8B5CF6]/55"
+                    />
+                  </div>
+                </div>
+
+                <div class="mt-5">
+                  <label class="text-xs font-semibold text-slate-200/80" for="sort">Sort</label>
+                  <select
+                    id="sort"
+                    class="mt-2 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white focus:outline-none focus:ring-2 focus:ring-[#3B82F6]/60"
+                  >
+                    <option value="popular">Popularity</option>
+                    <option value="newest">Newest</option>
+                    <option value="priceAsc">Price: Low → High</option>
+                    <option value="priceDesc">Price: High → Low</option>
+                  </select>
+                </div>
+              </div>
+            </aside>
+
+            <!-- Grid -->
+            <section class="lg:col-span-9">
+              <div class="flex items-center justify-between gap-4 reveal">
+                <div class="text-sm text-slate-200/90">
+                  <span class="font-semibold text-white" id="resultCount">0</span> products
+                </div>
+                <div class="flex items-center gap-2">
+                  <button id="prevBtn" class="rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200 hover:text-white hover:bg-white/10 transition disabled:opacity-40 disabled:hover:bg-white/5">Prev</button>
+                  <div class="text-xs text-slate-200/80">Page <span id="pageLabel">1</span></div>
+                  <button id="nextBtn" class="rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200 hover:text-white hover:bg-white/10 transition disabled:opacity-40 disabled:hover:bg-white/5">Next</button>
+                </div>
+              </div>
+
+              <div id="grid" class="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"></div>
+
+              <div id="emptyState" class="hidden mt-10 glass-card rounded-2xl p-8 text-center reveal">
+                <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-white/5 border border-white/10">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M21 21l-4.3-4.3M10.8 18.2a7.4 7.4 0 1 1 0-14.8 7.4 7.4 0 0 1 0 14.8Z" stroke="rgba(226,232,240,.9)" stroke-width="1.8" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <h3 class="mt-4 text-lg font-semibold">No products found</h3>
+                <p class="mt-2 text-sm text-slate-200/80">Try adjusting search keywords or filters.</p>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+      const PRODUCTS = [
+        { id: "p1",  name: "OnboardFlow",   category: "banking",  price: 149, popularity: 92,  newest: 8,  desc: "KYC onboarding flows with audit trails.",           accent: "#3B82F6" },
+        { id: "p2",  name: "SecureGateway", category: "security", price: 199, popularity: 96,  newest: 6,  desc: "API governance, throttling, token security.",      accent: "#8B5CF6" },
+        { id: "p3",  name: "InsightDeck",   category: "analytics",price: 129, popularity: 86,  newest: 10, desc: "Executive dashboards, alerts and reporting.",     accent: "#3B82F6" },
+        { id: "p4",  name: "ERP Nxt",       category: "erp",      price: 249, popularity: 90,  newest: 5,  desc: "Modern ERP modules with automation-ready UI.",   accent: "#8B5CF6" },
+        { id: "p5",  name: "PayRail",       category: "banking",  price: 179, popularity: 88,  newest: 7,  desc: "Payment integrations with reconciliation.",      accent: "#3B82F6" },
+        { id: "p6",  name: "VaultDocs",     category: "security", price: 99,  popularity: 80,  newest: 12, desc: "Secure document management for teams.",          accent: "#8B5CF6" },
+        { id: "p7",  name: "CommerceKit",   category: "ecommerce",price: 159, popularity: 84,  newest: 9,  desc: "Catalog, cart and checkout starter components.", accent: "#3B82F6" },
+        { id: "p8",  name: "OpsMonitor",    category: "analytics",price: 139, popularity: 78,  newest: 11, desc: "SLO dashboards and incident insights.",          accent: "#8B5CF6" },
+        { id: "p9",  name: "LoanSuite",     category: "banking",  price: 229, popularity: 82,  newest: 4,  desc: "Loan origination and servicing workflows.",       accent: "#3B82F6" },
+        { id: "p10", name: "StoreFront UI", category: "ecommerce",price: 119, popularity: 76,  newest: 3,  desc: "Premium storefront UI templates and blocks.",     accent: "#8B5CF6" },
+        { id: "p11", name: "AuditTrail",    category: "security", price: 189, popularity: 89,  newest: 2,  desc: "Compliance-ready logs, roles, and reviews.",      accent: "#3B82F6" },
+        { id: "p12", name: "Inventory Pro", category: "erp",      price: 169, popularity: 81,  newest: 1,  desc: "Inventory, procurement and supplier modules.",   accent: "#8B5CF6" },
+      ];
+
+      const state = {
+        q: "",
+        category: "all",
+        minPrice: "",
+        maxPrice: "",
+        sort: "popular",
+        page: 1,
+        pageSize: 8,
+      };
+
+      const el = {
+        qTop: document.getElementById("qTop"),
+        q: document.getElementById("q"),
+        category: document.getElementById("category"),
+        minPrice: document.getElementById("minPrice"),
+        maxPrice: document.getElementById("maxPrice"),
+        sort: document.getElementById("sort"),
+        grid: document.getElementById("grid"),
+        empty: document.getElementById("emptyState"),
+        resultCount: document.getElementById("resultCount"),
+        prev: document.getElementById("prevBtn"),
+        next: document.getElementById("nextBtn"),
+        pageLabel: document.getElementById("pageLabel"),
+        reset: document.getElementById("resetBtn"),
+        minLabel: document.getElementById("priceMinLabel"),
+        maxLabel: document.getElementById("priceMaxLabel"),
+      };
+
+      function money(x) { return `$${x}`; }
+      function clamp(n, a, b) { return Math.max(a, Math.min(b, n)); }
+
+      function compute() {
+        const q = (state.q || "").trim().toLowerCase();
+        const cat = state.category;
+        const minP = state.minPrice === "" ? -Infinity : Number(state.minPrice);
+        const maxP = state.maxPrice === "" ? Infinity : Number(state.maxPrice);
+
+        let list = PRODUCTS.filter((p) => {
+          const matchQ = !q || (p.name + " " + p.desc).toLowerCase().includes(q);
+          const matchC = cat === "all" || p.category === cat;
+          const matchP = p.price >= minP && p.price <= maxP;
+          return matchQ && matchC && matchP;
+        });
+
+        switch (state.sort) {
+          case "priceAsc": list.sort((a, b) => a.price - b.price); break;
+          case "priceDesc": list.sort((a, b) => b.price - a.price); break;
+          case "newest": list.sort((a, b) => b.newest - a.newest); break;
+          default: list.sort((a, b) => b.popularity - a.popularity);
+        }
+
+        return list;
+      }
+
+      function card(p) {
+        const imgBg = `radial-gradient(120px 80px at 25% 30%, ${p.accent}55, transparent 60%), linear-gradient(145deg, rgba(255,255,255,.10), rgba(255,255,255,.03))`;
+        return `
+          <article class="group glass-card rounded-2xl overflow-hidden transition will-change-transform hover:-translate-y-1 hover:shadow-[0_26px_90px_rgba(0,0,0,.45)] reveal">
+            <div class="relative">
+              <div class="h-40 w-full" style="background:${imgBg}">
+                <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"></div>
+                </div>
+              </div>
+
+              <div class="absolute inset-0 flex items-end justify-center pb-4 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition">
+                <a href="contact.html" class="glow-btn inline-flex items-center justify-center rounded-xl bg-[#3B82F6] px-4 py-2 text-xs font-semibold text-white transition">
+                  Quick Buy
+                </a>
+              </div>
+            </div>
+
+            <div class="p-4">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <h3 class="text-sm font-semibold text-white">${p.name}</h3>
+                  <p class="mt-1 text-xs text-slate-200/80 line-clamp-2">${p.desc}</p>
+                </div>
+                <div class="text-sm font-bold text-white">${money(p.price)}</div>
+              </div>
+
+              <div class="mt-4 flex items-center justify-between gap-3">
+                <span class="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] text-slate-200/80 capitalize">${p.category}</span>
+                <a href="contact.html" class="glow-btn inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] px-4 py-2 text-xs font-semibold text-white transition">
+                  View Details
+                </a>
+              </div>
+            </div>
+          </article>
+        `;
+      }
+
+      function skeletonCard() {
+        return `
+          <article class="glass-card rounded-2xl overflow-hidden">
+            <div class="h-40 skeleton"></div>
+            <div class="p-4 space-y-3">
+              <div class="h-4 w-2/3 rounded-lg skeleton"></div>
+              <div class="h-3 w-full rounded-lg skeleton"></div>
+              <div class="h-3 w-5/6 rounded-lg skeleton"></div>
+              <div class="flex items-center justify-between pt-2">
+                <div class="h-7 w-20 rounded-full skeleton"></div>
+                <div class="h-8 w-24 rounded-xl skeleton"></div>
+              </div>
+            </div>
+          </article>
+        `;
+      }
+
+      function renderSkeleton() {
+        el.grid.innerHTML = new Array(8).fill(0).map(skeletonCard).join("");
+      }
+
+      function render() {
+        const list = compute();
+        el.resultCount.textContent = String(list.length);
+
+        const totalPages = Math.max(1, Math.ceil(list.length / state.pageSize));
+        state.page = clamp(state.page, 1, totalPages);
+        el.pageLabel.textContent = String(state.page);
+
+        const start = (state.page - 1) * state.pageSize;
+        const pageItems = list.slice(start, start + state.pageSize);
+
+        el.prev.disabled = state.page <= 1;
+        el.next.disabled = state.page >= totalPages;
+
+        if (pageItems.length === 0) {
+          el.grid.innerHTML = "";
+          el.empty.classList.remove("hidden");
+        } else {
+          el.empty.classList.add("hidden");
+          el.grid.innerHTML = pageItems.map(card).join("");
+          observeReveals();
+        }
+
+        const minLabel = state.minPrice === "" ? 0 : Number(state.minPrice || 0);
+        const maxLabel = state.maxPrice === "" ? 999 : Number(state.maxPrice || 999);
+        el.minLabel.textContent = money(Math.max(0, minLabel));
+        el.maxLabel.textContent = money(Math.max(0, maxLabel));
+      }
+
+      function syncSearch(v) {
+        state.q = v;
+        el.q.value = v;
+        el.qTop.value = v;
+        state.page = 1;
+        render();
+      }
+
+      function wire() {
+        el.qTop.addEventListener("input", (e) => syncSearch(e.target.value));
+        el.q.addEventListener("input", (e) => syncSearch(e.target.value));
+        el.category.addEventListener("change", (e) => { state.category = e.target.value; state.page = 1; render(); });
+        el.sort.addEventListener("change", (e) => { state.sort = e.target.value; state.page = 1; render(); });
+        el.minPrice.addEventListener("input", (e) => { state.minPrice = e.target.value; state.page = 1; render(); });
+        el.maxPrice.addEventListener("input", (e) => { state.maxPrice = e.target.value; state.page = 1; render(); });
+
+        el.prev.addEventListener("click", () => { state.page = Math.max(1, state.page - 1); render(); window.scrollTo({ top: 0, behavior: "smooth" }); });
+        el.next.addEventListener("click", () => { state.page = state.page + 1; render(); window.scrollTo({ top: 0, behavior: "smooth" }); });
+
+        el.reset.addEventListener("click", () => {
+          state.q = ""; state.category = "all"; state.minPrice = ""; state.maxPrice = ""; state.sort = "popular"; state.page = 1;
+          el.q.value = ""; el.qTop.value = ""; el.category.value = "all"; el.minPrice.value = ""; el.maxPrice.value = ""; el.sort.value = "popular";
+          render();
+        });
+      }
+
+      let revealObserver;
+      function observeReveals() {
+        if (!revealObserver) {
+          revealObserver = new IntersectionObserver(
+            (entries) => {
+              for (const e of entries) {
+                if (e.isIntersecting) {
+                  e.target.classList.add("is-visible");
+                  revealObserver.unobserve(e.target);
+                }
+              }
+            },
+            { threshold: 0.12 }
+          );
+        }
+        document.querySelectorAll(".reveal:not(.is-visible)").forEach((n) => revealObserver.observe(n));
+      }
+
+      // Init
+      renderSkeleton();
+      wire();
+      observeReveals();
+
+      setTimeout(() => {
+        render();
+        observeReveals();
+      }, 450);
+    </script>
+  </body>
+</html>
+

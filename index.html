@@ -8,110 +8,183 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <style>
+      /* Dark slider variant on top of existing hero-light slider behavior */
+      .hero-dark {
+        background: #0B1120 !important;
+      }
+      .hero-dark .hero-title { color: #fff !important; }
+      .hero-dark .hero-subtitle { color: rgba(226,232,240,.9) !important; }
+      .hero-dark .hero-label { color: rgba(59,130,246,.95) !important; }
+      .hero-dark .hero-bg {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        transform: scale(1.02);
+      }
+      .hero-dark .hero-veil {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(900px 520px at 20% 25%, rgba(59,130,246,.25), transparent 60%),
+          radial-gradient(900px 520px at 80% 20%, rgba(139,92,246,.22), transparent 55%),
+          linear-gradient(90deg, rgba(11,17,32,.92) 0%, rgba(11,17,32,.72) 48%, rgba(11,17,32,.35) 100%);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .hero-dark .hero-bg { transform: none; }
+      }
+    </style>
   </head>
   <body class="min-h-screen antialiased">
     <div id="site-header"></div>
 
     <main>
-      <!-- Hero Slider: light gradient, left text + right illustration, 3 slides, fade, 5s autoplay -->
-      <section class="slider hero-light" data-hero-slider data-interval="5000" tabindex="0" aria-label="Hero slider">
+      <!-- Hero Slider (premium dark background) -->
+      <section class="slider hero-light hero-dark" data-hero-slider data-interval="6500" tabindex="0" aria-label="Hero slider">
         <div class="slider-track" data-slider-track>
-          <!-- Slide 1: Digital Banking & Enterprise -->
-          <div class="slider-slide" data-slide aria-hidden="false" data-title="Digital Banking & Enterprise Software">
-            <div class="hero-slide-inner">
-              <div class="hero-slide-content">
-                <h1 class="hero-title">Digital Banking &amp; Enterprise Software</h1>
-                <p class="hero-subtitle">Empowering financial institutions and enterprises with secure, scalable and innovative technology solutions.</p>
+          <!-- Slide 1 -->
+          <div class="slider-slide" data-slide aria-hidden="false" data-title="Secure Digital Banking Platforms">
+            <div class="hero-bg" style="background-image:url('image/SECURITY_SECTION_ILLUSTRATION.png');"></div>
+            <div class="hero-veil"></div>
+            <div class="hero-slide-inner relative">
+              <div class="hero-slide-content" data-reveal>
+                <div class="hero-label text-sm font-semibold">Fintech &amp; Technology</div>
+                <h1 class="hero-title mt-3">Secure Digital Banking Platforms</h1>
+                <p class="hero-subtitle">Launch UPI, onboarding and payments with enterprise-grade security and clean user journeys.</p>
                 <div class="hero-buttons">
-                  <a href="products.html" class="btn-primary rounded-xl px-6 py-3 text-sm font-semibold text-white transition focus-ring">Explore Products</a>
-                  <a href="contact.html" class="btn-secondary rounded-xl px-6 py-3 text-sm font-semibold text-[#0f172a] border border-slate-200 transition focus-ring hover:bg-[#f8fafc]">Contact Us</a>
+                  <a href="contact.html" class="btn-primary rounded-xl px-6 py-3 text-sm font-semibold text-white transition focus-ring">Get Started</a>
                 </div>
               </div>
-              <div class="hero-slide-illus" aria-hidden="true">
-                <div class="hero-illus-placeholder hero-illus-banking">
-                  <svg class="w-full h-full text-[#2563EB]/20" viewBox="0 0 280 200" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="20" y="20" width="240" height="160" rx="8"/><path d="M20 60h240M20 100h240M60 60v100M140 60v100M220 60v100"/><circle cx="70" cy="140" r="12"/><circle cx="150" cy="140" r="12"/><circle cx="230" cy="140" r="12"/></svg>
-                </div>
-              </div>
+              <div class="hero-slide-illus hidden lg:flex" aria-hidden="true"></div>
             </div>
           </div>
 
-          <!-- Slide 2: ERP & Business Automation -->
-          <div class="slider-slide" data-slide aria-hidden="true" data-title="ERP & Business Automation">
-            <div class="hero-slide-inner">
-              <div class="hero-slide-content">
-                <h2 class="hero-title">Powerful ERP &amp; Business Automation Systems</h2>
-                <p class="hero-subtitle">Streamline operations, manage resources and boost productivity with our enterprise ERP platforms.</p>
+          <!-- Slide 2 -->
+          <div class="slider-slide" data-slide aria-hidden="true" data-title="Analytics That Build User Trust">
+            <div class="hero-bg" style="background-image:url('image/DASHBOARDIMAGE.png');"></div>
+            <div class="hero-veil"></div>
+            <div class="hero-slide-inner relative">
+              <div class="hero-slide-content" data-reveal>
+                <div class="hero-label text-sm font-semibold" style="color: rgba(139,92,246,.95)">Modern SaaS Delivery</div>
+                <h2 class="hero-title mt-3">Analytics That Build User Trust</h2>
+                <p class="hero-subtitle">Real-time dashboards and insights to improve decisions across teams—fast, secure, scalable.</p>
                 <div class="hero-buttons">
-                  <a href="products.html#smart-products" class="btn-primary rounded-xl px-6 py-3 text-sm font-semibold text-white transition focus-ring">View ERP Solutions</a>
-                  <a href="getintouche.html" class="btn-secondary rounded-xl px-6 py-3 text-sm font-semibold text-[#0f172a] border border-slate-200 transition focus-ring hover:bg-[#f8fafc]">Book Demo</a>
+                  <a href="catalog.html" class="btn-primary rounded-xl px-6 py-3 text-sm font-semibold text-white transition focus-ring">Explore Catalog</a>
                 </div>
               </div>
-              <div class="hero-slide-illus" aria-hidden="true">
-                <div class="hero-illus-placeholder hero-illus-erp">
-                  <svg class="w-full h-full text-[#2563EB]/20" viewBox="0 0 280 200" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="20" y="30" width="110" height="140" rx="6"/><rect x="150" y="30" width="110" height="50" rx="4"/><rect x="150" y="95" width="110" height="75" rx="4"/><path d="M30 55h90M30 85h60M30 115h70"/></svg>
-                </div>
-              </div>
+              <div class="hero-slide-illus hidden lg:flex" aria-hidden="true"></div>
             </div>
           </div>
 
-          <!-- Slide 3: AI Powered Solutions -->
-          <div class="slider-slide" data-slide aria-hidden="true" data-title="AI Powered Technology">
-            <div class="hero-slide-inner">
-              <div class="hero-slide-content">
-                <h2 class="hero-title">AI Powered Technology Solutions</h2>
-                <p class="hero-subtitle">Leverage Artificial Intelligence, automation and data analytics to transform your business digitally.</p>
+          <!-- Slide 3 -->
+          <div class="slider-slide" data-slide aria-hidden="true" data-title="Scalable Apps, Fast Integrations">
+            <div class="hero-bg" style="background-image:url('image/MOBILE_APP_SCREEN.png');"></div>
+            <div class="hero-veil"></div>
+            <div class="hero-slide-inner relative">
+              <div class="hero-slide-content" data-reveal>
+                <div class="hero-label text-sm font-semibold">Engineering &amp; UI</div>
+                <h2 class="hero-title mt-3">Scalable Apps, Fast Integrations</h2>
+                <p class="hero-subtitle">Modern websites, mobile apps and APIs with performance-first UX and clean architecture.</p>
                 <div class="hero-buttons">
-                  <a href="services.html" class="btn-primary rounded-xl px-6 py-3 text-sm font-semibold text-white transition focus-ring">Explore Services</a>
-                  <a href="contact.html" class="btn-secondary rounded-xl px-6 py-3 text-sm font-semibold text-[#0f172a] border border-slate-200 transition focus-ring hover:bg-[#f8fafc]">Get Started</a>
+                  <a href="services.html" class="btn-primary rounded-xl px-6 py-3 text-sm font-semibold text-white transition focus-ring">View Services</a>
                 </div>
               </div>
-              <div class="hero-slide-illus" aria-hidden="true">
-                <div class="hero-illus-placeholder hero-illus-ai">
-                  <svg class="w-full h-full text-[#2563EB]/20" viewBox="0 0 280 200" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="140" cy="90" r="50"/><path d="M100 90a40 40 0 0 1 80 0"/><path d="M140 40v100M90 140h100M70 170h140"/><circle cx="140" cy="90" r="20"/></svg>
-                </div>
-              </div>
+              <div class="hero-slide-illus hidden lg:flex" aria-hidden="true"></div>
             </div>
           </div>
         </div>
 
         <div class="slider-controls">
-          <button type="button" class="slider-btn rounded-xl border border-slate-200 bg-white/90 px-3 py-3 text-[#0f172a] shadow-sm focus-ring hover:bg-white transition" data-prev aria-label="Previous slide">
+          <button type="button" class="slider-btn rounded-xl border border-white/10 bg-white/5 px-3 py-3 text-white/90 shadow-sm focus-ring hover:bg-white/10 transition" data-prev aria-label="Previous slide">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 6 9 12l6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
-          <button type="button" class="slider-btn rounded-xl border border-slate-200 bg-white/90 px-3 py-3 text-[#0f172a] shadow-sm focus-ring hover:bg-white transition" data-next aria-label="Next slide">
+          <button type="button" class="slider-btn rounded-xl border border-white/10 bg-white/5 px-3 py-3 text-white/90 shadow-sm focus-ring hover:bg-white/10 transition" data-next aria-label="Next slide">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
         </div>
 
         <div class="slider-dots">
-          <button type="button" class="slider-dot rounded-full bg-[#2563EB] transition" data-dot="0" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" class="slider-dot rounded-full bg-slate-300 transition" data-dot="1" aria-current="false" aria-label="Slide 2"></button>
-          <button type="button" class="slider-dot rounded-full bg-slate-300 transition" data-dot="2" aria-current="false" aria-label="Slide 3"></button>
+          <button type="button" class="slider-dot rounded-full transition" data-dot="0" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" class="slider-dot rounded-full transition" data-dot="1" aria-current="false" aria-label="Slide 2"></button>
+          <button type="button" class="slider-dot rounded-full transition" data-dot="2" aria-current="false" aria-label="Slide 3"></button>
         </div>
 
         <div class="sr-only" aria-live="polite" data-live></div>
       </section>
 
       <!-- Stats -->
-      <section class="bg-white py-10 lg:py-14 border-b border-slate-100">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p class="text-center text-sm text-[#334155] max-w-2xl mx-auto mb-8" data-reveal>Delivering reliable fintech, ERP and enterprise solutions worldwide.</p>
-          <div class="grid grid-cols-2 gap-6 lg:grid-cols-4 lg:gap-8" data-reveal>
-            <div class="text-center">
-              <div class="text-3xl font-bold text-[#2563EB] sm:text-4xl">20+</div>
-              <div class="mt-1 text-sm font-medium text-[#334155]">Years of Technology Excellence</div>
+      <section data-bg="custom" class="relative overflow-hidden py-14 lg:py-20" style="background:#0B1120">
+        <div class="pointer-events-none absolute inset-0">
+          <div class="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-[#3B82F6]/20 blur-3xl"></div>
+          <div class="absolute -right-24 top-10 h-72 w-72 rounded-full bg-[#8B5CF6]/18 blur-3xl"></div>
+          <div class="absolute inset-0 opacity-[0.09]" style="background-image:radial-gradient(rgba(255,255,255,.7) 1px, transparent 1px); background-size: 18px 18px;"></div>
+        </div>
+
+        <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="text-center" data-reveal>
+            <div class="text-sm font-semibold text-[#3B82F6]">Impact</div>
+            <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">Trusted achievements</h2>
+            <p class="mt-3 text-sm text-slate-200/85 max-w-2xl mx-auto">
+              Delivering reliable fintech, ERP and enterprise solutions worldwide.
+            </p>
+          </div>
+
+          <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8" data-reveal data-reveal-delay="80">
+            <div class="group rounded-2xl border border-white/10 bg-white/5 p-6 text-center shadow-[0_18px_60px_rgba(0,0,0,.35)] backdrop-blur-md transition hover:-translate-y-1 hover:bg-white/7 hover:shadow-[0_26px_90px_rgba(0,0,0,.45)]">
+              <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-white/5 border border-white/10 text-[#3B82F6]">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 20V10M18 20V4M6 20v-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="mt-5 text-4xl sm:text-5xl font-extrabold tracking-tight text-white">
+                <span data-countup data-to="20" data-suffix="+">0</span>
+              </div>
+              <div class="mt-2 text-sm font-medium text-slate-200/85">Years of Experience</div>
+              <div class="mt-3 h-px w-12 mx-auto bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] opacity-40 group-hover:opacity-70 transition"></div>
             </div>
-            <div class="text-center">
-              <div class="text-3xl font-bold text-[#2563EB] sm:text-4xl">35+</div>
-              <div class="mt-1 text-sm font-medium text-[#334155]">Countries Served</div>
+
+            <div class="group rounded-2xl border border-white/10 bg-white/5 p-6 text-center shadow-[0_18px_60px_rgba(0,0,0,.35)] backdrop-blur-md transition hover:-translate-y-1 hover:bg-white/7 hover:shadow-[0_26px_90px_rgba(0,0,0,.45)]">
+              <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-white/5 border border-white/10 text-[#8B5CF6]">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                  <path d="M12 10.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" stroke="currentColor" stroke-width="1.8"/>
+                </svg>
+              </div>
+              <div class="mt-5 text-4xl sm:text-5xl font-extrabold tracking-tight text-white">
+                <span data-countup data-to="35" data-suffix="+">0</span>
+              </div>
+              <div class="mt-2 text-sm font-medium text-slate-200/85">Countries Served</div>
+              <div class="mt-3 h-px w-12 mx-auto bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] opacity-40 group-hover:opacity-70 transition"></div>
             </div>
-            <div class="text-center">
-              <div class="text-3xl font-bold text-[#2563EB] sm:text-4xl">1000+</div>
-              <div class="mt-1 text-sm font-medium text-[#334155]">Enterprise Clients</div>
+
+            <div class="group rounded-2xl border border-white/10 bg-white/5 p-6 text-center shadow-[0_18px_60px_rgba(0,0,0,.35)] backdrop-blur-md transition hover:-translate-y-1 hover:bg-white/7 hover:shadow-[0_26px_90px_rgba(0,0,0,.45)]">
+              <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-white/5 border border-white/10 text-[#3B82F6]">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="mt-5 text-4xl sm:text-5xl font-extrabold tracking-tight text-white">
+                <span data-countup data-to="1000" data-suffix="+">0</span>
+              </div>
+              <div class="mt-2 text-sm font-medium text-slate-200/85">Enterprise Clients</div>
+              <div class="mt-3 h-px w-12 mx-auto bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] opacity-40 group-hover:opacity-70 transition"></div>
             </div>
-            <div class="text-center">
-              <div class="text-3xl font-bold text-[#2563EB] sm:text-4xl">5000+</div>
-              <div class="mt-1 text-sm font-medium text-[#334155]">Successful Projects Delivered</div>
+
+            <div class="group rounded-2xl border border-white/10 bg-white/5 p-6 text-center shadow-[0_18px_60px_rgba(0,0,0,.35)] backdrop-blur-md transition hover:-translate-y-1 hover:bg-white/7 hover:shadow-[0_26px_90px_rgba(0,0,0,.45)]">
+              <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-white/5 border border-white/10 text-[#8B5CF6]">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M9 11l3 3L22 4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="mt-5 text-4xl sm:text-5xl font-extrabold tracking-tight text-white">
+                <span data-countup data-to="5000" data-suffix="+">0</span>
+              </div>
+              <div class="mt-2 text-sm font-medium text-slate-200/85">Successful Projects</div>
+              <div class="mt-3 h-px w-12 mx-auto bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] opacity-40 group-hover:opacity-70 transition"></div>
             </div>
           </div>
         </div>
@@ -120,29 +193,217 @@
       <!-- About Us -->
       <section id="about" class="section py-16 lg:py-20 bg-[#f8fafc]">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div data-reveal>
-            <div class="text-sm font-semibold text-[#2563EB]">About Us</div>
-            <h2 class="mt-3 text-3xl font-semibold tracking-tight text-[#0f172a]">F6IT</h2>
-            <p class="mt-4 max-w-3xl text-sm text-[#334155] leading-relaxed">
-              F6IT is a global technology company delivering enterprise software, fintech platforms and digital transformation solutions. With more than 20 years of industry experience, we have supported over 1000 enterprise clients across 35+ countries. Our expertise spans financial technology, enterprise systems, business analytics and digital innovation, helping organizations grow faster in the modern digital economy.
-            </p>
-            <a href="about.html" class="mt-4 inline-block text-sm font-semibold text-[#2563EB] hover:text-[#1d4ed8]">Read More</a>
+          <div class="grid gap-10 lg:grid-cols-12 lg:items-center">
+            <!-- Image -->
+            <div class="lg:col-span-5" data-reveal>
+              <div class="relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+                <div class="absolute -left-16 -top-16 h-56 w-56 rounded-full bg-[#3B82F6]/20 blur-3xl"></div>
+                <div class="absolute -right-16 -bottom-16 h-56 w-56 rounded-full bg-[#8B5CF6]/18 blur-3xl"></div>
+                <div class="relative p-3">
+                  <div class="relative overflow-hidden rounded-2xl bg-[#0B1120]">
+                    <img
+                      src="image/DASHBOARDIMAGE.png"
+                      alt="Fintech dashboard illustration"
+                      class="h-64 w-full object-cover sm:h-72 lg:h-80"
+                      loading="lazy"
+                      onerror="this.style.display='none'; this.parentElement.classList.add('bg-gradient-to-br','from-[#0B1120]','via-[#111a33]','to-[#1b1b3a]');"
+                    />
+                    <div class="pointer-events-none absolute inset-0 bg-gradient-to-tr from-[#0B1120]/65 via-transparent to-[#3B82F6]/18"></div>
+                    <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0B1120]/60 via-transparent to-transparent"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Text + cards -->
+            <div class="lg:col-span-7" data-reveal data-reveal-delay="80">
+              <div class="text-sm font-semibold text-[#2563EB]">About Us</div>
+              <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-[#0f172a] sm:text-4xl">F6IT</h2>
+              <p class="mt-4 max-w-3xl text-sm text-[#334155] leading-relaxed">
+                F6IT is a global technology company delivering enterprise software, fintech platforms and digital transformation solutions. With more than 20 years of industry experience, we’ve supported 1000+ enterprise clients across 35+ countries—helping teams move faster with secure, scalable systems.
+              </p>
+              <div class="mt-6">
+                <a href="about.html" class="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:opacity-95 focus-ring">
+                  Read more <span aria-hidden="true">→</span>
+                </a>
+              </div>
+
+              <div class="mt-10 grid gap-5 md:grid-cols-3">
+                <a href="about.html#vision" class="group rounded-2xl border border-slate-200 bg-white/70 p-6 shadow-sm backdrop-blur-md transition hover:-translate-y-1 hover:shadow-lg">
+                  <div class="flex items-start justify-between gap-4">
+                    <div class="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[#eff6ff] text-[#3B82F6]">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                        <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="currentColor" stroke-width="1.8"/>
+                      </svg>
+                    </div>
+                    <span class="text-xs font-semibold text-slate-500 group-hover:text-[#2563EB] transition">Read more</span>
+                  </div>
+                  <div class="mt-4 text-sm font-semibold text-[#0f172a]">Vision</div>
+                  <p class="mt-2 text-xs text-[#334155] leading-relaxed">
+                    Build innovative, reliable digital solutions that scale globally.
+                  </p>
+                  <div class="mt-4 h-px w-14 bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] opacity-35 group-hover:opacity-70 transition"></div>
+                </a>
+
+                <a href="about.html#mission" class="group rounded-2xl border border-slate-200 bg-white/70 p-6 shadow-sm backdrop-blur-md transition hover:-translate-y-1 hover:shadow-lg">
+                  <div class="flex items-start justify-between gap-4">
+                    <div class="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[#eff6ff] text-[#8B5CF6]">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M12 2 4 6v6c0 5 3.5 9.7 8 10 4.5-.3 8-5 8-10V6l-8-4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                        <path d="M9.5 12l1.8 1.8L15 10" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                    <span class="text-xs font-semibold text-slate-500 group-hover:text-[#2563EB] transition">Read more</span>
+                  </div>
+                  <div class="mt-4 text-sm font-semibold text-[#0f172a]">Mission</div>
+                  <p class="mt-2 text-xs text-[#334155] leading-relaxed">
+                    Deliver measurable outcomes with secure engineering and quality.
+                  </p>
+                  <div class="mt-4 h-px w-14 bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] opacity-35 group-hover:opacity-70 transition"></div>
+                </a>
+
+                <a href="services.html" class="group rounded-2xl border border-slate-200 bg-white/70 p-6 shadow-sm backdrop-blur-md transition hover:-translate-y-1 hover:shadow-lg md:col-span-3 lg:col-span-1">
+                  <div class="flex items-start justify-between gap-4">
+                    <div class="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[#eff6ff] text-[#3B82F6]">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M4 7h16v10H4V7Z" stroke="currentColor" stroke-width="1.8"/>
+                        <path d="M7 10h6M7 13h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                      </svg>
+                    </div>
+                    <span class="text-xs font-semibold text-slate-500 group-hover:text-[#2563EB] transition">Explore</span>
+                  </div>
+                  <div class="mt-4 text-sm font-semibold text-[#0f172a]">Expertise</div>
+                  <p class="mt-2 text-xs text-[#334155] leading-relaxed">
+                    Fintech, enterprise systems, analytics and digital innovation—trusted by global teams.
+                  </p>
+                  <div class="mt-4 h-px w-14 bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] opacity-35 group-hover:opacity-70 transition"></div>
+                </a>
+              </div>
+            </div>
           </div>
-          <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3" data-reveal data-reveal-delay="80">
-            <div class="glass rounded-3xl p-6 bg-white">
-              <div class="text-sm font-semibold text-[#0f172a]">Vision</div>
-              <p class="mt-3 text-sm text-[#334155] leading-relaxed">To become a globally recognized technology company delivering innovative and reliable digital solutions for enterprises worldwide.</p>
-              <a href="about.html#vision" class="mt-3 inline-block text-sm font-semibold text-[#2563EB] hover:text-[#1d4ed8]">Read More</a>
+        </div>
+      </section>
+
+      <!-- Why Choose Us -->
+      <section id="why-us" class="relative overflow-hidden py-20 lg:py-24 bg-[#f8fafc]">
+        <div class="pointer-events-none absolute inset-0">
+          <div class="absolute -left-28 -top-24 h-80 w-80 rounded-full bg-[#3B82F6]/18 blur-3xl"></div>
+          <div class="absolute -right-28 top-10 h-80 w-80 rounded-full bg-[#8B5CF6]/14 blur-3xl"></div>
+          <div class="absolute inset-0 opacity-[0.16]" style="background-image:radial-gradient(rgba(15,23,42,.32) 1px, transparent 1px); background-size: 22px 22px;"></div>
+        </div>
+
+        <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="grid gap-12 lg:grid-cols-12 lg:items-start">
+            <!-- Left: text -->
+            <div class="lg:col-span-5" data-reveal>
+              <div class="text-sm font-semibold text-[#3B82F6]">Why Choose Us</div>
+              <h2 class="mt-4 text-4xl font-extrabold tracking-tight text-[#0f172a] sm:text-5xl">
+                Built for trust, scale, and speed
+              </h2>
+              <p class="mt-5 text-sm sm:text-base text-[#334155] leading-relaxed">
+                We deliver secure fintech and enterprise platforms with clean UI/UX, compliance-aware engineering, and scalable architecture—so you can ship faster with confidence.
+              </p>
+
+              <div class="mt-8 space-y-4">
+                <div class="flex items-start gap-3">
+                  <span class="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-white text-[#3B82F6] shadow-sm">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16v10H4V7Z" stroke="currentColor" stroke-width="1.8"/><path d="M7 10h6M7 13h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                  </span>
+                  <div>
+                    <div class="text-sm font-semibold text-[#0f172a]">Scalable architecture</div>
+                    <div class="mt-1 text-sm text-[#334155]">Cloud-ready systems, API-first integration, and performance-first design.</div>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span class="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-white text-[#8B5CF6] shadow-sm">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.5 9.7 8 10 4.5-.3 8-5 8-10V6l-8-4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.5 12l1.8 1.8L15 10" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  <div>
+                    <div class="text-sm font-semibold text-[#0f172a]">Compliance & security</div>
+                    <div class="mt-1 text-sm text-[#334155]">Audit-ready workflows, role-based access, and secure transaction patterns.</div>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span class="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-white text-[#3B82F6] shadow-sm">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16v10H4V7Z" stroke="currentColor" stroke-width="1.8"/><path d="M8 21h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                  </span>
+                  <div>
+                    <div class="text-sm font-semibold text-[#0f172a]">Premium UI/UX</div>
+                    <div class="mt-1 text-sm text-[#334155]">Modern journeys that improve adoption, conversion, and customer trust.</div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="glass rounded-3xl p-6 bg-white">
-              <div class="text-sm font-semibold text-[#0f172a]">Mission</div>
-              <p class="mt-3 text-sm text-[#334155] leading-relaxed">To expand our technology solutions to 100+ countries through strategic partnerships while delivering the highest standards of innovation, quality and customer satisfaction.</p>
-              <a href="about.html#mission" class="mt-3 inline-block text-sm font-semibold text-[#2563EB] hover:text-[#1d4ed8]">Read More</a>
+
+            <!-- Right: cards -->
+            <div class="lg:col-span-7" data-reveal data-reveal-delay="80">
+              <div class="grid gap-6 sm:grid-cols-2">
+                <div class="group rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+                  <div class="flex items-start justify-between gap-4">
+                    <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-200 bg-[#f8fafc] text-[#3B82F6]">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m22 7-8.5 8.5-4-4L2 17" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 7h6v6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </span>
+                    <span class="h-12 w-12 rounded-2xl bg-gradient-to-br from-[#3B82F6]/18 to-[#8B5CF6]/14 blur-xl opacity-0 group-hover:opacity-100 transition"></span>
+                  </div>
+                  <div class="mt-5 text-base font-semibold text-[#0f172a]">Delivery</div>
+                  <p class="mt-2 text-sm text-[#334155] leading-relaxed">Milestone-based delivery with clear reporting and predictable timelines.</p>
+                  <div class="mt-5 h-px w-16 bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] opacity-35 group-hover:opacity-80 transition"></div>
+                </div>
+
+                <div class="group rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+                  <div class="flex items-start justify-between gap-4">
+                    <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-200 bg-[#f8fafc] text-[#8B5CF6]">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </span>
+                    <span class="h-12 w-12 rounded-2xl bg-gradient-to-br from-[#8B5CF6]/18 to-[#3B82F6]/12 blur-xl opacity-0 group-hover:opacity-100 transition"></span>
+                  </div>
+                  <div class="mt-5 text-base font-semibold text-[#0f172a]">Quality</div>
+                  <p class="mt-2 text-sm text-[#334155] leading-relaxed">Clean architecture, automated testing, and maintainable code standards.</p>
+                  <div class="mt-5 h-px w-16 bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] opacity-35 group-hover:opacity-80 transition"></div>
+                </div>
+
+                <div class="group rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+                  <div class="flex items-start justify-between gap-4">
+                    <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-200 bg-[#f8fafc] text-[#3B82F6]">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16v10H4V7Z" stroke="currentColor" stroke-width="1.9"/><path d="M7 10h5M7 13h7" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+                    </span>
+                    <span class="h-12 w-12 rounded-2xl bg-gradient-to-br from-[#3B82F6]/18 to-[#8B5CF6]/14 blur-xl opacity-0 group-hover:opacity-100 transition"></span>
+                  </div>
+                  <div class="mt-5 text-base font-semibold text-[#0f172a]">Operations</div>
+                  <p class="mt-2 text-sm text-[#334155] leading-relaxed">Monitoring, reliability, backups and support for production systems.</p>
+                  <div class="mt-5 h-px w-16 bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] opacity-35 group-hover:opacity-80 transition"></div>
+                </div>
+
+                <div class="group rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+                  <div class="flex items-start justify-between gap-4">
+                    <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-200 bg-[#f8fafc] text-[#8B5CF6]">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></svg>
+                    </span>
+                    <span class="h-12 w-12 rounded-2xl bg-gradient-to-br from-[#8B5CF6]/18 to-[#3B82F6]/12 blur-xl opacity-0 group-hover:opacity-100 transition"></span>
+                  </div>
+                  <div class="mt-5 text-base font-semibold text-[#0f172a]">Security</div>
+                  <p class="mt-2 text-sm text-[#334155] leading-relaxed">Secure SDLC, access control, and risk-aware delivery patterns.</p>
+                  <div class="mt-5 h-px w-16 bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] opacity-35 group-hover:opacity-80 transition"></div>
+                </div>
+              </div>
             </div>
-            <div class="glass rounded-3xl p-6 bg-white md:col-span-2 lg:col-span-1">
-              <div class="text-sm font-semibold text-[#0f172a]">Expertise</div>
-              <p class="mt-3 text-sm text-[#334155] leading-relaxed">Financial technology, enterprise systems, business analytics and digital innovation—trusted by 1000+ global clients.</p>
-              <a href="services.html" class="mt-3 inline-block text-sm font-semibold text-[#2563EB] hover:text-[#1d4ed8]">Our services</a>
+          </div>
+
+          <!-- CTA -->
+          <div class="mt-12" data-reveal data-reveal-delay="120">
+            <div class="rounded-3xl border border-slate-200 bg-gradient-to-r from-[#3B82F6]/10 to-[#8B5CF6]/10 p-8 sm:p-10 shadow-sm">
+              <div class="grid gap-6 lg:grid-cols-12 lg:items-center">
+                <div class="lg:col-span-8">
+                  <div class="text-sm font-semibold text-[#0f172a]">Ready to build with confidence?</div>
+                  <p class="mt-2 text-sm text-[#334155]">Talk to our experts and get a clear plan, timeline and next steps.</p>
+                </div>
+                <div class="lg:col-span-4 lg:text-right">
+                  <a href="contact.html" class="inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] px-7 py-3 text-sm font-semibold text-white shadow-sm transition hover:opacity-95 focus-ring">
+                    Contact Us
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -196,42 +457,278 @@
         </div>
       </section>
 
-      <!-- Product showcase grid (teaser) -->
+      <!-- Product / Solution cards (image hover + read more) -->
       <section id="product-showcase" class="py-16 lg:py-20 bg-white">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div data-reveal>
-            <div class="text-sm font-semibold text-[#2563EB]">Products</div>
-            <h2 class="mt-3 text-3xl font-semibold tracking-tight text-[#0f172a]">Core Banking • ERP • CRM • Analytics</h2>
-            <p class="mt-3 max-w-2xl text-sm text-[#334155] leading-relaxed">Digital banking, insurance, ERP, and business intelligence—built for scale and compliance.</p>
+            <div class="text-sm font-semibold text-[#2563EB]">Solutions</div>
+            <h2 class="mt-3 text-3xl font-semibold tracking-tight text-[#0f172a]">Browse popular services & products</h2>
+            <p class="mt-3 max-w-2xl text-sm text-[#334155] leading-relaxed">
+              Hover on a card to see details and a Read more button.
+            </p>
           </div>
-          <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            <a href="products.html#smart-products" class="glass group rounded-2xl p-6 text-center transition hover:-translate-y-1" data-reveal data-reveal-delay="60">
-              <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#eff6ff] text-[#2563EB]">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 10 12 5l8 5" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 10v9M10 10v9M14 10v9M18 10v9M5 19h14" stroke-linecap="round"/></svg>
+
+          <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <!-- Card template: image + hover overlay -->
+            <a href="banking-services.html" class="group glass rounded-3xl overflow-hidden border border-slate-200/80 bg-white transition hover:-translate-y-1 hover:shadow-xl" data-reveal data-reveal-delay="60">
+              <div class="relative h-44 overflow-hidden bg-[#f8fafc]">
+                <img src="image/Connected.png" alt="Connected Banking" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('bg-gradient-to-br','from-[#eff6ff]','via-white','to-[#eef2ff]');" />
+                <div class="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-100">
+                  <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a]/80 via-[#0f172a]/30 to-transparent"></div>
+                </div>
+                <div class="absolute inset-x-0 bottom-0 p-5 opacity-0 translate-y-2 transition group-hover:opacity-100 group-hover:translate-y-0">
+                  <p class="text-sm text-white/90">All bank accounts in one dashboard with real-time insights.</p>
+                  <span class="mt-4 inline-flex items-center gap-2 rounded-xl bg-white/95 px-4 py-2 text-xs font-semibold text-[#0f172a]">Read more <span aria-hidden="true">→</span></span>
+                </div>
               </div>
-              <div class="mt-4 text-sm font-semibold text-[#0f172a]">Digital Banking</div>
-              <div class="mt-2 text-xs text-slate-600">Core banking & digital channels</div>
+              <div class="p-6">
+                <div class="text-base font-semibold text-[#0f172a]">Connected Banking</div>
+                <div class="mt-2 text-sm text-[#334155] line-clamp-2">Unified banking dashboard & automation.</div>
+              </div>
             </a>
-            <a href="products.html#smart-products" class="glass group rounded-2xl p-6 text-center transition hover:-translate-y-1" data-reveal data-reveal-delay="90">
-              <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#eff6ff] text-[#2563EB]">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2 4 6v6c0 5 3.5 9.7 8 10 4.5-.3 8-5 8-10V6l-8-4Z" stroke-linejoin="round"/><path d="M9.5 12l1.8 1.8L15 10" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+            <a href="catalog.html" class="group glass rounded-3xl overflow-hidden border border-slate-200/80 bg-white transition hover:-translate-y-1 hover:shadow-xl" data-reveal data-reveal-delay="80">
+              <div class="relative h-44 overflow-hidden bg-[#f8fafc]">
+                <img src="image/Utility_Payments.png" alt="Utility Payments" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('bg-gradient-to-br','from-[#eff6ff]','via-white','to-[#f8fafc]');" />
+                <div class="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-100">
+                  <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a]/80 via-[#0f172a]/30 to-transparent"></div>
+                </div>
+                <div class="absolute inset-x-0 bottom-0 p-5 opacity-0 translate-y-2 transition group-hover:opacity-100 group-hover:translate-y-0">
+                  <p class="text-sm text-white/90">Bulk bill payments, reminders and reconciliation.</p>
+                  <span class="mt-4 inline-flex items-center gap-2 rounded-xl bg-white/95 px-4 py-2 text-xs font-semibold text-[#0f172a]">Read more <span aria-hidden="true">→</span></span>
+                </div>
               </div>
-              <div class="mt-4 text-sm font-semibold text-[#0f172a]">Insurance Solutions</div>
-              <div class="mt-2 text-xs text-slate-600">Core insurance & claims</div>
+              <div class="p-6">
+                <div class="text-base font-semibold text-[#0f172a]">Utility Payments</div>
+                <div class="mt-2 text-sm text-[#334155] line-clamp-2">Bill pay flows with reporting.</div>
+              </div>
             </a>
-            <a href="products.html#smart-products" class="glass group rounded-2xl p-6 text-center transition hover:-translate-y-1" data-reveal data-reveal-delay="120">
-              <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#eff6ff] text-[#2563EB]">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M18 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/><path d="M3 9h18M9 21V9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+            <a href="catalog.html" class="group glass rounded-3xl overflow-hidden border border-slate-200/80 bg-white transition hover:-translate-y-1 hover:shadow-xl" data-reveal data-reveal-delay="100">
+              <div class="relative h-44 overflow-hidden bg-[#f8fafc]">
+                <img src="image/Payment_Collection.png" alt="UPI Collection" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('bg-gradient-to-br','from-[#eef2ff]','via-white','to-[#eff6ff]');" />
+                <div class="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-100">
+                  <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a]/80 via-[#0f172a]/30 to-transparent"></div>
+                </div>
+                <div class="absolute inset-x-0 bottom-0 p-5 opacity-0 translate-y-2 transition group-hover:opacity-100 group-hover:translate-y-0">
+                  <p class="text-sm text-white/90">Collect via UPI links & QR with real-time tracking.</p>
+                  <span class="mt-4 inline-flex items-center gap-2 rounded-xl bg-white/95 px-4 py-2 text-xs font-semibold text-[#0f172a]">Read more <span aria-hidden="true">→</span></span>
+                </div>
               </div>
-              <div class="mt-4 text-sm font-semibold text-[#0f172a]">ERP Systems</div>
-              <div class="mt-2 text-xs text-slate-600">Enterprise resource planning</div>
+              <div class="p-6">
+                <div class="text-base font-semibold text-[#0f172a]">UPI Collection</div>
+                <div class="mt-2 text-sm text-[#334155] line-clamp-2">UPI links, QR and settlement.</div>
+              </div>
             </a>
-            <a href="products.html#smart-products" class="glass group rounded-2xl p-6 text-center transition hover:-translate-y-1" data-reveal data-reveal-delay="150">
-              <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#eff6ff] text-[#2563EB]">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 20V10M18 20V4M6 20v-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+            <a href="catalog.html" class="group glass rounded-3xl overflow-hidden border border-slate-200/80 bg-white transition hover:-translate-y-1 hover:shadow-xl" data-reveal data-reveal-delay="120">
+              <div class="relative h-44 overflow-hidden bg-[#f8fafc]">
+                <img src="image/ATM.png" alt="Micro ATM" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('bg-gradient-to-br','from-[#eff6ff]','via-white','to-[#eef2ff]');" />
+                <div class="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-100">
+                  <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a]/80 via-[#0f172a]/30 to-transparent"></div>
+                </div>
+                <div class="absolute inset-x-0 bottom-0 p-5 opacity-0 translate-y-2 transition group-hover:opacity-100 group-hover:translate-y-0">
+                  <p class="text-sm text-white/90">Mini ATM services: cash withdrawal & balance check.</p>
+                  <span class="mt-4 inline-flex items-center gap-2 rounded-xl bg-white/95 px-4 py-2 text-xs font-semibold text-[#0f172a]">Read more <span aria-hidden="true">→</span></span>
+                </div>
               </div>
-              <div class="mt-4 text-sm font-semibold text-[#0f172a]">Business Intelligence</div>
-              <div class="mt-2 text-xs text-slate-600">Analytics & dashboards</div>
+              <div class="p-6">
+                <div class="text-base font-semibold text-[#0f172a]">Micro ATM</div>
+                <div class="mt-2 text-sm text-[#334155] line-clamp-2">AEPS enabled micro-ATM network.</div>
+              </div>
+            </a>
+
+            <a href="catalog.html" class="group glass rounded-3xl overflow-hidden border border-slate-200/80 bg-white transition hover:-translate-y-1 hover:shadow-xl" data-reveal data-reveal-delay="140">
+              <div class="relative h-44 overflow-hidden bg-[#f8fafc]">
+                <img src="image/Instant.png" alt="Instant Payouts" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('bg-gradient-to-br','from-[#f8fafc]','via-white','to-[#eff6ff]');" />
+                <div class="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-100">
+                  <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a]/80 via-[#0f172a]/30 to-transparent"></div>
+                </div>
+                <div class="absolute inset-x-0 bottom-0 p-5 opacity-0 translate-y-2 transition group-hover:opacity-100 group-hover:translate-y-0">
+                  <p class="text-sm text-white/90">Send money via UPI/IMPS/NEFT with tracking.</p>
+                  <span class="mt-4 inline-flex items-center gap-2 rounded-xl bg-white/95 px-4 py-2 text-xs font-semibold text-[#0f172a]">Read more <span aria-hidden="true">→</span></span>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="text-base font-semibold text-[#0f172a]">Instant Payouts</div>
+                <div class="mt-2 text-sm text-[#334155] line-clamp-2">Fast disbursals with reconciliation.</div>
+              </div>
+            </a>
+
+            <a href="catalog.html" class="group glass rounded-3xl overflow-hidden border border-slate-200/80 bg-white transition hover:-translate-y-1 hover:shadow-xl" data-reveal data-reveal-delay="160">
+              <div class="relative h-44 overflow-hidden bg-[#f8fafc]">
+                <img src="image/Travel_Booking.png" alt="Travel Booking" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('bg-gradient-to-br','from-[#eff6ff]','via-white','to-[#f8fafc]');" />
+                <div class="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-100">
+                  <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a]/80 via-[#0f172a]/30 to-transparent"></div>
+                </div>
+                <div class="absolute inset-x-0 bottom-0 p-5 opacity-0 translate-y-2 transition group-hover:opacity-100 group-hover:translate-y-0">
+                  <p class="text-sm text-white/90">Booking flows for flights & buses with agent model.</p>
+                  <span class="mt-4 inline-flex items-center gap-2 rounded-xl bg-white/95 px-4 py-2 text-xs font-semibold text-[#0f172a]">Read more <span aria-hidden="true">→</span></span>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="text-base font-semibold text-[#0f172a]">Travel Booking</div>
+                <div class="mt-2 text-sm text-[#334155] line-clamp-2">Travel commerce platform modules.</div>
+              </div>
+            </a>
+
+            <a href="catalog.html" class="group glass rounded-3xl overflow-hidden border border-slate-200/80 bg-white transition hover:-translate-y-1 hover:shadow-xl" data-reveal data-reveal-delay="180">
+              <div class="relative h-44 overflow-hidden bg-[#f8fafc]">
+                <img src="image/Aadhaar.png" alt="Aadhaar Banking" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('bg-gradient-to-br','from-[#eef2ff]','via-white','to-[#eff6ff]');" />
+                <div class="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-100">
+                  <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a]/80 via-[#0f172a]/30 to-transparent"></div>
+                </div>
+                <div class="absolute inset-x-0 bottom-0 p-5 opacity-0 translate-y-2 transition group-hover:opacity-100 group-hover:translate-y-0">
+                  <p class="text-sm text-white/90">AEPS withdrawals & balance checks with biometric.</p>
+                  <span class="mt-4 inline-flex items-center gap-2 rounded-xl bg-white/95 px-4 py-2 text-xs font-semibold text-[#0f172a]">Read more <span aria-hidden="true">→</span></span>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="text-base font-semibold text-[#0f172a]">Aadhaar Banking</div>
+                <div class="mt-2 text-sm text-[#334155] line-clamp-2">Biometric-enabled banking services.</div>
+              </div>
+            </a>
+
+            <a href="catalog.html" class="group glass rounded-3xl overflow-hidden border border-slate-200/80 bg-white transition hover:-translate-y-1 hover:shadow-xl" data-reveal data-reveal-delay="200">
+              <div class="relative h-44 overflow-hidden bg-[#f8fafc]">
+                <img src="image/Verification.png" alt="Verification APIs" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('bg-gradient-to-br','from-[#eff6ff]','via-white','to-[#eef2ff]');" />
+                <div class="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-100">
+                  <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a]/80 via-[#0f172a]/30 to-transparent"></div>
+                </div>
+                <div class="absolute inset-x-0 bottom-0 p-5 opacity-0 translate-y-2 transition group-hover:opacity-100 group-hover:translate-y-0">
+                  <p class="text-sm text-white/90">PAN/Aadhaar/GST/bank account verifications via APIs.</p>
+                  <span class="mt-4 inline-flex items-center gap-2 rounded-xl bg-white/95 px-4 py-2 text-xs font-semibold text-[#0f172a]">Read more <span aria-hidden="true">→</span></span>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="text-base font-semibold text-[#0f172a]">Verification APIs</div>
+                <div class="mt-2 text-sm text-[#334155] line-clamp-2">Secure verification & compliance checks.</div>
+              </div>
+            </a>
+
+            <a href="catalog.html" class="group glass rounded-3xl overflow-hidden border border-slate-200/80 bg-white transition hover:-translate-y-1 hover:shadow-xl" data-reveal data-reveal-delay="220">
+              <div class="relative h-44 overflow-hidden bg-[#f8fafc]">
+                <img src="image/Verification.png" alt="PAN Card" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('bg-gradient-to-br','from-[#f8fafc]','via-white','to-[#eff6ff]');" />
+                <div class="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-100">
+                  <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a]/80 via-[#0f172a]/30 to-transparent"></div>
+                </div>
+                <div class="absolute inset-x-0 bottom-0 p-5 opacity-0 translate-y-2 transition group-hover:opacity-100 group-hover:translate-y-0">
+                  <p class="text-sm text-white/90">PAN services: validation, linking and workflow automation.</p>
+                  <span class="mt-4 inline-flex items-center gap-2 rounded-xl bg-white/95 px-4 py-2 text-xs font-semibold text-[#0f172a]">Read more <span aria-hidden="true">→</span></span>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="text-base font-semibold text-[#0f172a]">PAN Card</div>
+                <div class="mt-2 text-sm text-[#334155] line-clamp-2">PAN workflows & verification.</div>
+              </div>
+            </a>
+
+            <a href="catalog.html" class="group glass rounded-3xl overflow-hidden border border-slate-200/80 bg-white transition hover:-translate-y-1 hover:shadow-xl" data-reveal data-reveal-delay="240">
+              <div class="relative h-44 overflow-hidden bg-[#f8fafc]">
+                <img src="image/SECURITY_SECTION_ILLUSTRATION.png" alt="Insurance" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('bg-gradient-to-br','from-[#eef2ff]','via-white','to-[#eff6ff]');" />
+                <div class="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-100">
+                  <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a]/80 via-[#0f172a]/30 to-transparent"></div>
+                </div>
+                <div class="absolute inset-x-0 bottom-0 p-5 opacity-0 translate-y-2 transition group-hover:opacity-100 group-hover:translate-y-0">
+                  <p class="text-sm text-white/90">Insurance onboarding, policy issuance and claims support.</p>
+                  <span class="mt-4 inline-flex items-center gap-2 rounded-xl bg-white/95 px-4 py-2 text-xs font-semibold text-[#0f172a]">Read more <span aria-hidden="true">→</span></span>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="text-base font-semibold text-[#0f172a]">Insurance</div>
+                <div class="mt-2 text-sm text-[#334155] line-clamp-2">Core insurance solutions.</div>
+              </div>
+            </a>
+
+            <a href="catalog.html" class="group glass rounded-3xl overflow-hidden border border-slate-200/80 bg-white transition hover:-translate-y-1 hover:shadow-xl" data-reveal data-reveal-delay="260">
+              <div class="relative h-44 overflow-hidden bg-[#f8fafc]">
+                <img src="image/DASHBOARDIMAGE.png" alt="Investment" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('bg-gradient-to-br','from-[#eff6ff]','via-white','to-[#eef2ff]');" />
+                <div class="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-100">
+                  <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a]/80 via-[#0f172a]/30 to-transparent"></div>
+                </div>
+                <div class="absolute inset-x-0 bottom-0 p-5 opacity-0 translate-y-2 transition group-hover:opacity-100 group-hover:translate-y-0">
+                  <p class="text-sm text-white/90">Investment journeys, portfolios and analytics views.</p>
+                  <span class="mt-4 inline-flex items-center gap-2 rounded-xl bg-white/95 px-4 py-2 text-xs font-semibold text-[#0f172a]">Read more <span aria-hidden="true">→</span></span>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="text-base font-semibold text-[#0f172a]">Investment</div>
+                <div class="mt-2 text-sm text-[#334155] line-clamp-2">Portfolio & wealth modules.</div>
+              </div>
+            </a>
+
+            <a href="catalog.html" class="group glass rounded-3xl overflow-hidden border border-slate-200/80 bg-white transition hover:-translate-y-1 hover:shadow-xl" data-reveal data-reveal-delay="280">
+              <div class="relative h-44 overflow-hidden bg-[#f8fafc]">
+                <img src="image/Utility.png" alt="Recharge" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('bg-gradient-to-br','from-[#f8fafc]','via-white','to-[#eff6ff]');" />
+                <div class="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-100">
+                  <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a]/80 via-[#0f172a]/30 to-transparent"></div>
+                </div>
+                <div class="absolute inset-x-0 bottom-0 p-5 opacity-0 translate-y-2 transition group-hover:opacity-100 group-hover:translate-y-0">
+                  <p class="text-sm text-white/90">Mobile/DTH recharge flows with instant confirmations.</p>
+                  <span class="mt-4 inline-flex items-center gap-2 rounded-xl bg-white/95 px-4 py-2 text-xs font-semibold text-[#0f172a]">Read more <span aria-hidden="true">→</span></span>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="text-base font-semibold text-[#0f172a]">Recharge</div>
+                <div class="mt-2 text-sm text-[#334155] line-clamp-2">Recharge & bill pay modules.</div>
+              </div>
+            </a>
+
+            <a href="catalog.html" class="group glass rounded-3xl overflow-hidden border border-slate-200/80 bg-white transition hover:-translate-y-1 hover:shadow-xl" data-reveal data-reveal-delay="300">
+              <div class="relative h-44 overflow-hidden bg-[#f8fafc]">
+                <img src="image/Money_Transfer.png" alt="Lending" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('bg-gradient-to-br','from-[#eef2ff]','via-white','to-[#eff6ff]');" />
+                <div class="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-100">
+                  <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a]/80 via-[#0f172a]/30 to-transparent"></div>
+                </div>
+                <div class="absolute inset-x-0 bottom-0 p-5 opacity-0 translate-y-2 transition group-hover:opacity-100 group-hover:translate-y-0">
+                  <p class="text-sm text-white/90">Loan origination, servicing and collections.</p>
+                  <span class="mt-4 inline-flex items-center gap-2 rounded-xl bg-white/95 px-4 py-2 text-xs font-semibold text-[#0f172a]">Read more <span aria-hidden="true">→</span></span>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="text-base font-semibold text-[#0f172a]">Lending</div>
+                <div class="mt-2 text-sm text-[#334155] line-clamp-2">LMS/LOS workflows.</div>
+              </div>
+            </a>
+
+            <a href="services.html#it" class="group glass rounded-3xl overflow-hidden border border-slate-200/80 bg-white transition hover:-translate-y-1 hover:shadow-xl" data-reveal data-reveal-delay="320">
+              <div class="relative h-44 overflow-hidden bg-[#f8fafc]">
+                <img src="image/MOBILE_APP_SCREEN.png" alt="Website Development" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('bg-gradient-to-br','from-[#eff6ff]','via-white','to-[#f8fafc]');" />
+                <div class="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-100">
+                  <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a]/80 via-[#0f172a]/30 to-transparent"></div>
+                </div>
+                <div class="absolute inset-x-0 bottom-0 p-5 opacity-0 translate-y-2 transition group-hover:opacity-100 group-hover:translate-y-0">
+                  <p class="text-sm text-white/90">Modern websites with performance, SEO and conversion UX.</p>
+                  <span class="mt-4 inline-flex items-center gap-2 rounded-xl bg-white/95 px-4 py-2 text-xs font-semibold text-[#0f172a]">Read more <span aria-hidden="true">→</span></span>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="text-base font-semibold text-[#0f172a]">Website Development</div>
+                <div class="mt-2 text-sm text-[#334155] line-clamp-2">Landing pages & corporate sites.</div>
+              </div>
+            </a>
+
+            <a href="services.html#it" class="group glass rounded-3xl overflow-hidden border border-slate-200/80 bg-white transition hover:-translate-y-1 hover:shadow-xl" data-reveal data-reveal-delay="340">
+              <div class="relative h-44 overflow-hidden bg-[#f8fafc]">
+                <img src="image/SECURITY_SECTION_ILLUSTRATION.png" alt="Software Development" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('bg-gradient-to-br','from-[#f8fafc]','via-white','to-[#eff6ff]');" />
+                <div class="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-100">
+                  <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a]/80 via-[#0f172a]/30 to-transparent"></div>
+                </div>
+                <div class="absolute inset-x-0 bottom-0 p-5 opacity-0 translate-y-2 transition group-hover:opacity-100 group-hover:translate-y-0">
+                  <p class="text-sm text-white/90">Custom software, APIs, dashboards and integrations.</p>
+                  <span class="mt-4 inline-flex items-center gap-2 rounded-xl bg-white/95 px-4 py-2 text-xs font-semibold text-[#0f172a]">Read more <span aria-hidden="true">→</span></span>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="text-base font-semibold text-[#0f172a]">Software Development</div>
+                <div class="mt-2 text-sm text-[#334155] line-clamp-2">Full-stack engineering delivery.</div>
+              </div>
+            </a>
+          </div>
+
+          <div class="mt-8" data-reveal>
+            <a href="catalog.html" class="inline-flex items-center gap-2 text-sm font-semibold text-[#2563EB] hover:text-[#1d4ed8] transition">
+              View full catalog <span aria-hidden="true">→</span>
             </a>
           </div>
         </div>
@@ -538,23 +1035,6 @@
               <p class="mt-2 text-sm text-[#334155] leading-relaxed">Non-Banking Financial Companies are rising fast as an integral part of the Indian economic system. Learn how NBFCs are reshaping credit and financial inclusion.</p>
               <span class="mt-3 inline-block text-sm font-semibold text-[#2563EB] group-hover:underline">Read more</span>
             </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- Partners -->
-      <section class="section py-16 lg:py-20 bg-white">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div data-reveal>
-            <div class="text-sm font-semibold text-[#2563EB]">Partners</div>
-            <h2 class="mt-3 text-3xl font-semibold tracking-tight text-[#0f172a]">Our Strategic Partners</h2>
-            <p class="mt-2 text-sm text-[#334155] max-w-2xl">Collaborating with global technology leaders and trusted partners to deliver reliable and innovative digital solutions.</p>
-          </div>
-          <div class="mt-10 flex flex-wrap items-center justify-center gap-8 sm:gap-12" data-reveal>
-            <div class="h-14 w-36 rounded-xl border border-slate-200 bg-[#f8fafc] flex items-center justify-center text-sm font-medium text-[#334155]">Partner 1</div>
-            <div class="h-14 w-36 rounded-xl border border-slate-200 bg-[#f8fafc] flex items-center justify-center text-sm font-medium text-[#334155]">Partner 2</div>
-            <div class="h-14 w-36 rounded-xl border border-slate-200 bg-[#f8fafc] flex items-center justify-center text-sm font-medium text-[#334155]">Partner 3</div>
-            <div class="h-14 w-36 rounded-xl border border-slate-200 bg-[#f8fafc] flex items-center justify-center text-sm font-medium text-[#334155]">Partner 4</div>
           </div>
         </div>
       </section>

@@ -205,12 +205,69 @@
     document.documentElement.style.scrollPaddingTop = `${h + 12}px`;
   }
 
+  function initCountUp() {
+    const nodes = Array.from(document.querySelectorAll("[data-countup]"));
+    if (!nodes.length) return;
+
+    const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+    const format = (n) => {
+      try {
+        return new Intl.NumberFormat(undefined).format(n);
+      } catch {
+        return String(n);
+      }
+    };
+
+    const animate = (el) => {
+      const to = Number(el.getAttribute("data-to") || "0");
+      const suffix = el.getAttribute("data-suffix") || "";
+      const duration = Math.min(1400, Math.max(700, to > 1000 ? 1200 : 900));
+
+      if (reduce) {
+        el.textContent = format(to) + suffix;
+        return;
+      }
+
+      const start = performance.now();
+      const from = 0;
+
+      const step = (t) => {
+        const p = Math.min(1, (t - start) / duration);
+        // easeOutCubic
+        const eased = 1 - Math.pow(1 - p, 3);
+        const val = Math.round(from + (to - from) * eased);
+        el.textContent = format(val) + suffix;
+        if (p < 1) requestAnimationFrame(step);
+      };
+
+      requestAnimationFrame(step);
+    };
+
+    const seen = new WeakSet();
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (!e.isIntersecting) continue;
+          const el = e.target;
+          if (seen.has(el)) continue;
+          seen.add(el);
+          animate(el);
+          io.unobserve(el);
+        }
+      },
+      { threshold: 0.35 }
+    );
+
+    nodes.forEach((n) => io.observe(n));
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     window.F6ITComponents?.mount?.();
     initMobileMenu();
     initAccordions();
     initMegaMenu();
     initReveal();
+    initCountUp();
     initSmoothAnchorOffset();
   });
 })();

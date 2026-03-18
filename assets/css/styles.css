@@ -27,6 +27,10 @@ body {
 main section {
   background: var(--section);
 }
+/* Allow sections to fully control their own background (e.g., dark hero/stats) */
+main section[data-bg="custom"] {
+  background: transparent;
+}
 main section:nth-of-type(odd) {
   background: var(--section);
 }
