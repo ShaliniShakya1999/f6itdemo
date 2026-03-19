@@ -261,6 +261,32 @@
     nodes.forEach((n) => io.observe(n));
   }
 
+  function initStatsCardHover() {
+    const cards = Array.from(document.querySelectorAll(".stats-card"));
+    if (!cards.length) return;
+
+    const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+    if (reduce) return;
+
+    cards.forEach((card) => {
+      const onMove = (e) => {
+        const rect = card.getBoundingClientRect();
+        const px = (e.clientX - rect.left) / rect.width;
+        const py = (e.clientY - rect.top) / rect.height;
+        const rx = (0.5 - py) * 4; // -2..2
+        const ry = (px - 0.5) * 5; // -2.5..2.5
+        card.style.transform = `translateY(-6px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+      };
+
+      const onLeave = () => {
+        card.style.transform = "";
+      };
+
+      card.addEventListener("mousemove", onMove);
+      card.addEventListener("mouseleave", onLeave);
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     window.F6ITComponents?.mount?.();
     initMobileMenu();
@@ -268,6 +294,7 @@
     initMegaMenu();
     initReveal();
     initCountUp();
+    initStatsCardHover();
     initSmoothAnchorOffset();
   });
 })();

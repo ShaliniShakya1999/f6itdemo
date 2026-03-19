@@ -34,6 +34,57 @@
       @media (prefers-reduced-motion: reduce) {
         .hero-dark .hero-bg { transform: none; }
       }
+
+      /* Trusted achievements cards animation */
+      .stats-card {
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease, background-color .35s ease;
+        will-change: transform;
+        overflow: hidden;
+      }
+      .stats-card::before {
+        content: "";
+        position: absolute;
+        inset: -120% auto auto -40%;
+        width: 50%;
+        height: 280%;
+        transform: rotate(18deg);
+        background: linear-gradient(90deg, transparent, rgba(59,130,246,.16), rgba(139,92,246,.16), transparent);
+        opacity: 0;
+        transition: transform .7s ease, opacity .35s ease;
+        pointer-events: none;
+      }
+      .stats-card:hover::before {
+        opacity: 1;
+        transform: translateX(330%) rotate(18deg);
+      }
+      .stats-card:hover {
+        border-color: rgba(59,130,246,.35);
+        box-shadow: 0 26px 60px rgba(59,130,246,.15), 0 18px 40px rgba(15,23,42,.16);
+      }
+      .stats-icon {
+        transition: transform .35s ease, box-shadow .35s ease;
+      }
+      .stats-card:hover .stats-icon {
+        transform: translateY(-2px) scale(1.04);
+        box-shadow: 0 10px 24px rgba(59,130,246,.18);
+      }
+      .stats-number {
+        transition: transform .25s ease;
+      }
+      .stats-card:hover .stats-number {
+        transform: translateY(-1px);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .stats-card,
+        .stats-card::before,
+        .stats-icon,
+        .stats-number {
+          transition: none !important;
+          transform: none !important;
+        }
+      }
     </style>
   </head>
   <body class="min-h-screen antialiased">
@@ -114,76 +165,76 @@
       </section>
 
       <!-- Stats -->
-      <section data-bg="custom" class="relative overflow-hidden py-14 lg:py-20" style="background:#0B1120">
+      <section class="relative overflow-hidden py-14 lg:py-20 bg-[#f8fafc]">
         <div class="pointer-events-none absolute inset-0">
-          <div class="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-[#3B82F6]/20 blur-3xl"></div>
-          <div class="absolute -right-24 top-10 h-72 w-72 rounded-full bg-[#8B5CF6]/18 blur-3xl"></div>
-          <div class="absolute inset-0 opacity-[0.09]" style="background-image:radial-gradient(rgba(255,255,255,.7) 1px, transparent 1px); background-size: 18px 18px;"></div>
+          <div class="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-[#3B82F6]/10 blur-3xl"></div>
+          <div class="absolute -right-24 top-10 h-72 w-72 rounded-full bg-[#8B5CF6]/10 blur-3xl"></div>
+          <div class="absolute inset-0 opacity-[0.08]" style="background-image:radial-gradient(rgba(15,23,42,.28) 1px, transparent 1px); background-size: 18px 18px;"></div>
         </div>
 
         <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="text-center" data-reveal>
             <div class="text-sm font-semibold text-[#3B82F6]">Impact</div>
-            <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">Trusted achievements</h2>
-            <p class="mt-3 text-sm text-slate-200/85 max-w-2xl mx-auto">
+            <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-[#0f172a] sm:text-4xl">Trusted achievements</h2>
+            <p class="mt-3 text-sm text-[#334155] max-w-2xl mx-auto">
               Delivering reliable fintech, ERP and enterprise solutions worldwide.
             </p>
           </div>
 
           <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8" data-reveal data-reveal-delay="80">
-            <div class="group rounded-2xl border border-white/10 bg-white/5 p-6 text-center shadow-[0_18px_60px_rgba(0,0,0,.35)] backdrop-blur-md transition hover:-translate-y-1 hover:bg-white/7 hover:shadow-[0_26px_90px_rgba(0,0,0,.45)]">
-              <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-white/5 border border-white/10 text-[#3B82F6]">
+            <div class="stats-card group rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm">
+              <div class="stats-icon mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-[#f8fafc] border border-slate-200 text-[#3B82F6]">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                   <path d="M12 20V10M18 20V4M6 20v-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
-              <div class="mt-5 text-4xl sm:text-5xl font-extrabold tracking-tight text-white">
+              <div class="stats-number mt-5 text-4xl sm:text-5xl font-extrabold tracking-tight text-[#0f172a]">
                 <span data-countup data-to="20" data-suffix="+">0</span>
               </div>
-              <div class="mt-2 text-sm font-medium text-slate-200/85">Years of Experience</div>
+              <div class="mt-2 text-sm font-medium text-[#334155]">Years of Experience</div>
               <div class="mt-3 h-px w-12 mx-auto bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] opacity-40 group-hover:opacity-70 transition"></div>
             </div>
 
-            <div class="group rounded-2xl border border-white/10 bg-white/5 p-6 text-center shadow-[0_18px_60px_rgba(0,0,0,.35)] backdrop-blur-md transition hover:-translate-y-1 hover:bg-white/7 hover:shadow-[0_26px_90px_rgba(0,0,0,.45)]">
-              <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-white/5 border border-white/10 text-[#8B5CF6]">
+            <div class="stats-card group rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm">
+              <div class="stats-icon mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-[#f8fafc] border border-slate-200 text-[#8B5CF6]">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                   <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
                   <path d="M12 10.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" stroke="currentColor" stroke-width="1.8"/>
                 </svg>
               </div>
-              <div class="mt-5 text-4xl sm:text-5xl font-extrabold tracking-tight text-white">
+              <div class="stats-number mt-5 text-4xl sm:text-5xl font-extrabold tracking-tight text-[#0f172a]">
                 <span data-countup data-to="35" data-suffix="+">0</span>
               </div>
-              <div class="mt-2 text-sm font-medium text-slate-200/85">Countries Served</div>
+              <div class="mt-2 text-sm font-medium text-[#334155]">Countries Served</div>
               <div class="mt-3 h-px w-12 mx-auto bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] opacity-40 group-hover:opacity-70 transition"></div>
             </div>
 
-            <div class="group rounded-2xl border border-white/10 bg-white/5 p-6 text-center shadow-[0_18px_60px_rgba(0,0,0,.35)] backdrop-blur-md transition hover:-translate-y-1 hover:bg-white/7 hover:shadow-[0_26px_90px_rgba(0,0,0,.45)]">
-              <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-white/5 border border-white/10 text-[#3B82F6]">
+            <div class="stats-card group rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm">
+              <div class="stats-icon mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-[#f8fafc] border border-slate-200 text-[#3B82F6]">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                   <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                   <path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" stroke="currentColor" stroke-width="1.8"/>
                   <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
                 </svg>
               </div>
-              <div class="mt-5 text-4xl sm:text-5xl font-extrabold tracking-tight text-white">
+              <div class="stats-number mt-5 text-4xl sm:text-5xl font-extrabold tracking-tight text-[#0f172a]">
                 <span data-countup data-to="1000" data-suffix="+">0</span>
               </div>
-              <div class="mt-2 text-sm font-medium text-slate-200/85">Enterprise Clients</div>
+              <div class="mt-2 text-sm font-medium text-[#334155]">Enterprise Clients</div>
               <div class="mt-3 h-px w-12 mx-auto bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] opacity-40 group-hover:opacity-70 transition"></div>
             </div>
 
-            <div class="group rounded-2xl border border-white/10 bg-white/5 p-6 text-center shadow-[0_18px_60px_rgba(0,0,0,.35)] backdrop-blur-md transition hover:-translate-y-1 hover:bg-white/7 hover:shadow-[0_26px_90px_rgba(0,0,0,.45)]">
-              <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-white/5 border border-white/10 text-[#8B5CF6]">
+            <div class="stats-card group rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm">
+              <div class="stats-icon mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-[#f8fafc] border border-slate-200 text-[#8B5CF6]">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                   <path d="M9 11l3 3L22 4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
                   <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
-              <div class="mt-5 text-4xl sm:text-5xl font-extrabold tracking-tight text-white">
+              <div class="stats-number mt-5 text-4xl sm:text-5xl font-extrabold tracking-tight text-[#0f172a]">
                 <span data-countup data-to="5000" data-suffix="+">0</span>
               </div>
-              <div class="mt-2 text-sm font-medium text-slate-200/85">Successful Projects</div>
+              <div class="mt-2 text-sm font-medium text-[#334155]">Successful Projects</div>
               <div class="mt-3 h-px w-12 mx-auto bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] opacity-40 group-hover:opacity-70 transition"></div>
             </div>
           </div>
@@ -1010,30 +1061,90 @@
       </section>
 
       <!-- Blogs -->
-      <section id="blogs" class="section py-16 lg:py-20">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div data-reveal>
-            <div class="text-sm font-semibold text-[#2563EB]">Blogs</div>
-            <h2 class="mt-3 text-3xl font-semibold tracking-tight text-[#0f172a]">Latest Insights &amp; Technology Trends</h2>
+      <section id="blogs" class="relative overflow-hidden py-20 lg:py-24 bg-[#f8fafc]">
+        <div class="pointer-events-none absolute inset-0">
+          <div class="absolute -left-24 top-4 h-72 w-72 rounded-full bg-[#3B82F6]/12 blur-3xl"></div>
+          <div class="absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-[#8B5CF6]/10 blur-3xl"></div>
+        </div>
+
+        <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between" data-reveal>
+            <div>
+              <div class="text-sm font-semibold text-[#2563EB]">Insights</div>
+              <h2 class="mt-3 text-4xl sm:text-5xl font-extrabold tracking-tight text-[#0f172a]">
+                Latest Insights &amp; Technology Trends
+              </h2>
+              <p class="mt-3 max-w-2xl text-sm text-[#334155] leading-relaxed">
+                Explore practical fintech and enterprise engineering insights from our delivery teams.
+              </p>
+            </div>
+            <a href="about.html#blog" class="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-[#0f172a] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md focus-ring">
+              View All Blogs <span aria-hidden="true">→</span>
+            </a>
           </div>
-          <div class="mt-10 grid gap-5 md:grid-cols-3">
-            <a href="about.html#blog" class="glass group rounded-3xl p-6 transition hover:-translate-y-1 bg-white" data-reveal data-reveal-delay="60">
-              <div class="text-xs font-medium text-[#334155]">Banking &nbsp;|&nbsp; March 8, 2020</div>
-              <h3 class="mt-2 text-base font-semibold text-[#0f172a]">The Future of Digital Banking</h3>
-              <p class="mt-2 text-sm text-[#334155] leading-relaxed">Mobile banking is set to lead over all other banking channels. The convenience of banking anywhere anytime has given digital banking a competitive edge and is shaping the future of finance.</p>
-              <span class="mt-3 inline-block text-sm font-semibold text-[#2563EB] group-hover:underline">Read more</span>
-            </a>
-            <a href="about.html#blog" class="glass group rounded-3xl p-6 transition hover:-translate-y-1 bg-white" data-reveal data-reveal-delay="110">
-              <div class="text-xs font-medium text-[#334155]">Finance &nbsp;|&nbsp; March 8, 2020</div>
-              <h3 class="mt-2 text-base font-semibold text-[#0f172a]">How Artificial Intelligence is Transforming Finance</h3>
-              <p class="mt-2 text-sm text-[#334155] leading-relaxed">AI is rapidly transforming the financial industry. Banks are using AI to minimize costs, meet margins, improve customer experience and automate decision-making at scale.</p>
-              <span class="mt-3 inline-block text-sm font-semibold text-[#2563EB] group-hover:underline">Read more</span>
-            </a>
-            <a href="about.html#blog" class="glass group rounded-3xl p-6 transition hover:-translate-y-1 bg-white" data-reveal data-reveal-delay="160">
-              <div class="text-xs font-medium text-[#334155]">Banking &nbsp;|&nbsp; March 8, 2020</div>
-              <h3 class="mt-2 text-base font-semibold text-[#0f172a]">Understanding the Growth of NBFC in India</h3>
-              <p class="mt-2 text-sm text-[#334155] leading-relaxed">Non-Banking Financial Companies are rising fast as an integral part of the Indian economic system. Learn how NBFCs are reshaping credit and financial inclusion.</p>
-              <span class="mt-3 inline-block text-sm font-semibold text-[#2563EB] group-hover:underline">Read more</span>
+
+          <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <article class="group rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl" data-reveal data-reveal-delay="60">
+              <a href="about.html#blog" class="block">
+                <div class="relative h-48 overflow-hidden rounded-t-2xl bg-[#eef2ff]">
+                  <img src="image/DASHBOARDIMAGE.png" alt="Digital banking trends dashboard" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" loading="lazy" />
+                </div>
+                <div class="p-6">
+                  <div class="flex items-center justify-between gap-3">
+                    <span class="inline-flex rounded-full bg-[#eff6ff] px-3 py-1 text-xs font-semibold text-[#2563EB]">Banking</span>
+                    <span class="text-xs text-slate-500">March 8, 2020</span>
+                  </div>
+                  <h3 class="mt-4 text-lg font-semibold text-[#0f172a]">The Future of Digital Banking</h3>
+                  <p class="mt-2 text-sm text-[#334155] leading-relaxed line-clamp-3">
+                    Mobile banking is leading all channels with always-on accessibility, better customer journeys, and faster transaction flows.
+                  </p>
+                  <span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#2563EB] transition group-hover:text-[#1d4ed8] group-hover:underline">Read More <span aria-hidden="true">→</span></span>
+                </div>
+              </a>
+            </article>
+
+            <article class="group rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl" data-reveal data-reveal-delay="110">
+              <a href="about.html#blog" class="block">
+                <div class="relative h-48 overflow-hidden rounded-t-2xl bg-[#eef2ff]">
+                  <img src="image/SECURITY_SECTION_ILLUSTRATION.png" alt="AI and finance security visual" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" loading="lazy" />
+                </div>
+                <div class="p-6">
+                  <div class="flex items-center justify-between gap-3">
+                    <span class="inline-flex rounded-full bg-[#f3e8ff] px-3 py-1 text-xs font-semibold text-[#8B5CF6]">Finance</span>
+                    <span class="text-xs text-slate-500">March 8, 2020</span>
+                  </div>
+                  <h3 class="mt-4 text-lg font-semibold text-[#0f172a]">How AI is Transforming Finance</h3>
+                  <p class="mt-2 text-sm text-[#334155] leading-relaxed line-clamp-3">
+                    AI is helping banks reduce cost, improve decision speed, and automate risk checks while improving customer experience.
+                  </p>
+                  <span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#2563EB] transition group-hover:text-[#1d4ed8] group-hover:underline">Read More <span aria-hidden="true">→</span></span>
+                </div>
+              </a>
+            </article>
+
+            <article class="group rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl" data-reveal data-reveal-delay="160">
+              <a href="about.html#blog" class="block">
+                <div class="relative h-48 overflow-hidden rounded-t-2xl bg-[#eef2ff]">
+                  <img src="image/MOBILE_APP_SCREEN.png" alt="NBFC growth and digital lending" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" loading="lazy" />
+                </div>
+                <div class="p-6">
+                  <div class="flex items-center justify-between gap-3">
+                    <span class="inline-flex rounded-full bg-[#eff6ff] px-3 py-1 text-xs font-semibold text-[#2563EB]">Lending</span>
+                    <span class="text-xs text-slate-500">March 8, 2020</span>
+                  </div>
+                  <h3 class="mt-4 text-lg font-semibold text-[#0f172a]">Understanding NBFC Growth in India</h3>
+                  <p class="mt-2 text-sm text-[#334155] leading-relaxed line-clamp-3">
+                    NBFCs are rapidly shaping credit access and financial inclusion through agile digital-first lending models.
+                  </p>
+                  <span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#2563EB] transition group-hover:text-[#1d4ed8] group-hover:underline">Read More <span aria-hidden="true">→</span></span>
+                </div>
+              </a>
+            </article>
+          </div>
+
+          <div class="mt-10 text-center" data-reveal data-reveal-delay="200">
+            <a href="about.html#blog" class="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] px-7 py-3 text-sm font-semibold text-white shadow-sm transition hover:opacity-95 focus-ring">
+              View All Blogs
             </a>
           </div>
         </div>
