@@ -267,11 +267,8 @@
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="flex h-14 lg:h-16 items-center justify-between gap-4">
             <a href="index.html" class="flex items-center gap-2.5 shrink-0 transition opacity-90 hover:opacity-100">
-              <span class="inline-flex h-9 w-9 lg:h-10 lg:w-10 items-center justify-center rounded-xl bg-[#2563EB] text-white shadow-sm">
-                <svg width="20" height="20" class="lg:w-[22px] lg:h-[22px]" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5v-9Z" stroke="currentColor" stroke-width="1.6"/>
-                  <path d="M8 9.2 12 7l4 2.2v5.6L12 17l-4-2.2V9.2Z" stroke="currentColor" stroke-width="1.6"/>
-                </svg>
+              <span class="inline-flex h-9 w-9 lg:h-10 lg:w-10 items-center justify-center overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+                <img src="image/F6.png" alt="F6 logo" class="h-full w-full object-contain p-1" loading="lazy" />
               </span>
               <div class="leading-tight">
                 <div class="text-sm font-semibold tracking-tight text-slate-900">F6IT</div>
@@ -329,7 +326,7 @@
                   <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
                 </svg>
               </button>
-              <a href="contact.html" class="btn-primary rounded-lg px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 focus-ring hover:shadow-md">
+              <a href="contact.html" class="rounded-lg bg-gradient-to-r from-[#2563EB] to-[#22D3EE] px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-cyan-200/40 transition-all duration-200 focus-ring hover:from-[#1D4ED8] hover:to-[#06B6D4] hover:shadow-md">
                 Talk to Expert
               </a>
             </div>
@@ -473,7 +470,7 @@
             </div>
 
             <div class="mt-4 pt-4 border-t border-slate-200 flex gap-3">
-              <a href="contact.html" class="btn-primary flex-1 rounded-lg px-4 py-2.5 text-center text-sm font-semibold text-white">Talk to Expert</a>
+              <a href="contact.html" class="flex-1 rounded-lg bg-gradient-to-r from-[#2563EB] to-[#22D3EE] px-4 py-2.5 text-center text-sm font-semibold text-white">Talk to Expert</a>
             </div>
           </div>
         </div>
@@ -489,8 +486,8 @@
           <div class="grid gap-10 lg:grid-cols-12">
             <div class="lg:col-span-4">
               <div class="flex items-center gap-3">
-                <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[#2563EB] text-white">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5v-9Z" stroke="currentColor" stroke-width="1.6"/><path d="M8 9.2 12 7l4 2.2v5.6L12 17l-4-2.2V9.2Z" stroke="currentColor" stroke-width="1.6"/></svg>
+                <span class="inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl border border-slate-200 bg-white">
+                  <img src="image/F6.png" alt="F6 logo" class="h-full w-full object-contain p-1" loading="lazy" />
                 </span>
                 <div class="leading-tight">
                   <div class="text-sm font-semibold text-[#0f172a]">F6IT</div>
