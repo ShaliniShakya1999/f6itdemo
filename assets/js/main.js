@@ -304,10 +304,70 @@
       dots.forEach((d, idx) => d.setAttribute("aria-current", String(idx === i)));
     };
 
-    prev?.addEventListener("click", () => setIndex(i - 1));
-    next?.addEventListener("click", () => setIndex(i + 1));
-    dots.forEach((d, idx) => d.addEventListener("click", () => setIndex(idx)));
+    const AUTOPLAY_MS = 4500;
+    let timer = null;
+    const startAuto = () => {
+      if (window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches) return;
+      timer = window.setInterval(() => setIndex(i + 1), AUTOPLAY_MS);
+    };
+    const stopAuto = () => {
+      if (timer) window.clearInterval(timer);
+      timer = null;
+    };
+    const nudgeAuto = () => {
+      stopAuto();
+      startAuto();
+    };
+
+    prev?.addEventListener("click", () => {
+      setIndex(i - 1);
+      nudgeAuto();
+    });
+    next?.addEventListener("click", () => {
+      setIndex(i + 1);
+      nudgeAuto();
+    });
+    dots.forEach((d, idx) =>
+      d.addEventListener("click", () => {
+        setIndex(idx);
+        nudgeAuto();
+      })
+    );
+    root.addEventListener("mouseenter", stopAuto);
+    root.addEventListener("mouseleave", startAuto);
+    root.addEventListener("focusin", stopAuto);
+    root.addEventListener("focusout", startAuto);
     setIndex(0);
+    startAuto();
+  }
+
+  function initProductTabs() {
+    const tabRoot = document.querySelector("[data-product-tabs]");
+    if (!tabRoot) return;
+    const tabs = Array.from(tabRoot.querySelectorAll("[data-p-tab]"));
+    const panels = Array.from(document.querySelectorAll("[data-p-panel]"));
+    if (!tabs.length || !panels.length) return;
+
+    const setActive = (key) => {
+      tabs.forEach((tab) => {
+        const isActive = tab.getAttribute("data-p-tab") === key;
+        tab.classList.toggle("is-active", isActive);
+      });
+
+      panels.forEach((panel) => {
+        const isActive = panel.getAttribute("data-p-panel") === key;
+        panel.classList.toggle("hidden", !isActive);
+      });
+    };
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        setActive(tab.getAttribute("data-p-tab"));
+      });
+    });
+
+    const initial = tabs.find((tab) => tab.classList.contains("is-active"))?.getAttribute("data-p-tab") || tabs[0].getAttribute("data-p-tab");
+    setActive(initial);
   }
 
   document.addEventListener("DOMContentLoaded", () => {
@@ -319,6 +379,7 @@
     initCountUp();
     initStatsCardHover();
     initTestimonialSlider();
+    initProductTabs();
     initSmoothAnchorOffset();
   });
 })();

@@ -481,71 +481,73 @@
   function renderFooter() {
     const year = new Date().getFullYear();
     return `
-      <footer class="border-t border-slate-200 bg-[#f8fafc]">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
-          <div class="grid gap-10 lg:grid-cols-12">
-            <div class="lg:col-span-4">
-              <div class="flex items-center gap-3">
-                <span class="inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl border border-slate-200 bg-white">
-                  <img src="image/F6.png" alt="F6 logo" class="h-full w-full object-contain p-1" loading="lazy" />
-                </span>
-                <div class="leading-tight">
-                  <div class="text-sm font-semibold text-[#0f172a]">F6IT</div>
-                  <div class="text-xs text-slate-500">Fintech & IT Solutions</div>
+      <footer class="border-t border-slate-200 bg-white">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+          <div class="rounded-3xl border border-slate-200 bg-gradient-to-br from-white to-[#f8f5ff] p-7 shadow-sm sm:p-9">
+            <div class="grid gap-10 lg:grid-cols-12">
+              <div class="lg:col-span-4">
+                <div class="flex items-center gap-3">
+                  <span class="inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+                    <img src="image/F6.png" alt="F6 logo" class="h-full w-full object-contain p-1" loading="lazy" />
+                  </span>
+                  <div class="leading-tight">
+                    <div class="text-sm font-semibold text-[#0f172a]">F6IT</div>
+                    <div class="text-xs text-slate-500">Fintech & IT Solutions</div>
+                  </div>
+                </div>
+                <p class="mt-5 text-sm text-slate-600 max-w-md leading-relaxed">
+                  We help organizations modernize with secure cloud platforms, digital transformation, and enterprise-grade software for regulated industries.
+                </p>
+                <div class="mt-6 flex gap-2.5">
+                  <a href="#" class="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-500 transition hover:border-[#6B30DD]/30 hover:bg-[#6B30DD]/6 hover:text-[#6B30DD]" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.28 2.37 4.28 5.45v6.29zM5.34 7.43c-1.14 0-2.06-.93-2.06-2.07 0-1.14.92-2.06 2.06-2.06 1.14 0 2.06.92 2.06 2.06 0 1.14-.92 2.07-2.06 2.07zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.78C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.78 24h20.44c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
+                  <a href="#" class="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-500 transition hover:border-[#6B30DD]/30 hover:bg-[#6B30DD]/6 hover:text-[#6B30DD]" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
                 </div>
               </div>
-              <p class="mt-5 text-sm text-slate-600 max-w-md leading-relaxed">
-                We help organizations modernize with secure cloud platforms, digital transformation, and enterprise-grade software for regulated industries.
-              </p>
-              <div class="mt-6 flex gap-3">
-                <a href="#" class="p-2 rounded-lg text-slate-500 hover:bg-white hover:text-[#2563EB] transition" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.28 2.37 4.28 5.45v6.29zM5.34 7.43c-1.14 0-2.06-.93-2.06-2.07 0-1.14.92-2.06 2.06-2.06 1.14 0 2.06.92 2.06 2.06 0 1.14-.92 2.07-2.06 2.07zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.78C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.78 24h20.44c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
-                <a href="#" class="p-2 rounded-lg text-slate-500 hover:bg-white hover:text-[#2563EB] transition" aria-label="Twitter"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+
+              <div class="lg:col-span-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+                <div>
+                  <div class="text-sm font-semibold text-[#0f172a]">Company</div>
+                  <div class="mt-3 grid gap-2 text-sm">
+                    <a class="text-slate-600 hover:text-[#6B30DD]" href="about.html">About</a>
+                    <a class="text-slate-600 hover:text-[#6B30DD]" href="careers.html">Careers</a>
+                    <a class="text-slate-600 hover:text-[#6B30DD]" href="contact.html">Contact</a>
+                  </div>
+                </div>
+                <div>
+                  <div class="text-sm font-semibold text-[#0f172a]">Products</div>
+                  <div class="mt-3 grid gap-2 text-sm">
+                    <a class="text-slate-600 hover:text-[#6B30DD]" href="catalog.html">All products</a>
+                    <a class="text-slate-600 hover:text-[#6B30DD]" href="products.html#smart-products">Digital Banking</a>
+                    <a class="text-slate-600 hover:text-[#6B30DD]" href="products.html#smart-products">ERP Systems</a>
+                  </div>
+                </div>
+                <div>
+                  <div class="text-sm font-semibold text-[#0f172a]">Industries</div>
+                  <div class="mt-3 grid gap-2 text-sm">
+                    <a class="text-slate-600 hover:text-[#6B30DD]" href="services.html#banking">Banking</a>
+                    <a class="text-slate-600 hover:text-[#6B30DD]" href="catalog.html">Insurance</a>
+                    <a class="text-slate-600 hover:text-[#6B30DD]" href="services.html#cloud">Manufacturing</a>
+                  </div>
+                </div>
+                <div>
+                  <div class="text-sm font-semibold text-[#0f172a]">Resources</div>
+                  <div class="mt-3 grid gap-2 text-sm">
+                    <a class="text-slate-600 hover:text-[#6B30DD]" href="about.html#story">Insights</a>
+                    <a class="text-slate-600 hover:text-[#6B30DD]" href="contact.html">Support</a>
+                    <a class="text-slate-600 hover:text-[#6B30DD]" href="contact.html">Privacy</a>
+                    <a class="text-slate-600 hover:text-[#6B30DD]" href="contact.html">Terms</a>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div class="lg:col-span-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-              <div>
-                <div class="text-sm font-semibold text-[#0f172a]">Company</div>
-                <div class="mt-3 grid gap-2 text-sm">
-                  <a class="text-slate-600 hover:text-[#2563EB]" href="about.html">About</a>
-                  <a class="text-slate-600 hover:text-[#2563EB]" href="careers.html">Careers</a>
-                  <a class="text-slate-600 hover:text-[#2563EB]" href="contact.html">Contact</a>
-                </div>
+            <div class="mt-10 flex flex-col gap-3 border-t border-slate-200 pt-6 sm:flex-row sm:items-center sm:justify-between">
+              <div class="text-xs text-slate-500">© ${year} F6IT. All rights reserved.</div>
+              <div class="flex gap-6 text-xs">
+                <a class="text-slate-500 hover:text-[#6B30DD]" href="contact.html">Privacy</a>
+                <a class="text-slate-500 hover:text-[#6B30DD]" href="contact.html">Terms</a>
+                <a class="text-slate-500 hover:text-[#6B30DD]" href="contact.html">Security</a>
               </div>
-              <div>
-                <div class="text-sm font-semibold text-[#0f172a]">Products</div>
-                <div class="mt-3 grid gap-2 text-sm">
-                  <a class="text-slate-600 hover:text-[#2563EB]" href="catalog.html">All products</a>
-                  <a class="text-slate-600 hover:text-[#2563EB]" href="products.html#smart-products">Digital Banking</a>
-                  <a class="text-slate-600 hover:text-[#2563EB]" href="products.html#smart-products">ERP Systems</a>
-                </div>
-              </div>
-              <div>
-                <div class="text-sm font-semibold text-[#0f172a]">Industries</div>
-                <div class="mt-3 grid gap-2 text-sm">
-                  <a class="text-slate-600 hover:text-[#2563EB]" href="services.html#banking">Banking</a>
-                  <a class="text-slate-600 hover:text-[#2563EB]" href="catalog.html">Insurance</a>
-                  <a class="text-slate-600 hover:text-[#2563EB]" href="services.html#cloud">Manufacturing</a>
-                </div>
-              </div>
-              <div>
-                <div class="text-sm font-semibold text-[#0f172a]">Resources</div>
-                <div class="mt-3 grid gap-2 text-sm">
-                  <a class="text-slate-600 hover:text-[#2563EB]" href="about.html#story">Insights</a>
-                  <a class="text-slate-600 hover:text-[#2563EB]" href="contact.html">Support</a>
-                  <a class="text-slate-600 hover:text-[#2563EB]" href="contact.html">Privacy</a>
-                  <a class="text-slate-600 hover:text-[#2563EB]" href="contact.html">Terms</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-12 flex flex-col gap-3 border-t border-slate-200 pt-8 sm:flex-row sm:items-center sm:justify-between">
-            <div class="text-xs text-slate-500">© ${year} F6IT. All rights reserved.</div>
-            <div class="flex gap-6 text-xs">
-              <a class="text-slate-500 hover:text-[#2563EB]" href="contact.html">Privacy</a>
-              <a class="text-slate-500 hover:text-[#2563EB]" href="contact.html">Terms</a>
-              <a class="text-slate-500 hover:text-[#2563EB]" href="contact.html">Security</a>
             </div>
           </div>
         </div>
