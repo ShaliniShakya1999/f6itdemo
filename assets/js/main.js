@@ -287,6 +287,29 @@
     });
   }
 
+  function initTestimonialSlider() {
+    const root = document.querySelector("[data-testimonial-slider]");
+    if (!root) return;
+    const track = root.querySelector("[data-t-track]");
+    const slides = Array.from(track?.children || []);
+    const prev = root.querySelector("[data-t-prev]");
+    const next = root.querySelector("[data-t-next]");
+    const dots = Array.from(root.querySelectorAll("[data-t-dot]"));
+    if (!track || slides.length <= 1) return;
+
+    let i = 0;
+    const setIndex = (n) => {
+      i = (n + slides.length) % slides.length;
+      track.style.transform = `translateX(-${i * 100}%)`;
+      dots.forEach((d, idx) => d.setAttribute("aria-current", String(idx === i)));
+    };
+
+    prev?.addEventListener("click", () => setIndex(i - 1));
+    next?.addEventListener("click", () => setIndex(i + 1));
+    dots.forEach((d, idx) => d.addEventListener("click", () => setIndex(idx)));
+    setIndex(0);
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     window.F6ITComponents?.mount?.();
     initMobileMenu();
@@ -295,6 +318,7 @@
     initReveal();
     initCountUp();
     initStatsCardHover();
+    initTestimonialSlider();
     initSmoothAnchorOffset();
   });
 })();
