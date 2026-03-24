@@ -8,26 +8,35 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <style>
+      .s-chip { display:inline-flex; align-items:center; justify-content:center; border:1px solid #e2e8f0; background:#fff; color:#0f172a; border-radius:999px; padding:9px 14px; font-size:13px; font-weight:600; transition:.2s ease; }
+      .s-chip:hover { border-color: rgba(107,48,221,.25); color:#6B30DD; background:#faf8ff; }
+      .s-link-card { border:1px solid #e2e8f0; border-radius:24px; background:#fff; padding:22px; transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+      .s-link-card:hover { transform: translateY(-4px); border-color: rgba(107,48,221,.22); box-shadow: 0 18px 38px rgba(15,23,42,.08); }
+    </style>
   </head>
   <body class="min-h-screen antialiased">
     <div id="site-header"></div>
 
     <main>
-      <section class="bg-gradient-to-br from-[#f8fafc] via-[#f1f5f9] to-[#e2e8f0] py-16 lg:py-20">
+      <section class="relative overflow-hidden bg-gradient-to-br from-[#eef7ff] via-[#f8fbff] to-white py-16 lg:py-20">
+        <div class="pointer-events-none absolute inset-0">
+          <div class="absolute -left-12 top-0 h-64 w-64 rounded-full bg-[#6B30DD]/10 blur-3xl"></div>
+          <div class="absolute right-0 top-8 h-64 w-64 rounded-full bg-[#3B82F6]/10 blur-3xl"></div>
+        </div>
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="grid gap-10 lg:grid-cols-12 lg:items-center">
             <div class="lg:col-span-7" data-reveal>
-              <div class="text-sm font-semibold text-[#2563EB]">Services</div>
+              <div class="text-sm font-semibold text-[#6B30DD]">Services</div>
               <h1 class="mt-3 text-4xl font-semibold tracking-tight text-[#0f172a] sm:text-5xl">
-                Enterprise services for secure digital growth
+                Services designed to build, launch, and scale digital platforms
               </h1>
               <p class="mt-5 max-w-2xl text-sm text-[#334155] sm:text-base leading-relaxed">
-                We deliver end-to-end programs—from roadmap to production—covering architecture, engineering, cloud,
-                fintech integrations, and modern UI.
+                From planning to production rollout, we help teams modernize systems, launch digital products, and connect the right fintech and enterprise capabilities with better user experience.
               </p>
               <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a href="contact.html" class="btn-primary rounded-2xl px-6 py-3 text-center text-sm font-semibold text-white transition focus-ring">Request a quote</a>
-                <a href="#catalog" class="rounded-2xl border border-slate-200 bg-white px-6 py-3 text-center text-sm font-semibold text-[#0f172a] transition focus-ring hover:bg-[#f8fafc]">Browse services</a>
+                <a href="contact.html" class="rounded-2xl bg-[#6B30DD] px-6 py-3 text-center text-sm font-semibold text-white shadow-lg shadow-[#6B30DD]/15 transition hover:-translate-y-0.5 hover:bg-[#5926bc]">Request a quote</a>
+                <a href="#catalog" class="rounded-2xl border border-slate-200 bg-white px-6 py-3 text-center text-sm font-semibold text-[#0f172a] transition hover:border-[#6B30DD]/25 hover:text-[#6B30DD]">Browse services</a>
               </div>
             </div>
             <div class="lg:col-span-5" data-reveal data-reveal-delay="120">
@@ -56,7 +65,7 @@
       <section id="catalog" class="py-16 bg-white">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div data-reveal>
-            <div class="text-sm font-semibold text-[#2563EB]">Service catalog</div>
+            <div class="text-sm font-semibold text-[#6B30DD]">Service catalog</div>
             <h2 class="mt-3 text-3xl font-semibold tracking-tight text-[#0f172a]">Core service areas</h2>
             <p class="mt-3 max-w-2xl text-sm text-[#334155]">
               Each offering can be delivered as a standalone engagement or combined into a full transformation program.
@@ -68,8 +77,8 @@
             <article id="digital" class="group glass rounded-3xl border border-slate-200/80 overflow-hidden transition hover:-translate-y-1 hover:shadow-xl bg-white" data-reveal data-reveal-delay="60">
               <div class="relative h-44">
                 <div class="absolute inset-0 bg-gradient-to-br from-[#eff6ff] via-white to-[#eef2ff]"></div>
-                <div class="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-[#2563EB]/10 blur-2xl"></div>
-                <div class="absolute left-6 top-6 h-12 w-12 rounded-2xl bg-white border border-slate-200 shadow-sm text-[#2563EB] flex items-center justify-center">
+                <div class="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-[#6B30DD]/10 blur-2xl"></div>
+                <div class="absolute left-6 top-6 h-12 w-12 rounded-2xl bg-white border border-slate-200 shadow-sm text-[#6B30DD] flex items-center justify-center">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 7h16v10H4V7Z"/><path d="M8 21h8" stroke-linecap="round"/></svg>
                 </div>
                 <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition">
@@ -80,14 +89,14 @@
                     <p class="text-sm text-white/90 leading-relaxed">
                       Modernize faster with roadmap, UX and measurable delivery.
                     </p>
-                    <a href="services.html#digital" class="mt-4 inline-flex items-center gap-2 rounded-xl bg-white/95 px-4 py-2 text-xs font-semibold text-[#0f172a] hover:bg-white transition focus-ring">
-                      Read more <span aria-hidden="true">→</span>
+                    <a href="#related-offerings" class="mt-4 inline-flex items-center gap-2 rounded-xl bg-white/95 px-4 py-2 text-xs font-semibold text-[#0f172a] hover:bg-white transition focus-ring">
+                      Related pages <span aria-hidden="true">→</span>
                     </a>
                   </div>
                 </div>
               </div>
               <div class="p-6">
-                <div class="text-xs font-semibold text-[#2563EB]">01</div>
+                <div class="text-xs font-semibold text-[#6B30DD]">01</div>
                 <h3 class="mt-2 text-base font-semibold text-[#0f172a]">Digital Transformation</h3>
                 <p class="mt-2 text-sm text-[#334155] line-clamp-2">
                   Roadmaps, modernization, modern UI and governance.
@@ -99,8 +108,8 @@
             <article id="it" class="group glass rounded-3xl border border-slate-200/80 overflow-hidden transition hover:-translate-y-1 hover:shadow-xl bg-white" data-reveal data-reveal-delay="120">
               <div class="relative h-44">
                 <div class="absolute inset-0 bg-gradient-to-br from-[#eff6ff] via-white to-[#f8fafc]"></div>
-                <div class="absolute -left-12 -bottom-12 h-44 w-44 rounded-full bg-[#2563EB]/10 blur-2xl"></div>
-                <div class="absolute left-6 top-6 h-12 w-12 rounded-2xl bg-white border border-slate-200 shadow-sm text-[#2563EB] flex items-center justify-center">
+                <div class="absolute -left-12 -bottom-12 h-44 w-44 rounded-full bg-[#6B30DD]/10 blur-2xl"></div>
+                <div class="absolute left-6 top-6 h-12 w-12 rounded-2xl bg-white border border-slate-200 shadow-sm text-[#6B30DD] flex items-center justify-center">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M7 7h10v10H7V7Z"/><path d="M4 12h3M17 12h3" stroke-linecap="round"/></svg>
                 </div>
                 <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition">
@@ -111,14 +120,14 @@
                     <p class="text-sm text-white/90 leading-relaxed">
                       Build apps, APIs and DevOps workflows with clean architecture.
                     </p>
-                    <a href="services.html#it" class="mt-4 inline-flex items-center gap-2 rounded-xl bg-white/95 px-4 py-2 text-xs font-semibold text-[#0f172a] hover:bg-white transition focus-ring">
-                      Read more <span aria-hidden="true">→</span>
+                    <a href="#related-offerings" class="mt-4 inline-flex items-center gap-2 rounded-xl bg-white/95 px-4 py-2 text-xs font-semibold text-[#0f172a] hover:bg-white transition focus-ring">
+                      Related pages <span aria-hidden="true">→</span>
                     </a>
                   </div>
                 </div>
               </div>
               <div class="p-6">
-                <div class="text-xs font-semibold text-[#2563EB]">02</div>
+                <div class="text-xs font-semibold text-[#6B30DD]">02</div>
                 <h3 class="mt-2 text-base font-semibold text-[#0f172a]">IT Solutions</h3>
                 <p class="mt-2 text-sm text-[#334155] line-clamp-2">
                   Enterprise apps, integrations, CI/CD and support.
@@ -130,8 +139,8 @@
             <article id="banking" class="group glass rounded-3xl border border-slate-200/80 overflow-hidden transition hover:-translate-y-1 hover:shadow-xl bg-white" data-reveal data-reveal-delay="180">
               <div class="relative h-44">
                 <div class="absolute inset-0 bg-gradient-to-br from-[#eef2ff] via-white to-[#eff6ff]"></div>
-                <div class="absolute -right-14 -bottom-14 h-48 w-48 rounded-full bg-[#2563EB]/12 blur-2xl"></div>
-                <div class="absolute left-6 top-6 h-12 w-12 rounded-2xl bg-white border border-slate-200 shadow-sm text-[#2563EB] flex items-center justify-center">
+                <div class="absolute -right-14 -bottom-14 h-48 w-48 rounded-full bg-[#6B30DD]/12 blur-2xl"></div>
+                <div class="absolute left-6 top-6 h-12 w-12 rounded-2xl bg-white border border-slate-200 shadow-sm text-[#6B30DD] flex items-center justify-center">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 10 12 5l8 5" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 10v9M10 10v9M14 10v9M18 10v9M5 19h14" stroke-linecap="round"/></svg>
                 </div>
                 <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition">
@@ -142,14 +151,14 @@
                     <p class="text-sm text-white/90 leading-relaxed">
                       Core banking, loans, payments and secure integrations.
                     </p>
-                    <a href="banking-services.html" class="mt-4 inline-flex items-center gap-2 rounded-xl bg-white/95 px-4 py-2 text-xs font-semibold text-[#0f172a] hover:bg-white transition focus-ring">
-                      Read more <span aria-hidden="true">→</span>
+                    <a href="connected-banking.html" class="mt-4 inline-flex items-center gap-2 rounded-xl bg-white/95 px-4 py-2 text-xs font-semibold text-[#0f172a] hover:bg-white transition focus-ring">
+                      Open page <span aria-hidden="true">→</span>
                     </a>
                   </div>
                 </div>
               </div>
               <div class="p-6">
-                <div class="text-xs font-semibold text-[#2563EB]">03</div>
+                <div class="text-xs font-semibold text-[#6B30DD]">03</div>
                 <h3 class="mt-2 text-base font-semibold text-[#0f172a]">Banking Software</h3>
                 <p class="mt-2 text-sm text-[#334155] line-clamp-2">
                   Digital banking platforms built for compliance and scale.
@@ -161,8 +170,8 @@
             <article id="cloud" class="group glass rounded-3xl border border-slate-200/80 overflow-hidden transition hover:-translate-y-1 hover:shadow-xl bg-white" data-reveal data-reveal-delay="240">
               <div class="relative h-44">
                 <div class="absolute inset-0 bg-gradient-to-br from-[#f8fafc] via-white to-[#eff6ff]"></div>
-                <div class="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-[#2563EB]/10 blur-2xl"></div>
-                <div class="absolute left-6 top-6 h-12 w-12 rounded-2xl bg-white border border-slate-200 shadow-sm text-[#2563EB] flex items-center justify-center">
+                <div class="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-[#6B30DD]/10 blur-2xl"></div>
+                <div class="absolute left-6 top-6 h-12 w-12 rounded-2xl bg-white border border-slate-200 shadow-sm text-[#6B30DD] flex items-center justify-center">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 0-8 5 5 0 0 0-9.7 1.6A3.5 3.5 0 0 0 7 18Z" stroke-linejoin="round"/><path d="M9 18v3M12 18v3M15 18v3" stroke-linecap="round"/></svg>
                 </div>
                 <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition">
@@ -173,14 +182,14 @@
                     <p class="text-sm text-white/90 leading-relaxed">
                       Secure cloud landing zones, migration and reliability.
                     </p>
-                    <a href="services.html#cloud" class="mt-4 inline-flex items-center gap-2 rounded-xl bg-white/95 px-4 py-2 text-xs font-semibold text-[#0f172a] hover:bg-white transition focus-ring">
-                      Read more <span aria-hidden="true">→</span>
+                    <a href="#related-offerings" class="mt-4 inline-flex items-center gap-2 rounded-xl bg-white/95 px-4 py-2 text-xs font-semibold text-[#0f172a] hover:bg-white transition focus-ring">
+                      Related pages <span aria-hidden="true">→</span>
                     </a>
                   </div>
                 </div>
               </div>
               <div class="p-6">
-                <div class="text-xs font-semibold text-[#2563EB]">04</div>
+                <div class="text-xs font-semibold text-[#6B30DD]">04</div>
                 <h3 class="mt-2 text-base font-semibold text-[#0f172a]">Cloud Solutions</h3>
                 <p class="mt-2 text-sm text-[#334155] line-clamp-2">
                   AWS/Azure, containers, governance and security.
@@ -196,14 +205,14 @@
           <div class="glass rounded-3xl p-8 sm:p-10 border border-slate-200/80 bg-white" data-reveal>
             <div class="grid gap-8 lg:grid-cols-12 lg:items-center">
               <div class="lg:col-span-7">
-                <div class="text-sm font-semibold text-[#2563EB]">How we work</div>
+                <div class="text-sm font-semibold text-[#6B30DD]">How we work</div>
                 <h2 class="mt-3 text-3xl font-semibold tracking-tight text-[#0f172a]">A predictable process, end to end</h2>
                 <p class="mt-3 max-w-2xl text-sm text-[#334155]">
                   We align stakeholders early, reduce delivery risk, and provide clear reporting throughout.
                 </p>
               </div>
               <div class="lg:col-span-5">
-                <a href="contact.html" class="btn-primary rounded-2xl px-6 py-3 text-center text-sm font-semibold text-white transition focus-ring">Start a project</a>
+                <a href="contact.html" class="rounded-2xl bg-[#6B30DD] px-6 py-3 text-center text-sm font-semibold text-white shadow-lg shadow-[#6B30DD]/15 transition hover:-translate-y-0.5 hover:bg-[#5926bc]">Start a project</a>
               </div>
             </div>
 
@@ -228,6 +237,107 @@
                 <div class="mt-2 text-sm font-semibold text-[#0f172a]">Operate</div>
                 <div class="mt-2 text-xs text-[#334155]">Monitoring, support, optimization, security updates.</div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="related-offerings" class="py-16 bg-white">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div data-reveal>
+            <div class="text-sm font-semibold text-[#6B30DD]">Related offering pages</div>
+            <h2 class="mt-3 text-3xl font-semibold tracking-tight text-[#0f172a]">Service-led paths into all product pages</h2>
+            <p class="mt-3 max-w-3xl text-sm leading-relaxed text-[#334155]">
+              If you start from services, you can still open the exact product or solution page you need from here.
+            </p>
+          </div>
+
+          <div class="mt-10 grid gap-6 lg:grid-cols-4">
+            <div class="s-link-card" data-reveal data-reveal-delay="50">
+              <div class="text-sm font-semibold text-[#6B30DD]">Digital Transformation</div>
+              <h3 class="mt-2 text-lg font-semibold text-[#0f172a]">UX, modernization and launch support</h3>
+              <p class="mt-3 text-sm leading-7 text-slate-600">Best fit when you want redesign, rollout support, product structure improvement, or conversion-focused platform work.</p>
+              <div class="mt-5 flex flex-wrap gap-3">
+                <a href="website-development.html" class="s-chip">Website Development</a>
+                <a href="software-development.html" class="s-chip">Software Development</a>
+                <a href="crm.html" class="s-chip">CRM</a>
+                <a href="pms.html" class="s-chip">PMS</a>
+              </div>
+            </div>
+
+            <div class="s-link-card" data-reveal data-reveal-delay="90">
+              <div class="text-sm font-semibold text-[#6B30DD]">IT Solutions</div>
+              <h3 class="mt-2 text-lg font-semibold text-[#0f172a]">Apps, systems, process and internal tooling</h3>
+              <p class="mt-3 text-sm leading-7 text-slate-600">Use these when your project needs scalable internal systems, sales tools, or enterprise process automation.</p>
+              <div class="mt-5 flex flex-wrap gap-3">
+                <a href="erp.html" class="s-chip">ERP</a>
+                <a href="dms.html" class="s-chip">DMS</a>
+                <a href="hpms.html" class="s-chip">HPMS</a>
+                <a href="b2b-sales-app.html" class="s-chip">B2B &amp; Sales App</a>
+              </div>
+            </div>
+
+            <div class="s-link-card" data-reveal data-reveal-delay="130">
+              <div class="text-sm font-semibold text-[#6B30DD]">Banking Software</div>
+              <h3 class="mt-2 text-lg font-semibold text-[#0f172a]">Fintech rails, collections and core transaction flows</h3>
+              <p class="mt-3 text-sm leading-7 text-slate-600">Start here for payout, banking, merchant collection, assisted banking, or onboarding-led fintech journeys.</p>
+              <div class="mt-5 flex flex-wrap gap-3">
+                <a href="connected-banking.html" class="s-chip">Connected Banking</a>
+                <a href="instant-payouts.html" class="s-chip">Instant Payouts</a>
+                <a href="upi-collection.html" class="s-chip">UPI Collection</a>
+                <a href="micro-atm.html" class="s-chip">Micro ATM</a>
+              </div>
+            </div>
+
+            <div class="s-link-card" data-reveal data-reveal-delay="170">
+              <div class="text-sm font-semibold text-[#6B30DD]">Cloud &amp; Integration</div>
+              <h3 class="mt-2 text-lg font-semibold text-[#0f172a]">APIs, verification and connected operations</h3>
+              <p class="mt-3 text-sm leading-7 text-slate-600">Useful when your service scope includes verification, integrations, communication workflows, or audit automation.</p>
+              <div class="mt-5 flex flex-wrap gap-3">
+                <a href="verification-apis.html" class="s-chip">Verification APIs</a>
+                <a href="pan-card.html" class="s-chip">PAN Card</a>
+                <a href="whatsapp-solution.html" class="s-chip">WhatsApp Solution</a>
+                <a href="eaudit.html" class="s-chip">eAudit</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-10 rounded-3xl border border-slate-200 bg-[#f8fafc] p-6 sm:p-8" data-reveal>
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <div class="text-sm font-semibold text-[#6B30DD]">All pages</div>
+                <h3 class="mt-2 text-2xl font-semibold text-[#0f172a]">Quick links to every offering page</h3>
+              </div>
+              <a href="products.html" class="rounded-2xl border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-[#0f172a] transition hover:border-[#6B30DD]/25 hover:text-[#6B30DD]">Open full product catalog</a>
+            </div>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a href="connected-banking.html" class="s-chip">Connected Banking</a>
+              <a href="utility-payments.html" class="s-chip">Utility Payments</a>
+              <a href="instant-payouts.html" class="s-chip">Instant Payouts</a>
+              <a href="travel-booking.html" class="s-chip">Travel Booking</a>
+              <a href="upi-collection.html" class="s-chip">UPI Collection</a>
+              <a href="micro-atm.html" class="s-chip">Micro ATM</a>
+              <a href="aadhaar-banking.html" class="s-chip">Aadhaar Banking</a>
+              <a href="core-banking.html" class="s-chip">Core Banking</a>
+              <a href="verification-apis.html" class="s-chip">Verification APIs</a>
+              <a href="pan-card.html" class="s-chip">PAN Card</a>
+              <a href="whatsapp-solution.html" class="s-chip">WhatsApp Solution</a>
+              <a href="eaudit.html" class="s-chip">eAudit</a>
+              <a href="insurance.html" class="s-chip">Insurance</a>
+              <a href="investment.html" class="s-chip">Investment</a>
+              <a href="recharge.html" class="s-chip">Recharge</a>
+              <a href="lending.html" class="s-chip">Lending</a>
+              <a href="core-insurance.html" class="s-chip">Core Insurance</a>
+              <a href="website-development.html" class="s-chip">Website Development</a>
+              <a href="software-development.html" class="s-chip">Software Development</a>
+              <a href="erp.html" class="s-chip">ERP</a>
+              <a href="crm.html" class="s-chip">CRM</a>
+              <a href="dms.html" class="s-chip">DMS</a>
+              <a href="pms.html" class="s-chip">PMS</a>
+              <a href="hpms.html" class="s-chip">HPMS</a>
+              <a href="e-auction.html" class="s-chip">E-Auction</a>
+              <a href="b2b-sales-app.html" class="s-chip">B2B &amp; Sales App</a>
+              <a href="e-governance.html" class="s-chip">E-Governance</a>
             </div>
           </div>
         </div>

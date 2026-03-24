@@ -233,6 +233,23 @@
         border-radius: 999px;
         padding: 6px 10px;
       }
+      .idx-cat { border: 0; border-radius: 0; background: transparent; padding: 0; }
+      .idx-cat-title { display: block; width: 100%; text-align: center; font-size: 22px; font-weight: 700; color: #0f172a; margin-bottom: 12px; }
+      .idx-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 14px; }
+      @media (max-width: 1024px) { .idx-grid { grid-template-columns: repeat(3, minmax(0,1fr)); } }
+      @media (max-width: 820px) { .idx-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+      @media (max-width: 560px) { .idx-grid { grid-template-columns: 1fr; } }
+      .idx-card { border: 1px solid #e2e8f0; border-radius: 14px; background: #fff; padding: 12px; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+      .idx-card:hover { transform: translateY(-4px); border-color: #cbd5e1; box-shadow: 0 12px 24px rgba(15,23,42,.10); }
+      .idx-media { position: relative; height: 120px; border-radius: 10px; overflow: hidden; background: #e2e8f0; }
+      .idx-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
+      .idx-card:hover .idx-media img { transform: scale(1.08); }
+      .idx-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,23,42,.25), rgba(15,23,42,.02)); }
+      .idx-hover { position: absolute; left: 8px; bottom: 8px; z-index: 2; font-size: 11px; font-weight: 700; border: 1px solid #cbd5e1; background: rgba(255,255,255,.95); color: #0f172a; border-radius: 999px; padding: 5px 9px; opacity: 0; transform: translateY(8px); transition: .22s ease; }
+      .idx-card:hover .idx-hover { opacity: 1; transform: translateY(0); }
+      .idx-icon { width: 34px; height: 34px; margin-top: 10px; border-radius: 10px; display: grid; place-items: center; border: 1px solid #dbeafe; background: #eff6ff; color: #2563eb; }
+      .idx-name { margin: 10px 0 5px; font-weight: 700; font-size: 15px; color: #0f172a; }
+      .idx-desc { margin: 0; color: #64748b; font-size: 12px; line-height: 1.45; }
       @media (max-width: 640px) {
         .hero-dark .hero-bg { background-position: 68% center; }
         .hero-dark .hero-slide-content { padding: 0; }
@@ -254,8 +271,8 @@
             <div class="hero-slide-inner relative">
               <div class="hero-slide-content" data-reveal>
                 <div class="hero-label text-sm font-semibold">Fintech &amp; Technology</div>
-                <h1 class="hero-title mt-3">We build secure fintech &amp; digital platforms for modern businesses</h1>
-                <p class="hero-subtitle">Launch trusted products faster with secure architecture, scalable systems, and seamless digital experiences.</p>
+                <h1 class="hero-title mt-3">Build Secure Fintech &amp; Digital Platforms for Your Business</h1>
+                <p class="hero-subtitle">APIs, Payments, Banking &amp; Automation - All in One Platform.</p>
                 <div class="hero-buttons">
                   <a href="contact.html" class="btn-cyan rounded-xl px-6 py-3 text-sm font-semibold transition focus-ring">Start Now</a>
                   <a href="contact.html" class="rounded-xl border border-white/20 bg-white/8 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/12 focus-ring">Get Demo</a>
@@ -350,7 +367,7 @@
             <!-- Text + cards -->
             <div class="lg:col-span-7" data-reveal data-reveal-delay="80">
               <div class="text-sm font-semibold text-[#2563EB]">How It Works</div>
-              <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-[#0f172a] sm:text-4xl">From idea to secure launch in 3 clear steps</h2>
+              <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-[#0f172a] sm:text-4xl">How It Works in 4 simple steps</h2>
               <p class="mt-4 max-w-3xl text-sm text-[#334155] leading-relaxed">
                 A simple execution model that keeps delivery predictable, transparent, and fast.
               </p>
@@ -363,7 +380,7 @@
                 </a>
               </div>
 
-              <div class="mt-10 grid gap-5 md:grid-cols-3">
+              <div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
                 <a href="about.html#vision" class="group rounded-2xl border border-slate-200 bg-white/70 p-6 shadow-sm backdrop-blur-md transition hover:-translate-y-1 hover:shadow-lg">
                   <div class="flex items-start justify-between gap-4">
                     <div class="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[#eff6ff] text-[#3B82F6]">
@@ -372,11 +389,11 @@
                         <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="currentColor" stroke-width="1.8"/>
                       </svg>
                     </div>
-                    <span class="text-xs font-semibold text-slate-500 group-hover:text-[#2563EB] transition">Read more</span>
+                    <span class="text-xs font-semibold text-slate-500 group-hover:text-[#2563EB] transition">Step 01</span>
                   </div>
-                  <div class="mt-4 text-sm font-semibold text-[#0f172a]">1. Discover</div>
+                  <div class="mt-4 text-sm font-semibold text-[#0f172a]">1. Signup</div>
                   <p class="mt-2 text-xs text-[#334155] leading-relaxed">
-                    We understand requirements, workflows, risks, and success metrics.
+                    Create your account and share your product goals with our team.
                   </p>
                   <div class="mt-4 h-px w-14 bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] opacity-35 group-hover:opacity-70 transition"></div>
                 </a>
@@ -389,16 +406,16 @@
                         <path d="M9.5 12l1.8 1.8L15 10" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
                       </svg>
                     </div>
-                    <span class="text-xs font-semibold text-slate-500 group-hover:text-[#2563EB] transition">Read more</span>
+                    <span class="text-xs font-semibold text-slate-500 group-hover:text-[#2563EB] transition">Step 02</span>
                   </div>
-                  <div class="mt-4 text-sm font-semibold text-[#0f172a]">2. Build</div>
+                  <div class="mt-4 text-sm font-semibold text-[#0f172a]">2. Get API Access</div>
                   <p class="mt-2 text-xs text-[#334155] leading-relaxed">
-                    We design and engineer secure, scalable platforms with QA and CI/CD.
+                    Receive sandbox and production-ready API credentials securely.
                   </p>
                   <div class="mt-4 h-px w-14 bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] opacity-35 group-hover:opacity-70 transition"></div>
                 </a>
 
-                <a href="services.html" class="group rounded-2xl border border-slate-200 bg-white/70 p-6 shadow-sm backdrop-blur-md transition hover:-translate-y-1 hover:shadow-lg md:col-span-3 lg:col-span-1">
+                <a href="services.html" class="group rounded-2xl border border-slate-200 bg-white/70 p-6 shadow-sm backdrop-blur-md transition hover:-translate-y-1 hover:shadow-lg">
                   <div class="flex items-start justify-between gap-4">
                     <div class="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[#eff6ff] text-[#3B82F6]">
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -406,11 +423,26 @@
                         <path d="M7 10h6M7 13h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
                       </svg>
                     </div>
-                    <span class="text-xs font-semibold text-slate-500 group-hover:text-[#2563EB] transition">Explore</span>
+                    <span class="text-xs font-semibold text-slate-500 group-hover:text-[#2563EB] transition">Step 03</span>
                   </div>
-                  <div class="mt-4 text-sm font-semibold text-[#0f172a]">3. Launch &amp; Scale</div>
+                  <div class="mt-4 text-sm font-semibold text-[#0f172a]">3. Integrate</div>
                   <p class="mt-2 text-xs text-[#334155] leading-relaxed">
-                    We deploy, monitor, optimize, and support continuous growth.
+                    Connect APIs, configure workflows, and run end-to-end testing.
+                  </p>
+                  <div class="mt-4 h-px w-14 bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] opacity-35 group-hover:opacity-70 transition"></div>
+                </a>
+                <a href="contact.html" class="group rounded-2xl border border-slate-200 bg-white/70 p-6 shadow-sm backdrop-blur-md transition hover:-translate-y-1 hover:shadow-lg">
+                  <div class="flex items-start justify-between gap-4">
+                    <div class="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[#eff6ff] text-[#3B82F6]">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                    <span class="text-xs font-semibold text-slate-500 group-hover:text-[#2563EB] transition">Step 04</span>
+                  </div>
+                  <div class="mt-4 text-sm font-semibold text-[#0f172a]">4. Go Live</div>
+                  <p class="mt-2 text-xs text-[#334155] leading-relaxed">
+                    Launch in production with monitoring, security checks, and support.
                   </p>
                   <div class="mt-4 h-px w-14 bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] opacity-35 group-hover:opacity-70 transition"></div>
                 </a>
@@ -425,72 +457,30 @@
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div data-reveal>
             <div class="text-sm font-semibold text-[#2563EB]">Solutions</div>
-            <h2 class="mt-3 text-3xl font-semibold tracking-tight text-[#0f172a]">Business use-cases designed to solve real operational bottlenecks</h2>
+            <h2 class="mt-3 text-3xl font-semibold tracking-tight text-[#0f172a]">Use-case based solutions</h2>
             <p class="mt-3 max-w-3xl text-sm text-slate-600 leading-relaxed">
-              Focused solution blocks for digital transformation, AI-driven workflows, payments orchestration, and business optimization.
+              Clear business problems mapped to ready-to-use solution blocks.
             </p>
           </div>
 
-          <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <article class="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl" data-reveal>
-              <div class="relative h-44 overflow-hidden bg-[#eef2ff]">
-                <img src="image/DASHBOARDIMAGE.png" alt="Digital Transformation" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" loading="lazy" />
-                <span class="absolute bottom-3 left-3 rounded-xl border border-[#bfdbfe] bg-white/90 px-3 py-1.5 text-xs font-semibold text-[#1e3a8a]">Read More →</span>
-              </div>
-              <div class="p-6">
-                <h3 class="text-lg font-semibold text-[#0f172a]">Digital Transformation</h3>
-                <p class="mt-2 text-sm text-slate-600">Modernize legacy processes using cloud-native architecture, workflow automation, and API-first systems.</p>
-              </div>
+          <div class="mt-10 grid gap-6 md:grid-cols-3" data-reveal>
+            <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+              <div class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[#eff6ff] text-[#6B30DD]">🏦</div>
+              <h3 class="mt-4 text-base font-semibold text-[#0f172a]">Managing multiple bank accounts is difficult</h3>
+              <p class="mt-2 text-sm text-slate-600">Unify accounts, balances, and transactions in one dashboard.</p>
+              <div class="mt-4 inline-flex rounded-full border border-[#6B30DD]/25 bg-[#f5f3ff] px-3 py-1 text-xs font-semibold text-[#6B30DD]">Connected Banking</div>
             </article>
-            <article class="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl" data-reveal data-reveal-delay="60">
-              <div class="relative h-44 overflow-hidden bg-[#eef2ff]">
-                <img src="image/SECURITY_SECTION_ILLUSTRATION.png" alt="AI Decisioning" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" loading="lazy" />
-                <span class="absolute bottom-3 left-3 rounded-xl border border-[#bfdbfe] bg-white/90 px-3 py-1.5 text-xs font-semibold text-[#1e3a8a]">Read More →</span>
-              </div>
-              <div class="p-6">
-                <h3 class="text-lg font-semibold text-[#0f172a]">AI Decisioning</h3>
-                <p class="mt-2 text-sm text-slate-600">Use AI-assisted scoring, risk checks, and insights to improve speed, fraud detection, and accuracy.</p>
-              </div>
+            <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+              <div class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[#eff6ff] text-[#6B30DD]">💡</div>
+              <h3 class="mt-4 text-base font-semibold text-[#0f172a]">Need to pay bills in bulk</h3>
+              <p class="mt-2 text-sm text-slate-600">Automate utility bill flows with reconciliation and status tracking.</p>
+              <div class="mt-4 inline-flex rounded-full border border-[#6B30DD]/25 bg-[#f5f3ff] px-3 py-1 text-xs font-semibold text-[#6B30DD]">Utility Payments</div>
             </article>
-            <article class="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl" data-reveal data-reveal-delay="100">
-              <div class="relative h-44 overflow-hidden bg-[#eef2ff]">
-                <img src="image/Analytics Dashboard.png" alt="Business Optimization" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" loading="lazy" />
-                <span class="absolute bottom-3 left-3 rounded-xl border border-[#bfdbfe] bg-white/90 px-3 py-1.5 text-xs font-semibold text-[#1e3a8a]">Read More →</span>
-              </div>
-              <div class="p-6">
-                <h3 class="text-lg font-semibold text-[#0f172a]">Business Optimization</h3>
-                <p class="mt-2 text-sm text-slate-600">Improve efficiency with real-time dashboards, process visibility, and data-backed planning.</p>
-              </div>
-            </article>
-            <article class="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl" data-reveal data-reveal-delay="140">
-              <div class="relative h-44 overflow-hidden bg-[#eef2ff]">
-                <img src="image/API Gateway.png" alt="Connected Integrations" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" loading="lazy" />
-                <span class="absolute bottom-3 left-3 rounded-xl border border-[#bfdbfe] bg-white/90 px-3 py-1.5 text-xs font-semibold text-[#1e3a8a]">Read More →</span>
-              </div>
-              <div class="p-6">
-                <h3 class="text-lg font-semibold text-[#0f172a]">Connected Integrations</h3>
-                <p class="mt-2 text-sm text-slate-600">Connect payments, CRM, KYC, ERP, and internal apps through secure integration patterns.</p>
-              </div>
-            </article>
-            <article class="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl" data-reveal data-reveal-delay="180">
-              <div class="relative h-44 overflow-hidden bg-[#eef2ff]">
-                <img src="image/Payment_Collection.png" alt="Payments Acceleration" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" loading="lazy" />
-                <span class="absolute bottom-3 left-3 rounded-xl border border-[#bfdbfe] bg-white/90 px-3 py-1.5 text-xs font-semibold text-[#1e3a8a]">Read More →</span>
-              </div>
-              <div class="p-6">
-                <h3 class="text-lg font-semibold text-[#0f172a]">Payments Acceleration</h3>
-                <p class="mt-2 text-sm text-slate-600">Build faster checkout, collections, and payout experiences with multi-channel orchestration.</p>
-              </div>
-            </article>
-            <article class="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl" data-reveal data-reveal-delay="220">
-              <div class="relative h-44 overflow-hidden bg-[#eef2ff]">
-                <img src="image/Verification.png" alt="Security and Compliance" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" loading="lazy" />
-                <span class="absolute bottom-3 left-3 rounded-xl border border-[#bfdbfe] bg-white/90 px-3 py-1.5 text-xs font-semibold text-[#1e3a8a]">Read More →</span>
-              </div>
-              <div class="p-6">
-                <h3 class="text-lg font-semibold text-[#0f172a]">Security &amp; Compliance</h3>
-                <p class="mt-2 text-sm text-slate-600">Protect data with secure controls, audit trails, and compliance-ready access management.</p>
-              </div>
+            <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+              <div class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[#eff6ff] text-[#6B30DD]">💬</div>
+              <h3 class="mt-4 text-base font-semibold text-[#0f172a]">Customer communication is too slow</h3>
+              <p class="mt-2 text-sm text-slate-600">Trigger alerts, reminders, and support flows from one API.</p>
+              <div class="mt-4 inline-flex rounded-full border border-[#6B30DD]/25 bg-[#f5f3ff] px-3 py-1 text-xs font-semibold text-[#6B30DD]">WhatsApp Solution</div>
             </article>
           </div>
         </div>
@@ -543,7 +533,7 @@
           <div class="stats-number mt-5 text-4xl sm:text-5xl font-extrabold tracking-tight text-[#0f172a]">
             <span data-countup data-to="50" data-suffix="+">0</span>
           </div>
-          <div class="mt-2 text-sm font-medium text-[#334155]">Clients</div>
+          <div class="mt-2 text-sm font-medium text-[#334155]">50+ Clients</div>
           <div class="mt-3 h-px w-12 mx-auto bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] opacity-40 group-hover:opacity-70 transition"></div>
         </div>
 
@@ -557,7 +547,7 @@
           <div class="stats-number mt-5 text-4xl sm:text-5xl font-extrabold tracking-tight text-[#0f172a]">
             <span data-countup data-to="1" data-suffix="M+">0</span>
           </div>
-          <div class="mt-2 text-sm font-medium text-[#334155]">Transactions Processed</div>
+          <div class="mt-2 text-sm font-medium text-[#334155]">1M+ Transactions</div>
           <div class="mt-3 h-px w-12 mx-auto bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] opacity-40 group-hover:opacity-70 transition"></div>
         </div>
 
@@ -572,7 +562,7 @@
           <div class="stats-number mt-5 text-4xl sm:text-5xl font-extrabold tracking-tight text-[#0f172a]">
             <span>Secure</span>
           </div>
-          <div class="mt-2 text-sm font-medium text-[#334155]">API Infra</div>
+          <div class="mt-2 text-sm font-medium text-[#334155]">Secure API Infra</div>
           <div class="mt-3 h-px w-12 mx-auto bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] opacity-40 group-hover:opacity-70 transition"></div>
         </div>
 
@@ -584,58 +574,23 @@
             </svg>
           </div>
           <div class="stats-number mt-5 text-4xl sm:text-5xl font-extrabold tracking-tight text-[#0f172a]">
-            <span data-countup data-to="99" data-suffix=".99%">0</span>
+            <span data-countup data-to="99" data-suffix=".9%">0</span>
           </div>
-          <div class="mt-2 text-sm font-medium text-[#334155]">Platform Uptime</div>
+          <div class="mt-2 text-sm font-medium text-[#334155]">99.9% Uptime</div>
           <div class="mt-3 h-px w-12 mx-auto bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] opacity-40 group-hover:opacity-70 transition"></div>
         </div>
       </div>
     </div>
   </section>
-      <!-- Safe & Smart Products -->
+      <!-- Products / Services catalog imported from new.html -->
       <section id="products" class="py-20 lg:py-24 bg-[#f8fafc]" data-order="3">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8 lg:p-10">
+          <div class="p-0">
             <div data-reveal>
-              <div class="text-sm font-semibold text-[#2563EB]">What We Offer</div>
-              <h2 class="mt-3 text-3xl font-semibold tracking-tight text-[#0f172a]">Services, solutions, and products in one clear offering stack</h2>
-              <p class="mt-3 max-w-2xl text-sm text-slate-600 leading-relaxed">
-                Scalable fintech and enterprise-grade platforms designed for performance, security, and growth.
-              </p>
+              <div class="text-sm font-semibold text-[#2563EB] text-center">Our Solutions &amp; Products</div>
+              <h2 class="mt-3 text-3xl font-semibold tracking-tight text-[#0f172a] text-center">All offerings in one place</h2>
             </div>
-
-            <div class="mt-8 flex flex-wrap gap-3" data-product-tabs>
-              <button class="smart-tab is-active rounded-xl px-4 py-2 text-sm font-semibold transition" data-p-tab="banking">🏦 Banking &amp; Finance</button>
-              <button class="smart-tab rounded-xl px-4 py-2 text-sm font-semibold transition" data-p-tab="enterprise">🏢 Enterprise Tools</button>
-              <button class="smart-tab rounded-xl px-4 py-2 text-sm font-semibold transition" data-p-tab="platforms">🌐 Platforms &amp; Tools</button>
-              <button class="smart-tab rounded-xl px-4 py-2 text-sm font-semibold transition" data-p-tab="implementation">💻 Implementation &amp; Development</button>
-            </div>
-
-            <div class="mt-8 space-y-0">
-            <div data-p-panel="banking" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              <a href="core-banking-solutions.html" class="smart-card group rounded-2xl p-4 transition duration-300"><div class="smart-media"><img src="image/Connected.png" alt="Core Banking" loading="lazy"/><span class="smart-read">Read More →</span></div><h3 class="mt-4 text-lg font-semibold text-[#0f172a]">Core Banking</h3><p class="mt-2 text-sm text-slate-600">Secure core banking workflows with reliable transaction processing.</p></a>
-              <a href="products.html#smart-products" class="smart-card group rounded-2xl p-4 transition duration-300"><div class="smart-media"><img src="image/SECURITY_SECTION_ILLUSTRATION.png" alt="Core Insurance" loading="lazy"/><span class="smart-read">Read More →</span></div><h3 class="mt-4 text-lg font-semibold text-[#0f172a]">Core Insurance</h3><p class="mt-2 text-sm text-slate-600">Policy lifecycle and claims management on secure infrastructure.</p></a>
-              <a href="catalog.html" class="smart-card group rounded-2xl p-4 transition duration-300"><div class="smart-media"><img src="image/Money_Transfer.png" alt="Lending" loading="lazy"/><span class="smart-read">Read More →</span></div><h3 class="mt-4 text-lg font-semibold text-[#0f172a]">Lending</h3><p class="mt-2 text-sm text-slate-600">Origination, servicing, and collections with full visibility.</p></a>
-            </div>
-
-            <div data-p-panel="enterprise" class="hidden grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              <a href="products.html#smart-products" class="smart-card group rounded-2xl p-4 transition duration-300"><div class="smart-media"><img src="image/ERP.png" alt="ERP" loading="lazy"/><span class="smart-read">Read More →</span></div><h3 class="mt-4 text-lg font-semibold text-[#0f172a]">ERP</h3><p class="mt-2 text-sm text-slate-600">Unify operations and finance with role-based workflows.</p></a>
-              <a href="products.html#smart-products" class="smart-card group rounded-2xl p-4 transition duration-300"><div class="smart-media"><img src="image/DASHBOARDIMAGE.png" alt="CRM" loading="lazy"/><span class="smart-read">Read More →</span></div><h3 class="mt-4 text-lg font-semibold text-[#0f172a]">CRM</h3><p class="mt-2 text-sm text-slate-600">Track leads, automate outreach, and improve conversion quality.</p></a>
-              <a href="products.html#smart-products" class="smart-card group rounded-2xl p-4 transition duration-300"><div class="smart-media"><img src="image/Document Vault  DMS.png" alt="DMS" loading="lazy"/><span class="smart-read">Read More →</span></div><h3 class="mt-4 text-lg font-semibold text-[#0f172a]">DMS</h3><p class="mt-2 text-sm text-slate-600">Secure document lifecycle management with fast retrieval controls.</p></a>
-            </div>
-
-            <div data-p-panel="platforms" class="hidden grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              <a href="products.html#smart-products" class="smart-card group rounded-2xl p-4 transition duration-300"><div class="smart-media"><img src="image/E-commerce Catalog  Store.png" alt="E-Auction" loading="lazy"/><span class="smart-read">Read More →</span></div><h3 class="mt-4 text-lg font-semibold text-[#0f172a]">E-Auction</h3><p class="mt-2 text-sm text-slate-600">Transparent online auction workflows with live bidding controls.</p></a>
-              <a href="products.html#smart-products" class="smart-card group rounded-2xl p-4 transition duration-300"><div class="smart-media"><img src="image/Storefront UI  Template.png" alt="B2B and Sales App" loading="lazy"/><span class="smart-read">Read More →</span></div><h3 class="mt-4 text-lg font-semibold text-[#0f172a]">B2B &amp; Sales App</h3><p class="mt-2 text-sm text-slate-600">Sales enablement and order lifecycle tools for partner networks.</p></a>
-              <a href="products.html#smart-products" class="smart-card group rounded-2xl p-4 transition duration-300"><div class="smart-media"><img src="image/Analytics Dashboard.png" alt="E-Governance" loading="lazy"/><span class="smart-read">Read More →</span></div><h3 class="mt-4 text-lg font-semibold text-[#0f172a]">E-Governance</h3><p class="mt-2 text-sm text-slate-600">Digital service delivery stack for citizen-focused operations.</p></a>
-            </div>
-
-            <div data-p-panel="implementation" class="hidden grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              <a href="services.html#it" class="smart-card group rounded-2xl p-4 transition duration-300"><div class="smart-media"><img src="image/MOBILE_APP_SCREEN.png" alt="Website Development" loading="lazy"/><span class="smart-read">Read More →</span></div><h3 class="mt-4 text-lg font-semibold text-[#0f172a]">Website Development</h3><p class="mt-2 text-sm text-slate-600">Modern websites focused on speed, UX, and conversion outcomes.</p></a>
-              <a href="services.html#it" class="smart-card group rounded-2xl p-4 transition duration-300"><div class="smart-media"><img src="image/API Gateway.png" alt="Software Development" loading="lazy"/><span class="smart-read">Read More →</span></div><h3 class="mt-4 text-lg font-semibold text-[#0f172a]">Software Development</h3><p class="mt-2 text-sm text-slate-600">Custom product engineering, APIs, and scalable backend systems.</p></a>
-              <a href="catalog.html" class="smart-card group rounded-2xl p-4 transition duration-300"><div class="smart-media"><img src="image/Payment_Collection.png" alt="Implementation Support" loading="lazy"/><span class="smart-read">Read More →</span></div><h3 class="mt-4 text-lg font-semibold text-[#0f172a]">Implementation Support</h3><p class="mt-2 text-sm text-slate-600">Deployment, integration, and rollout support for faster go-live.</p></a>
-            </div>
-          </div>
+            <div id="idx-stack" class="mt-6 grid gap-5"></div>
           </div>
         </div>
       </section>
@@ -894,13 +849,13 @@
           <div class="glass relative overflow-hidden rounded-3xl p-8 sm:p-10 border border-slate-200">
             <div class="grid gap-8 lg:grid-cols-12" data-reveal>
               <div class="lg:col-span-7">
-                <div class="text-sm font-semibold text-[#2563EB]">Ready to Build Your Next Digital Product?</div>
-                <h2 class="mt-3 text-3xl font-semibold tracking-tight text-[#0f172a]">Let's create something amazing together.</h2>
+                <div class="text-sm font-semibold text-[#2563EB]">Final CTA</div>
+                <h2 class="mt-3 text-3xl font-semibold tracking-tight text-[#0f172a]">Start Your Fintech Journey Today</h2>
                 <p class="mt-3 max-w-2xl text-sm text-slate-600 leading-relaxed">
                   Share your goals and we will turn your idea into a secure, scalable, production-ready digital platform.
                 </p>
                 <div class="mt-7 flex flex-col gap-3 sm:flex-row">
-                  <a href="contact.html" class="btn-cyan rounded-2xl px-6 py-3 text-center text-sm font-semibold transition focus-ring">Start Your Project</a>
+                  <a href="contact.html" class="btn-cyan rounded-2xl px-6 py-3 text-center text-sm font-semibold transition focus-ring">Get Started</a>
                   <a href="catalog.html" class="btn-secondary rounded-2xl px-6 py-3 text-center text-sm font-semibold text-[#0f172a] transition focus-ring">View Solutions</a>
                 </div>
               </div>
@@ -932,6 +887,62 @@
     <div id="site-footer"></div>
 
     <script src="assets/js/components.js"></script>
+    <script>
+      (() => {
+        const mount = () => {
+          const root = document.getElementById("idx-stack");
+          if (!root) return;
+          const hrefMap = {
+            "Connected Banking": "connected-banking.html",
+            "Utility Payments": "utility-payments.html",
+            "Instant Payouts": "instant-payouts.html",
+            "Travel Booking": "travel-booking.html",
+            "UPI Collection": "upi-collection.html",
+            "Micro ATM": "micro-atm.html",
+            "Aadhaar Banking": "aadhaar-banking.html",
+            "Core Banking": "core-banking.html",
+            "Verification APIs": "verification-apis.html",
+            "PAN Card": "pan-card.html",
+            "WhatsApp Solution": "whatsapp-solution.html",
+            "eAudit": "eaudit.html",
+            "Insurance": "insurance.html",
+            "Investment": "investment.html",
+            "Recharge": "recharge.html",
+            "Lending": "lending.html",
+            "Core Insurance": "core-insurance.html",
+            "Website Development": "website-development.html",
+            "Software Development": "software-development.html",
+            "ERP": "erp.html",
+            "CRM": "crm.html",
+            "DMS": "dms.html",
+            "PMS": "pms.html",
+            "HPMS": "hpms.html",
+            "E-Auction": "e-auction.html",
+            "B2B & Sales App": "b2b-sales-app.html",
+            "E-Governance": "e-governance.html",
+          };
+          const hrefFor = (name) => hrefMap[name] || "catalog.html";
+          const imageMap = {
+            "Connected Banking":"image/Connected.png","Utility Payments":"image/Utility_Payments.png","Instant Payouts":"image/Instant.png","Travel Booking":"image/MOBILE_APP_SCREEN.png","UPI Collection":"image/Payment_Collection.png","Micro ATM":"image/ATM.png","Aadhaar Banking":"image/Aadhaar.png","Verification APIs":"image/Verification.png","PAN Card":"image/pan-card-services.png","Insurance":"image/SECURITY_SECTION_ILLUSTRATION.png","Investment":"image/Analytics Dashboard.png","Recharge":"image/Utility.png","Lending":"image/Money_Transfer.png","Website Development":"image/MOBILE_APP_SCREEN.png","Software Development":"image/API Gateway.png","Core Banking":"image/Connected.png","HPMS":"image/API Gateway.png","PMS":"image/Analytics Dashboard.png","Core Insurance":"image/SECURITY_SECTION_ILLUSTRATION.png","E-Auction":"image/E-commerce Catalog  Store.png","B2B & Sales App":"image/Storefront UI  Template.png","ERP":"image/ERP.png","CRM":"image/DASHBOARDIMAGE.png","E-Governance":"image/Analytics Dashboard.png","DMS":"image/Document Vault  DMS.png","eAudit":"image/Compliance  Audit.png","WhatsApp Solution":"image/Storefront UI  Template.png"
+          };
+          const sections = [
+            { title: "Fintech & Banking", items: [["Connected Banking","Unified multi-account view with secure controls.","🏦"],["Utility Payments","Bulk utility bill operations with reconciliation.","💡"],["Instant Payouts","Realtime disbursals with transaction tracking.","⚡"],["Travel Booking","Integrated travel booking with payment support.","✈️"],["UPI Collection","Collect payments through UPI links and QR flows.","📲"],["Micro ATM","AEPS-enabled field withdrawals and banking access.","🏧"],["Aadhaar Banking","Biometric banking transactions with compliance.","🆔"],["Core Banking","Core ledger and account lifecycle platform.","🧾"]] },
+            { title: "APIs & Verification", items: [["Verification APIs","KYC and verification APIs for faster onboarding.","🔐"],["PAN Card","Fast PAN validation and verification workflows.","🪪"],["WhatsApp Solution","Automated customer communication APIs.","💬"],["eAudit","Audit trails and evidence-ready reporting.","✅"]] },
+            { title: "Financial Services", items: [["Insurance","Digital policy lifecycle and claims support.","🛡️"],["Investment","Portfolio insights and advisory workflows.","📈"],["Recharge","High-volume recharge with live status.","📡"],["Lending","Origination, underwriting, and collections stack.","💳"],["Core Insurance","Insurance operations backbone platform.","📋"]] },
+            { title: "Software & Platforms", items: [["Website Development","High-performance websites for conversion.","🌐"],["Software Development","Custom product engineering services.","💻"],["ERP","Enterprise planning and workflow platform.","🧠"],["CRM","Customer lifecycle and sales pipeline tools.","👥"],["DMS","Document lifecycle and compliance controls.","📁"],["PMS","Process and project workflow platform.","🗂️"],["HPMS","Hospitality/property management system.","🏨"],["E-Auction","Digital bidding and auction lifecycle tools.","⚖️"],["B2B & Sales App","Distributor and sales-force automation.","🛍️"],["E-Governance","Citizen-facing digital service modules.","🏛️"]] }
+          ];
+          root.innerHTML = sections.map(sec => `
+            <section class="idx-cat" data-reveal>
+              <div class="idx-cat-title">${sec.title}</div>
+              <div class="idx-grid">
+                ${sec.items.map(([n,d,i]) => `<a href="${hrefFor(n)}" class="idx-card block h-full"><div class="idx-media"><img src="${imageMap[n] || "image/DASHBOARDIMAGE.png"}" alt="${n}" loading="lazy" onerror="this.src='image/DASHBOARDIMAGE.png'"/><span class="idx-hover">Explore →</span></div><div class="idx-icon">${i}</div><h3 class="idx-name">${n}</h3><p class="idx-desc">${d}</p></a>`).join("")}
+              </div>
+            </section>
+          `).join("");
+        };
+        if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", mount); else mount();
+      })();
+    </script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/slider.js"></script>
   </body>

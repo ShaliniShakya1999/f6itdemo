@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Solutions & Products</title>
+    <style>
+      :root {
+        --bg: #f8fafc;
+        --panel: #ffffff;
+        --text: #0f172a;
+        --muted: #64748b;
+        --stroke: #e2e8f0;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: Inter, Segoe UI, Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+      }
+      .wrap { max-width: 1200px; margin: 56px auto; padding: 0 20px; }
+      .head {
+        border: 1px solid var(--stroke);
+        border-radius: 20px;
+        background: #ffffff;
+        padding: 24px;
+      }
+      h2 { margin: 0; font-size: 34px; letter-spacing: -.02em; }
+      .sub { margin: 10px 0 0; color: var(--muted); max-width: 760px; }
+      .stack { margin-top: 20px; display: grid; gap: 20px; }
+      .cat {
+        border: 1px solid var(--stroke);
+        border-radius: 18px;
+        background: #ffffff;
+        padding: 18px;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity .4s ease, transform .4s ease;
+      }
+      .cat.is-visible { opacity: 1; transform: translateY(0); }
+      .cat-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+      .cat-title { font-size: 20px; font-weight: 700; }
+      .link-more {
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 700;
+        color: #475569;
+      }
+      .link-more:hover { color: #2563eb; }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+      @media (min-width: 1180px) { .grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+      @media (max-width: 860px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+      @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+      .card {
+        border: 1px solid var(--stroke);
+        border-radius: 14px;
+        background: #ffffff;
+        padding: 12px;
+        transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+      }
+      .card:hover {
+        transform: translateY(-4px);
+        border-color: #cbd5e1;
+        box-shadow: 0 12px 24px rgba(15,23,42,.10);
+      }
+      .media {
+        position: relative;
+        height: 120px;
+        border-radius: 10px;
+        overflow: hidden;
+        background: #1e293b;
+      }
+      .media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform .35s ease;
+      }
+      .card:hover .media img { transform: scale(1.08); }
+      .media::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(15,23,42,.25), rgba(15,23,42,.02));
+      }
+      .hover-cta {
+        position: absolute;
+        left: 8px;
+        bottom: 8px;
+        z-index: 2;
+        font-size: 11px;
+        font-weight: 700;
+        border: 1px solid #cbd5e1;
+        background: rgba(255,255,255,.95);
+        color: #0f172a;
+        border-radius: 999px;
+        padding: 5px 9px;
+        opacity: 0;
+        transform: translateY(8px);
+        transition: .22s ease;
+      }
+      .card:hover .hover-cta { opacity: 1; transform: translateY(0); }
+      .icon {
+        width: 34px; height: 34px; margin-top: 10px;
+        border-radius: 10px; display: grid; place-items: center;
+        border: 1px solid #dbeafe;
+        background: #eff6ff;
+        color: #2563eb;
+      }
+      .name { margin: 10px 0 5px; font-weight: 700; font-size: 15px; }
+      .desc { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.45; }
+      .cta {
+        margin-top: 24px;
+        border: 1px solid var(--stroke);
+        border-radius: 14px;
+        background: #ffffff;
+        padding: 14px 16px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .cta p { margin: 0; color: #334155; font-size: 14px; }
+      .cta a {
+        text-decoration: none;
+        border: 1px solid #dbeafe;
+        color: #1d4ed8;
+        background: #eff6ff;
+        padding: 9px 14px;
+        border-radius: 10px;
+        font-weight: 700;
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="head">
+        <h2>Our Solutions &amp; Products</h2>
+        <p class="sub">Premium, structured overview of fintech services and platforms. Explore each category without clutter.</p>
+      </div>
+      <div class="stack" id="stack"></div>
+    </div>
+
+    <script>
+      const imageMap = {
+        "Connected Banking": "image/Connected.png",
+        "UPI Collection": "image/Payment_Collection.png",
+        "Instant Payouts": "image/Instant.png",
+        "Micro ATM": "image/ATM.png",
+        "Aadhaar Banking": "image/Aadhaar.png",
+        "Core Banking": "image/Connected.png",
+        "Recharge": "image/Utility.png",
+        "Travel Booking": "image/MOBILE_APP_SCREEN.png",
+        "Verification APIs": "image/Verification.png",
+        "PAN Card": "image/pan-card-services.png",
+        "WhatsApp Solution": "image/Storefront UI  Template.png",
+        "API Integration": "image/API Gateway.png",
+        "Utility Payments": "image/Utility_Payments.png",
+        "eAudit": "image/Compliance  Audit.png",
+        "Insurance": "image/SECURITY_SECTION_ILLUSTRATION.png",
+        "Investment": "image/Analytics Dashboard.png",
+        "Lending": "image/Money_Transfer.png",
+        "Core Insurance": "image/SECURITY_SECTION_ILLUSTRATION.png",
+        "Website Development": "image/MOBILE_APP_SCREEN.png",
+        "Software Development": "image/API Gateway.png",
+        "ERP": "image/ERP.png",
+        "CRM": "image/DASHBOARDIMAGE.png",
+        "DMS": "image/Document Vault  DMS.png",
+        "PMS": "image/Analytics Dashboard.png",
+        "HPMS": "image/API Gateway.png",
+        "E-Auction": "image/E-commerce Catalog  Store.png",
+        "B2B & Sales App": "image/Storefront UI  Template.png",
+        "E-Governance": "image/Analytics Dashboard.png"
+      };
+
+      const sections = [
+        {
+          title: "Fintech & Banking",
+          items: [
+            ["Connected Banking", "Unified multi-account view with secure controls.", "🏦"],
+            ["UPI Collection", "Collect payments via smart QR and UPI links.", "📲"],
+            ["Instant Payouts", "Realtime payouts with status and reconciliation.", "⚡"],
+            ["Micro ATM", "AEPS-enabled withdrawals and field banking access.", "🏧"],
+            ["Aadhaar Banking", "Biometric transaction workflows with compliance.", "🆔"],
+            ["Core Banking", "Core ledger and account lifecycle management.", "🧾"],
+            ["Recharge", "Recharge services with automated status tracking.", "🔋"],
+            ["Travel Booking", "Integrated travel booking with payment rails.", "✈️"]
+          ]
+        },
+        {
+          title: "APIs & Verification",
+          items: [
+            ["Verification APIs", "Plug-and-play KYC and verification endpoints.", "🔐"],
+            ["PAN Card", "Fast PAN validation and verification workflows.", "🪪"],
+            ["WhatsApp Solution", "Automated customer communication APIs.", "💬"],
+            ["API Integration", "Secure integration across tools and systems.", "🔗"],
+            ["Utility Payments", "API-first utility billing and reconciliation.", "💡"],
+            ["eAudit", "Audit trails and compliance-ready evidence logs.", "✅"]
+          ]
+        },
+        {
+          title: "Financial Services",
+          items: [
+            ["Insurance", "Digital insurance lifecycle and claims support.", "🛡️"],
+            ["Investment", "Portfolio insights and advisor workflows.", "📈"],
+            ["Lending", "Origination, underwriting, and collections stack.", "💳"],
+            ["Core Insurance", "Enterprise-grade insurance operations backbone.", "📋"],
+            ["Recharge", "High-volume recharge processing services.", "📡"],
+            ["Utility Payments", "Bulk bill operations for partners.", "🧾"]
+          ]
+        },
+        {
+          title: "Software & Platforms",
+          items: [
+            ["Website Development", "High-performance websites for conversion.", "🌐"],
+            ["Software Development", "Custom software product engineering.", "💻"],
+            ["ERP", "Enterprise planning and workflow management.", "🧠"],
+            ["CRM", "Sales pipeline and customer lifecycle platform.", "👥"],
+            ["DMS", "Document storage with governance and controls.", "📁"],
+            ["PMS", "Process and project workflow platform.", "🗂️"],
+            ["HPMS", "Hospitality/property management solution.", "🏨"],
+            ["E-Auction", "Digital bidding and auction lifecycle tools.", "⚖️"],
+            ["B2B & Sales App", "Distributor and sales-force automation.", "🛍️"],
+            ["E-Governance", "Citizen-facing digital service modules.", "🏛️"]
+          ]
+        }
+      ];
+
+      const stack = document.getElementById("stack");
+      sections.forEach((sec) => {
+        const node = document.createElement("section");
+        node.className = "cat";
+        node.innerHTML = `
+          <div class="cat-head">
+            <div class="cat-title">${sec.title}</div>
+            <a href="#" class="link-more">View All →</a>
+          </div>
+          <div class="grid"></div>
+        `;
+        const grid = node.querySelector(".grid");
+        sec.items.forEach((it, idx) => {
+          const [name, desc, icon] = it;
+          const src = imageMap[name] || "image/DASHBOARDIMAGE.png";
+          const card = document.createElement("article");
+          card.className = "card";
+          card.innerHTML = `
+            <div class="media">
+              <img src="${src}" alt="${name}" loading="lazy" onerror="this.src='image/DASHBOARDIMAGE.png'" />
+              <span class="hover-cta">Explore →</span>
+            </div>
+            <div class="icon">${icon}</div>
+            <h3 class="name">${name}</h3>
+            <p class="desc">${desc}</p>
+          `;
+          grid.appendChild(card);
+        });
+
+        stack.appendChild(node);
+      });
+
+      const cta = document.createElement("div");
+      cta.className = "cta";
+      cta.innerHTML = `
+        <p>Need custom integration? Contact us</p>
+        <a href="contact.html">Talk to Expert</a>
+      `;
+      stack.appendChild(cta);
+
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) e.target.classList.add("is-visible");
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll(".cat").forEach((c) => io.observe(c));
+    </script>
+  </body>
+</html>

@@ -8,46 +8,61 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <style>
+      .ab-card { border: 1px solid #e2e8f0; border-radius: 24px; background: #fff; transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease; }
+      .ab-card:hover { transform: translateY(-4px); border-color: rgba(107,48,221,.22); box-shadow: 0 18px 40px rgba(15,23,42,.08); }
+      .ab-chip { display:inline-flex; align-items:center; gap:8px; border:1px solid rgba(107,48,221,.16); background:#f5f3ff; color:#6B30DD; border-radius:999px; padding:6px 12px; font-size:11px; font-weight:700; }
+      .ab-stat { border:1px solid #e2e8f0; border-radius:20px; background:#fff; padding:22px; }
+    </style>
   </head>
   <body class="min-h-screen antialiased">
     <div id="site-header"></div>
 
     <main>
-      <section class="bg-gradient-to-br from-[#f8fafc] via-[#f1f5f9] to-[#e2e8f0] py-16 lg:py-20">
+      <section class="relative overflow-hidden bg-gradient-to-br from-[#eef7ff] via-[#f8fbff] to-white py-16 lg:py-20">
+        <div class="pointer-events-none absolute inset-0">
+          <div class="absolute -left-12 top-0 h-72 w-72 rounded-full bg-[#6B30DD]/10 blur-3xl"></div>
+          <div class="absolute right-0 top-6 h-72 w-72 rounded-full bg-[#3B82F6]/10 blur-3xl"></div>
+        </div>
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="grid gap-10 lg:grid-cols-12 lg:items-center">
             <div class="lg:col-span-7" data-reveal>
-              <div class="text-sm font-semibold text-[#2563EB]">About us</div>
+              <div class="text-sm font-semibold text-[#6B30DD]">About us</div>
               <h1 class="mt-3 text-4xl font-semibold tracking-tight text-[#0f172a] sm:text-5xl">
-                A modern IT partner for high‑trust industries
+                Building secure digital products for fintech and enterprise teams
               </h1>
               <p class="mt-5 max-w-2xl text-sm text-[#334155] sm:text-base leading-relaxed">
-                F6IT is a corporate IT and fintech solutions provider focused on secure platforms, reliable delivery,
-                and modern user experiences. We help teams move from legacy constraints to scalable systems.
+                F6IT is a technology partner focused on fintech, enterprise software, APIs, automation, and modern user experience. We help businesses move from fragmented systems to scalable platforms that are easier to launch, manage, and grow.
               </p>
+              <div class="mt-6 flex flex-wrap gap-3">
+                <span class="ab-chip">Secure delivery</span>
+                <span class="ab-chip">Modern UI</span>
+                <span class="ab-chip">Fintech expertise</span>
+                <span class="ab-chip">Enterprise systems</span>
+              </div>
               <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a href="services.html" class="btn-primary rounded-2xl px-6 py-3 text-center text-sm font-semibold text-white transition focus-ring">
+                <a href="services.html" class="rounded-2xl bg-[#6B30DD] px-6 py-3 text-center text-sm font-semibold text-white shadow-lg shadow-[#6B30DD]/15 transition hover:-translate-y-0.5 hover:bg-[#5926bc]">
                   What we do
                 </a>
-                <a href="contact.html" class="rounded-2xl border border-slate-200 bg-white px-6 py-3 text-center text-sm font-semibold text-[#0f172a] transition focus-ring hover:bg-[#f8fafc]">
+                <a href="contact.html" class="rounded-2xl border border-slate-200 bg-white px-6 py-3 text-center text-sm font-semibold text-[#0f172a] transition focus-ring hover:border-[#6B30DD]/25 hover:text-[#6B30DD]">
                   Talk to us
                 </a>
               </div>
             </div>
 
             <div class="lg:col-span-5" data-reveal data-reveal-delay="120">
-              <div class="glass rounded-3xl p-7 border border-slate-200/80 bg-white">
+              <div class="glass rounded-3xl p-7 border border-slate-200/80 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.08)]">
                 <div class="text-sm font-semibold text-[#0f172a]">What we stand for</div>
                 <div class="mt-5 grid gap-3">
-                  <div class="rounded-2xl border border-slate-200 bg-[#f8fafc] p-4">
+                  <div class="rounded-2xl border border-slate-200 bg-[#faf8ff] p-4">
                     <div class="text-sm font-semibold text-[#0f172a]">Clarity</div>
                     <div class="mt-1 text-xs text-[#334155]">Straightforward plans, transparent timelines, measurable outcomes.</div>
                   </div>
-                  <div class="rounded-2xl border border-slate-200 bg-[#f8fafc] p-4">
+                  <div class="rounded-2xl border border-slate-200 bg-[#faf8ff] p-4">
                     <div class="text-sm font-semibold text-[#0f172a]">Quality</div>
                     <div class="mt-1 text-xs text-[#334155]">Clean architecture, automated testing, and maintainable code.</div>
                   </div>
-                  <div class="rounded-2xl border border-slate-200 bg-[#f8fafc] p-4">
+                  <div class="rounded-2xl border border-slate-200 bg-[#faf8ff] p-4">
                     <div class="text-sm font-semibold text-[#0f172a]">Security</div>
                     <div class="mt-1 text-xs text-[#334155]">Security by design for regulated and high-trust environments.</div>
                   </div>
@@ -58,20 +73,46 @@
         </div>
       </section>
 
+      <section class="py-12 bg-white">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="grid gap-5 sm:grid-cols-2 xl:grid-cols-4" data-reveal>
+            <div class="ab-stat">
+              <div class="text-xs font-semibold tracking-[0.18em] text-[#64748b] uppercase">Focus</div>
+              <div class="mt-3 text-3xl font-semibold text-[#0f172a]">Fintech</div>
+              <div class="mt-2 text-sm text-[#334155]">Payments, banking flows, verification, and secure digital operations.</div>
+            </div>
+            <div class="ab-stat">
+              <div class="text-xs font-semibold tracking-[0.18em] text-[#64748b] uppercase">Delivery</div>
+              <div class="mt-3 text-3xl font-semibold text-[#0f172a]">End-to-End</div>
+              <div class="mt-2 text-sm text-[#334155]">Strategy, UX, engineering, integrations, deployment, and support.</div>
+            </div>
+            <div class="ab-stat">
+              <div class="text-xs font-semibold tracking-[0.18em] text-[#64748b] uppercase">Approach</div>
+              <div class="mt-3 text-3xl font-semibold text-[#0f172a]">User First</div>
+              <div class="mt-2 text-sm text-[#334155]">Premium interfaces designed to feel clear, fast, and trustworthy.</div>
+            </div>
+            <div class="ab-stat">
+              <div class="text-xs font-semibold tracking-[0.18em] text-[#64748b] uppercase">Goal</div>
+              <div class="mt-3 text-3xl font-semibold text-[#0f172a]">Scale Ready</div>
+              <div class="mt-2 text-sm text-[#334155]">Systems built for growth, governance, and long-term maintainability.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="py-16 bg-white">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="grid gap-10 lg:grid-cols-12">
             <div class="lg:col-span-5" data-reveal>
-              <div class="text-sm font-semibold text-[#2563EB]">Mission</div>
+              <div class="text-sm font-semibold text-[#6B30DD]">Mission</div>
               <h2 class="mt-3 text-3xl font-semibold tracking-tight text-[#0f172a]">Make complex systems simple to operate</h2>
               <p class="mt-4 text-sm text-[#334155]">
-                We help organizations ship reliable digital products with modern stacks, strong governance, and fast feedback loops.
-                Whether it’s a fintech product or an enterprise internal platform, we focus on operational excellence.
+                We help organizations launch reliable digital products with modern stacks, strong governance, and better user experience. Whether it is a fintech platform or an internal business system, our focus stays on clarity, speed, and operational excellence.
               </p>
             </div>
             <div class="lg:col-span-7" data-reveal data-reveal-delay="90">
               <div class="grid gap-5 sm:grid-cols-2">
-                <div class="glass rounded-3xl p-6 border border-slate-200/80 bg-white">
+                <div class="ab-card glass rounded-3xl p-6 border border-slate-200/80 bg-white">
                   <div class="text-sm font-semibold text-[#0f172a]">Our approach</div>
                   <ul class="mt-4 grid gap-3 text-sm text-[#334155]">
                     <li class="rounded-2xl border border-slate-200 bg-[#f8fafc] p-4"><span class="font-semibold text-[#0f172a]">Discover:</span> map systems, risks, and goals.</li>
@@ -80,7 +121,7 @@
                     <li class="rounded-2xl border border-slate-200 bg-[#f8fafc] p-4"><span class="font-semibold text-[#0f172a]">Operate:</span> monitor, support, improve continuously.</li>
                   </ul>
                 </div>
-                <div class="glass rounded-3xl p-6 border border-slate-200/80 bg-white">
+                <div class="ab-card glass rounded-3xl p-6 border border-slate-200/80 bg-white">
                   <div class="text-sm font-semibold text-[#0f172a]">Core capabilities</div>
                   <div class="mt-4 grid gap-3">
                     <div class="rounded-2xl border border-slate-200 bg-[#f8fafc] px-4 py-3">
@@ -110,75 +151,78 @@
       <section id="story" class="py-16 bg-[#f8fafc]">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div data-reveal>
-            <div class="text-sm font-semibold text-[#2563EB]">Our story</div>
-            <h2 class="mt-3 text-3xl font-semibold tracking-tight text-[#0f172a]">A simple, scalable delivery timeline</h2>
+            <div class="text-sm font-semibold text-[#6B30DD]">Our story</div>
+            <h2 class="mt-3 text-3xl font-semibold tracking-tight text-[#0f172a]">How F6IT has grown with modern digital delivery</h2>
             <p class="mt-3 max-w-2xl text-sm text-[#334155]">
-              This is a placeholder journey—replace years, milestones, and achievements with your real history.
+              Our growth has been driven by practical delivery, stronger product thinking, and a focus on secure, scalable systems.
             </p>
           </div>
 
           <div class="mt-10 grid gap-5 lg:grid-cols-12">
-            <div class="glass rounded-3xl p-7 lg:col-span-7 border border-slate-200/80 bg-white" data-reveal data-reveal-delay="80">
+            <div class="ab-card glass rounded-3xl p-7 lg:col-span-7 border border-slate-200/80 bg-white" data-reveal data-reveal-delay="80">
               <div class="space-y-4">
                 <div class="rounded-2xl border border-slate-200 bg-[#f8fafc] p-5">
                   <div class="flex items-center justify-between">
-                    <div class="text-sm font-semibold text-[#0f172a]">2018 — Founded</div>
-                    <div class="text-xs text-[#64748b]">Milestone</div>
+                    <div class="text-sm font-semibold text-[#0f172a]">Foundation phase</div>
+                    <div class="text-xs text-[#64748b]">Start</div>
                   </div>
-                  <div class="mt-2 text-sm text-[#334155]">Started delivering secure enterprise applications and fintech integrations.</div>
+                  <div class="mt-2 text-sm text-[#334155]">We began by supporting businesses with dependable software delivery, enterprise systems, and practical digital execution.</div>
                 </div>
                 <div class="rounded-2xl border border-slate-200 bg-[#f8fafc] p-5">
                   <div class="flex items-center justify-between">
-                    <div class="text-sm font-semibold text-[#0f172a]">2021 — Cloud expansion</div>
-                    <div class="text-xs text-[#64748b]">Milestone</div>
+                    <div class="text-sm font-semibold text-[#0f172a]">Expansion into connected systems</div>
+                    <div class="text-xs text-[#64748b]">Growth</div>
                   </div>
-                  <div class="mt-2 text-sm text-[#334155]">Built reusable cloud templates, CI/CD pipelines, and SRE practices.</div>
+                  <div class="mt-2 text-sm text-[#334155]">As client needs evolved, we expanded into APIs, cloud workflows, fintech integrations, and modern platform engineering.</div>
                 </div>
                 <div class="rounded-2xl border border-slate-200 bg-[#f8fafc] p-5">
                   <div class="flex items-center justify-between">
-                    <div class="text-sm font-semibold text-[#0f172a]">2024 — Productized solutions</div>
-                    <div class="text-xs text-[#64748b]">Milestone</div>
+                    <div class="text-sm font-semibold text-[#0f172a]">Product-led delivery</div>
+                    <div class="text-xs text-[#64748b]">Today</div>
                   </div>
-                  <div class="mt-2 text-sm text-[#334155]">Delivered packaged offerings for onboarding, analytics, and secure platforms.</div>
+                  <div class="mt-2 text-sm text-[#334155]">Today, we combine service expertise with productized offerings that help businesses launch faster with better UI, stronger trust, and easier operations.</div>
                 </div>
               </div>
             </div>
 
-            <div class="glass rounded-3xl p-7 lg:col-span-5 border border-slate-200/80 bg-white" data-reveal data-reveal-delay="120">
-              <div class="text-sm font-semibold text-[#0f172a]">Leadership (placeholder)</div>
+            <div class="ab-card glass rounded-3xl p-7 lg:col-span-5 border border-slate-200/80 bg-white" data-reveal data-reveal-delay="120">
+              <div class="text-sm font-semibold text-[#0f172a]">What makes us different</div>
               <div class="mt-5 grid gap-4">
                 <div class="rounded-2xl border border-slate-200 bg-[#f8fafc] p-5">
                   <div class="flex items-center gap-3">
-                    <div class="h-11 w-11 rounded-2xl bg-gradient-to-br from-blue-500/70 to-cyan-400/60"></div>
+                    <div class="h-11 w-11 rounded-2xl bg-gradient-to-br from-[#6B30DD]/70 to-[#8b5cf6]/50"></div>
                     <div>
-                      <div class="text-sm font-semibold text-[#0f172a]">Delivery Director</div>
-                      <div class="text-xs text-[#64748b]">Enterprise programs</div>
+                      <div class="text-sm font-semibold text-[#0f172a]">Business + technology mindset</div>
+                      <div class="text-xs text-[#64748b]">Solutions designed around real business workflows</div>
                     </div>
                   </div>
                 </div>
                 <div class="rounded-2xl border border-slate-200 bg-[#f8fafc] p-5">
                   <div class="flex items-center gap-3">
-                    <div class="h-11 w-11 rounded-2xl bg-gradient-to-br from-cyan-400/60 to-indigo-400/60"></div>
+                    <div class="h-11 w-11 rounded-2xl bg-gradient-to-br from-[#3B82F6]/70 to-[#6B30DD]/55"></div>
                     <div>
-                      <div class="text-sm font-semibold text-[#0f172a]">Security Lead</div>
-                      <div class="text-xs text-[#64748b]">Secure SDLC</div>
+                      <div class="text-sm font-semibold text-[#0f172a]">Secure by design</div>
+                      <div class="text-xs text-[#64748b]">Governance, reliability, and safer implementation patterns</div>
                     </div>
                   </div>
                 </div>
                 <div class="rounded-2xl border border-slate-200 bg-[#f8fafc] p-5">
                   <div class="flex items-center gap-3">
-                    <div class="h-11 w-11 rounded-2xl bg-gradient-to-br from-blue-500/70 to-indigo-400/60"></div>
+                    <div class="h-11 w-11 rounded-2xl bg-gradient-to-br from-[#6B30DD]/75 to-[#3B82F6]/50"></div>
                     <div>
-                      <div class="text-sm font-semibold text-[#0f172a]">Product & UX</div>
-                      <div class="text-xs text-[#64748b]">Modern UI</div>
+                      <div class="text-sm font-semibold text-[#0f172a]">Premium product experience</div>
+                      <div class="text-xs text-[#64748b]">Modern UI that feels clean, trustworthy, and user friendly</div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="mt-6 rounded-2xl border border-slate-200 bg-[#f8fafc] p-5">
-                <div class="text-sm font-semibold text-[#0f172a]">Looking for talent?</div>
-                <div class="mt-1 text-xs text-[#64748b]">Explore open roles and join our modern delivery culture.</div>
-                <a href="careers.html" class="mt-4 inline-flex rounded-2xl border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-[#0f172a] transition focus-ring hover:bg-[#f8fafc]">View careers</a>
+              <div class="mt-6 rounded-2xl border border-slate-200 bg-[#faf8ff] p-5">
+                <div class="text-sm font-semibold text-[#0f172a]">Want to build with us?</div>
+                <div class="mt-1 text-xs text-[#64748b]">See our services, explore offerings, or connect with our team for your next project.</div>
+                <div class="mt-4 flex flex-wrap gap-3">
+                  <a href="services.html" class="inline-flex rounded-2xl bg-[#6B30DD] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#5926bc]">Explore services</a>
+                  <a href="products.html" class="inline-flex rounded-2xl border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-[#0f172a] transition hover:border-[#6B30DD]/25 hover:text-[#6B30DD]">View offerings</a>
+                </div>
               </div>
             </div>
           </div>

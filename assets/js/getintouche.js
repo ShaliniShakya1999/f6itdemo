@@ -31,10 +31,10 @@
     "Queue Management",
     "Forex & Treasury Banking",
     "ATM Solutions",
-    "Loan Originating System",
-    "Risk Base Internal Management",
+    "Loan Origination System",
+    "Risk-Based Internal Management",
     "Debt Collection Management",
-    "E-serve",
+    "E-Serve",
     "MyOffice",
     "HRMS",
     "CRM",
@@ -54,20 +54,20 @@
     "Project Management System",
     "Business Intelligence",
     "MIS",
-    "Taxi Management",
+    "Taxi Management System",
   ];
 
   const services = [
-    "BlockChain",
+    "Blockchain",
     "Augmented Reality",
     "IT Auditing & ISO Auditing",
     "Open Source Solutions",
     "Artificial Intelligence",
     "Machine Learning",
     "Business Leadership Acceleration Program",
-    "MS Dynamic",
+    "Microsoft Dynamics",
     "Strategy & Architecture",
-    "Internet Of Things",
+    "Internet of Things",
     "Virtual Reality",
     "IT Infrastructure",
     "Cyber Insurance & Cyber Security",
@@ -83,7 +83,7 @@
     "Web & Mobile App Development",
     "SAP",
     "Digital Transformation",
-    "Enterprises Process & Application",
+    "Enterprise Process & Applications",
   ];
 
   function renderCheckboxes(list, namePrefix, containerId) {

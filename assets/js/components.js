@@ -71,7 +71,37 @@
   ];
 
   const productsBaseHref = "products.html";
+  const offeringPages = {
+    "Connected Banking": "connected-banking.html",
+    "Utility Payments": "utility-payments.html",
+    "Instant Payouts": "instant-payouts.html",
+    "Travel Booking": "travel-booking.html",
+    "UPI Collection": "upi-collection.html",
+    "Micro ATM": "micro-atm.html",
+    "Aadhaar Banking": "aadhaar-banking.html",
+    "Core Banking": "core-banking.html",
+    "Verification APIs": "verification-apis.html",
+    "PAN Card": "pan-card.html",
+    "WhatsApp Solution": "whatsapp-solution.html",
+    "eAudit": "eaudit.html",
+    "Insurance": "insurance.html",
+    "Investment": "investment.html",
+    "Recharge": "recharge.html",
+    "Lending": "lending.html",
+    "Core Insurance": "core-insurance.html",
+    "Website Development": "website-development.html",
+    "Software Development": "software-development.html",
+    "ERP": "erp.html",
+    "CRM": "crm.html",
+    "DMS": "dms.html",
+    "PMS": "pms.html",
+    "HPMS": "hpms.html",
+    "E-Auction": "e-auction.html",
+    "B2B & Sales App": "b2b-sales-app.html",
+    "E-Governance": "e-governance.html",
+  };
   function productHref(slug) {
+    if (slug && offeringPages[slug]) return offeringPages[slug];
     return slug ? `${productsBaseHref}#${slug.toLowerCase().replace(/\s+/g, "-").replace(/\//g, "-")}` : productsBaseHref;
   }
 
@@ -480,77 +510,129 @@
 
   function renderFooter() {
     const year = new Date().getFullYear();
+    const footHeading =
+      "mb-4 inline-block text-[11px] font-bold uppercase tracking-[0.18em] text-white pb-2 border-b-2 border-[#6B30DD]";
+    const footLink = "text-sm text-slate-400 transition hover:text-white hover:translate-x-0.5 inline-block";
+    const iconCircle =
+      "flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-slate-800/90 text-slate-200 ring-1 ring-white/10";
+
     return `
-      <footer class="border-t border-slate-200 bg-white">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-          <div class="rounded-3xl border border-slate-200 bg-gradient-to-br from-white to-[#f8f5ff] p-7 shadow-sm sm:p-9">
-            <div class="grid gap-10 lg:grid-cols-12">
-              <div class="lg:col-span-4">
-                <div class="flex items-center gap-3">
-                  <span class="inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
-                    <img src="image/F6.png" alt="F6 logo" class="h-full w-full object-contain p-1" loading="lazy" />
-                  </span>
-                  <div class="leading-tight">
-                    <div class="text-sm font-semibold text-[#0f172a]">F6IT</div>
-                    <div class="text-xs text-slate-500">Fintech & IT Solutions</div>
-                  </div>
-                </div>
-                <p class="mt-5 text-sm text-slate-600 max-w-md leading-relaxed">
-                  We help organizations modernize with secure cloud platforms, digital transformation, and enterprise-grade software for regulated industries.
-                </p>
-                <div class="mt-6 flex gap-2.5">
-                  <a href="#" class="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-500 transition hover:border-[#6B30DD]/30 hover:bg-[#6B30DD]/6 hover:text-[#6B30DD]" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.28 2.37 4.28 5.45v6.29zM5.34 7.43c-1.14 0-2.06-.93-2.06-2.07 0-1.14.92-2.06 2.06-2.06 1.14 0 2.06.92 2.06 2.06 0 1.14-.92 2.07-2.06 2.07zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.78C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.78 24h20.44c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
-                  <a href="#" class="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-500 transition hover:border-[#6B30DD]/30 hover:bg-[#6B30DD]/6 hover:text-[#6B30DD]" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <footer class="relative border-t border-white/10 bg-[#050a14] text-slate-300">
+        <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(107,48,221,0.12),transparent)]" aria-hidden="true"></div>
+        <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
+          <div class="grid gap-12 lg:gap-10 lg:grid-cols-12">
+            <!-- Brand + contact -->
+            <div class="lg:col-span-4 space-y-6">
+              <div class="inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white px-3 py-2.5 shadow-lg shadow-black/20">
+                <span class="inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-lg">
+                  <img src="image/F6.png" alt="F6IT logo" class="h-full w-full object-contain" loading="lazy" />
+                </span>
+                <div class="leading-tight">
+                  <div class="text-sm font-bold tracking-tight text-[#0f172a]">F6IT</div>
+                  <div class="text-[11px] font-medium text-slate-500">Fintech &amp; IT Solutions</div>
                 </div>
               </div>
+              <p class="text-sm leading-relaxed text-slate-400 max-w-sm">
+                A technology-first platform for secure APIs, payments, banking automation, and enterprise software—built for teams that need speed without compromising compliance.
+              </p>
 
-              <div class="lg:col-span-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-                <div>
-                  <div class="text-sm font-semibold text-[#0f172a]">Company</div>
-                  <div class="mt-3 grid gap-2 text-sm">
-                    <a class="text-slate-600 hover:text-[#6B30DD]" href="about.html">About</a>
-                    <a class="text-slate-600 hover:text-[#6B30DD]" href="careers.html">Careers</a>
-                    <a class="text-slate-600 hover:text-[#6B30DD]" href="contact.html">Contact</a>
-                  </div>
-                </div>
-                <div>
-                  <div class="text-sm font-semibold text-[#0f172a]">Products</div>
-                  <div class="mt-3 grid gap-2 text-sm">
-                    <a class="text-slate-600 hover:text-[#6B30DD]" href="catalog.html">All products</a>
-                    <a class="text-slate-600 hover:text-[#6B30DD]" href="products.html#smart-products">Digital Banking</a>
-                    <a class="text-slate-600 hover:text-[#6B30DD]" href="products.html#smart-products">ERP Systems</a>
-                  </div>
-                </div>
-                <div>
-                  <div class="text-sm font-semibold text-[#0f172a]">Industries</div>
-                  <div class="mt-3 grid gap-2 text-sm">
-                    <a class="text-slate-600 hover:text-[#6B30DD]" href="services.html#banking">Banking</a>
-                    <a class="text-slate-600 hover:text-[#6B30DD]" href="catalog.html">Insurance</a>
-                    <a class="text-slate-600 hover:text-[#6B30DD]" href="services.html#cloud">Manufacturing</a>
-                  </div>
-                </div>
-                <div>
-                  <div class="text-sm font-semibold text-[#0f172a]">Resources</div>
-                  <div class="mt-3 grid gap-2 text-sm">
-                    <a class="text-slate-600 hover:text-[#6B30DD]" href="about.html#story">Insights</a>
-                    <a class="text-slate-600 hover:text-[#6B30DD]" href="contact.html">Support</a>
-                    <a class="text-slate-600 hover:text-[#6B30DD]" href="contact.html">Privacy</a>
-                    <a class="text-slate-600 hover:text-[#6B30DD]" href="contact.html">Terms</a>
-                  </div>
-                </div>
+              <div>
+                <div class="${footHeading}">Contact us</div>
+                <ul class="space-y-3.5">
+                  <li class="flex gap-3">
+                    <span class="${iconCircle}" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    </span>
+                    <a href="tel:+10000000000" class="text-sm text-slate-300 hover:text-white transition pt-1">+1 (000) 000‑0000</a>
+                  </li>
+                  <li class="flex gap-3">
+                    <span class="${iconCircle}" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="m22 6-10 7L2 6"/></svg>
+                    </span>
+                    <a href="mailto:hello@f6it.example" class="text-sm text-slate-300 hover:text-white transition pt-1 break-all">hello@f6it.example</a>
+                  </li>
+                  <li class="flex gap-3">
+                    <span class="${iconCircle}" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </span>
+                    <span class="text-sm text-slate-300 pt-0.5 leading-snug">Global delivery · Remote-first team</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="flex flex-wrap gap-2">
+                <a href="#" class="inline-flex h-9 w-9 items-center justify-center rounded-md bg-slate-800/90 text-slate-300 ring-1 ring-white/10 transition hover:bg-[#6B30DD] hover:text-white hover:ring-[#6B30DD]/50" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                <a href="#" class="inline-flex h-9 w-9 items-center justify-center rounded-md bg-slate-800/90 text-slate-300 ring-1 ring-white/10 transition hover:bg-[#6B30DD] hover:text-white hover:ring-[#6B30DD]/50" aria-label="X (Twitter)"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                <a href="#" class="inline-flex h-9 w-9 items-center justify-center rounded-md bg-slate-800/90 text-slate-300 ring-1 ring-white/10 transition hover:bg-[#6B30DD] hover:text-white hover:ring-[#6B30DD]/50" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.28 2.37 4.28 5.45v6.29zM5.34 7.43c-1.14 0-2.06-.93-2.06-2.07 0-1.14.92-2.06 2.06-2.06 1.14 0 2.06.92 2.06 2.06 0 1.14-.92 2.07-2.06 2.07zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+                <a href="#" class="inline-flex h-9 w-9 items-center justify-center rounded-md bg-slate-800/90 text-slate-300 ring-1 ring-white/10 transition hover:bg-[#6B30DD] hover:text-white hover:ring-[#6B30DD]/50" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                <a href="#" class="inline-flex h-9 w-9 items-center justify-center rounded-md bg-slate-800/90 text-slate-300 ring-1 ring-white/10 transition hover:bg-[#6B30DD] hover:text-white hover:ring-[#6B30DD]/50" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
               </div>
             </div>
 
-            <div class="mt-10 flex flex-col gap-3 border-t border-slate-200 pt-6 sm:flex-row sm:items-center sm:justify-between">
-              <div class="text-xs text-slate-500">© ${year} F6IT. All rights reserved.</div>
-              <div class="flex gap-6 text-xs">
-                <a class="text-slate-500 hover:text-[#6B30DD]" href="contact.html">Privacy</a>
-                <a class="text-slate-500 hover:text-[#6B30DD]" href="contact.html">Terms</a>
-                <a class="text-slate-500 hover:text-[#6B30DD]" href="contact.html">Security</a>
-              </div>
+            <!-- Company -->
+            <div class="lg:col-span-2">
+              <div class="${footHeading}">Company</div>
+              <nav class="grid gap-2.5" aria-label="Company">
+                <a class="${footLink}" href="about.html">About us</a>
+                <a class="${footLink}" href="careers.html">Careers</a>
+                <a class="${footLink}" href="contact.html">FAQ</a>
+                <a class="${footLink}" href="contact.html">Privacy policy</a>
+                <a class="${footLink}" href="contact.html">Terms &amp; conditions</a>
+                <a class="${footLink}" href="contact.html">Refund policy</a>
+                <a class="${footLink}" href="contact.html">Grievance redressal</a>
+                <a class="${footLink}" href="contact.html">Compliance</a>
+              </nav>
+            </div>
+
+            <!-- Products -->
+            <div class="lg:col-span-4">
+              <div class="${footHeading}">Products</div>
+              <nav class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2" aria-label="Products">
+                <a class="${footLink}" href="${productHref("Connected Banking")}">Connected Banking</a>
+                <a class="${footLink}" href="${productHref("Utility Payments")}">Utility Payments</a>
+                <a class="${footLink}" href="${productHref("UPI Collection")}">UPI Collection</a>
+                <a class="${footLink}" href="${productHref("Micro ATM")}">Micro ATM</a>
+                <a class="${footLink}" href="${productHref("Instant Payouts")}">Instant Payouts</a>
+                <a class="${footLink}" href="${productHref("Travel Booking")}">Travel Booking</a>
+                <a class="${footLink}" href="${productHref("Aadhaar Banking")}">Aadhaar Banking</a>
+                <a class="${footLink}" href="${productHref("Verification APIs")}">Verification APIs</a>
+                <a class="${footLink}" href="${productHref("PAN Card")}">PAN Card</a>
+                <a class="${footLink}" href="${productHref("Insurance")}">Insurance</a>
+                <a class="${footLink}" href="${productHref("Investment")}">Investment</a>
+                <a class="${footLink}" href="${productHref("Recharge")}">Recharge</a>
+              </nav>
+            </div>
+
+            <!-- Useful links -->
+            <div class="lg:col-span-2">
+              <div class="${footHeading}">Useful links</div>
+              <nav class="grid gap-2.5" aria-label="Useful">
+                <a class="${footLink}" href="index.html">Home</a>
+                <a class="${footLink}" href="catalog.html">Solutions</a>
+                <a class="${footLink}" href="contact.html">Pricing &amp; quotes</a>
+                <a class="${footLink}" href="contact.html">Support</a>
+                <a class="${footLink}" href="contact.html">Contact</a>
+                <a class="${footLink}" href="products.html">All products</a>
+              </nav>
+            </div>
+          </div>
+
+          <div class="mt-14 flex flex-col gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
+            <p class="text-xs text-slate-500">© ${year} F6IT. All rights reserved.</p>
+            <div class="flex flex-wrap gap-6 text-xs text-slate-500">
+              <a class="hover:text-[#6B30DD] transition" href="contact.html">Privacy</a>
+              <a class="hover:text-[#6B30DD] transition" href="contact.html">Terms</a>
+              <a class="hover:text-[#6B30DD] transition" href="contact.html">Security</a>
+              <a class="hover:text-[#6B30DD] transition" href="index.html#products">Sitemap</a>
             </div>
           </div>
         </div>
+
+        <a href="https://wa.me/911234567890" target="_blank" rel="noopener noreferrer"
+          class="fixed bottom-6 right-5 z-[60] flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-black/30 ring-2 ring-white/20 transition hover:scale-105 hover:shadow-xl focus-ring"
+          aria-label="Chat on WhatsApp">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
       </footer>
     `;
   }
