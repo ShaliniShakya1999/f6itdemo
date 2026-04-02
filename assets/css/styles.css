@@ -27,14 +27,11 @@ body {
 main section {
   background: var(--section);
 }
-/* Allow sections to fully control their own background (e.g., dark hero/stats) */
-main section[data-bg="custom"] {
-  background: transparent;
-}
-main section:nth-of-type(odd) {
+/* Keep alternating backgrounds only for normal sections */
+main section:nth-of-type(odd):not([data-bg="custom"]):not([class*="hero"]):not([class*="banner"]) {
   background: var(--section);
 }
-main section:nth-of-type(even) {
+main section:nth-of-type(even):not([data-bg="custom"]):not([class*="hero"]):not([class*="banner"]) {
   background: var(--bg);
 }
 

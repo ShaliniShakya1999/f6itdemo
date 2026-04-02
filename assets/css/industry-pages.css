@@ -1,0 +1,114 @@
+.ind-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 360px;
+  background-size: cover;
+  background-position: center;
+}
+
+.ind-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(88, 28, 214, 0.82), rgba(88, 28, 214, 0.70)),
+    linear-gradient(180deg, rgba(15,23,42,0.10), rgba(15,23,42,0.24));
+}
+
+.ind-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.10), transparent 52%);
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.ind-hero-content {
+  position: relative;
+  z-index: 1;
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.ind-hero-title {
+  color: #fff;
+  font-size: clamp(2.4rem, 4vw, 4.2rem);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  text-shadow: 0 8px 28px rgba(15, 23, 42, 0.30);
+}
+
+.ind-hero-subtitle {
+  margin-top: 1rem;
+  color: rgba(255,255,255,0.92);
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ind-hero-breadcrumb {
+  margin-top: 1.25rem;
+  color: rgba(255,255,255,0.88);
+  font-size: 0.95rem;
+}
+
+.ind-hero-breadcrumb a {
+  color: rgba(255,255,255,0.96);
+  transition: opacity 0.2s ease;
+}
+
+.ind-hero-breadcrumb a:hover {
+  opacity: 0.82;
+}
+
+.ind-hero-actions {
+  margin-top: 1.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.ind-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  background: #fff;
+  transition: transform .24s ease, box-shadow .24s ease, border-color .24s ease;
+}
+
+.ind-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(107, 48, 221, 0.22);
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
+}
+
+.ind-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(107,48,221,.16);
+  background: #f5f3ff;
+  color: #6B30DD;
+  border-radius: 999px;
+  padding: 9px 14px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .ind-hero,
+  .ind-hero-content {
+    min-height: 290px;
+  }
+
+  .ind-hero-title {
+    font-size: 2.2rem;
+  }
+}

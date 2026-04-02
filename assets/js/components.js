@@ -1,17 +1,13 @@
 (() => {
   const industries = [
-    { label: "Banking & Finance", href: "services.html#banking", icon: "bank" },
-    { label: "Insurance", href: "catalog.html", icon: "shield" },
-    { label: "Education", href: "services.html#it", icon: "graduation" },
-    { label: "Healthcare", href: "services.html#it", icon: "heart" },
-    { label: "E-Commerce", href: "catalog.html", icon: "cart" },
-    { label: "E-Governance", href: "products.html#smart-products", icon: "building" },
-    { label: "Retail", href: "catalog.html", icon: "store" },
-    { label: "Agriculture", href: "catalog.html", icon: "leaf" },
-    { label: "Real Estate", href: "catalog.html", icon: "building" },
-    { label: "Manufacturing", href: "services.html#cloud", icon: "factory" },
-    { label: "Oil & Gas", href: "services.html#cloud", icon: "factory" },
-    { label: "Mining", href: "services.html#cloud", icon: "factory" },
+    { label: "Banking & Finance", href: "banking-finance.html", icon: "bank" },
+    { label: "Insurance", href: "insurance-industry.html", icon: "shield" },
+    { label: "Education", href: "education-industry.html", icon: "graduation" },
+    { label: "Healthcare", href: "healthcare-industry.html", icon: "heart" },
+    { label: "E-Commerce", href: "ecommerce-industry.html", icon: "cart" },
+    { label: "E-Governance", href: "e-governance-industry.html", icon: "building" },
+    { label: "Retail", href: "retail-industry.html", icon: "store" },
+    { label: "Real Estate", href: "real-estate-industry.html", icon: "building" },
   ];
 
   const productCategories = [
@@ -21,14 +17,6 @@
       items: [
         "Core Banking Software", "Microfinance Solutions", "Forex Treasury Banking", "Wallet Solution",
         "Virtual Banking", "Switching Solution", "Agent Banking", "ATM Solutions", "USSD Banking",
-      ],
-    },
-    {
-      title: "MIS",
-      icon: "bar-chart",
-      items: [
-        "Business Intelligence", "Fund Management", "DSS", "Ratio Analysis / Budgeting",
-        "Performance Management", "Day End MIS",
       ],
     },
     {
@@ -72,6 +60,11 @@
 
   const productsBaseHref = "products.html";
   const offeringPages = {
+    "Digital Banking": "digital-banking.html",
+    "Core Insurance Solutions": "core-insurance-solutions.html",
+    "Regulatory Channels": "regulatory-channels.html",
+    "Operational Channels": "operational-channels.html",
+    "Stand-Alone Products": "stand-alone-products.html",
     "Connected Banking": "connected-banking.html",
     "Utility Payments": "utility-payments.html",
     "Instant Payouts": "instant-payouts.html",
@@ -136,6 +129,12 @@
       ],
     },
   ];
+
+  const servicePages = {
+    "Technology Service": "technology-service.html",
+    "Business Service": "business-service.html",
+    "Consulting Service": "consulting-service.html",
+  };
 
   const servicesBaseHref = "services.html";
   function serviceHref(label) {
@@ -238,7 +237,11 @@
           <div class="mega-col space-y-2.5 border-r border-slate-100 last:border-r-0 pr-4 last:pr-0">
             <div class="flex items-center gap-2 pb-2 border-b border-slate-100">
               ${getIcon(col.icon)}
-              <span class="text-sm font-bold text-slate-900">${col.title}</span>
+              ${
+                offeringPages[col.title]
+                  ? `<a href="${offeringPages[col.title]}" class="text-sm font-bold text-slate-900 transition hover:text-[#2563EB]">${col.title}</a>`
+                  : `<span class="text-sm font-bold text-slate-900">${col.title}</span>`
+              }
             </div>
             <ul class="space-y-0.5 pt-0.5">
               ${col.items
@@ -264,7 +267,11 @@
           <div class="space-y-3">
             <div class="flex items-center gap-2 pb-1 border-b border-slate-200">
               ${getIcon(col.icon)}
-              <span class="text-sm font-semibold text-[#0f172a]">${col.title}</span>
+              ${
+                servicePages[col.title]
+                  ? `<a href="${servicePages[col.title]}" class="text-sm font-semibold text-[#0f172a] transition hover:text-[#2563EB]">${col.title}</a>`
+                  : `<span class="text-sm font-semibold text-[#0f172a]">${col.title}</span>`
+              }
             </div>
             <ul class="space-y-1">
               ${col.items
@@ -356,9 +363,6 @@
                   <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
                 </svg>
               </button>
-              <a href="contact.html" class="rounded-lg bg-gradient-to-r from-[#2563EB] to-[#22D3EE] px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-cyan-200/40 transition-all duration-200 focus-ring hover:from-[#1D4ED8] hover:to-[#06B6D4] hover:shadow-md">
-                Talk to Expert
-              </a>
             </div>
 
             <button id="mobileMenuBtn" class="lg:hidden inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white p-2.5 text-slate-700 focus-ring hover:bg-[#f8fafc]"
@@ -380,9 +384,6 @@
                   <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
                     ${renderIndustriesGrid()}
                   </div>
-                  <div class="mt-5 pt-4 border-t border-slate-100 flex justify-end">
-                    <a href="contact.html" class="text-sm font-semibold text-[#2563EB] hover:text-[#1d4ed8]">Talk to an expert →</a>
-                  </div>
                 </div>
               </div>
 
@@ -392,9 +393,7 @@
                   <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-0">
                     ${renderProductsMegaMenu()}
                   </div>
-                  <div class="mt-5 pt-4 border-t border-slate-100 flex justify-end">
-                    <a href="catalog.html" class="text-sm font-semibold text-[#2563EB] hover:text-[#1d4ed8] transition-colors">View catalog →</a>
-                  </div>
+                  
                 </div>
               </div>
 
@@ -404,9 +403,7 @@
                   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     ${renderServicesMegaMenu()}
                   </div>
-                  <div class="mt-5 pt-4 border-t border-slate-100 flex justify-end">
-                    <a href="services.html" class="text-sm font-semibold text-[#2563EB] hover:text-[#1d4ed8]">See all services →</a>
-                  </div>
+                  
                 </div>
               </div>
 
@@ -435,23 +432,23 @@
           <div class="mx-auto max-w-7xl px-4 py-4 space-y-1">
             <a href="index.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium ${homeActive ? "bg-[#eff6ff] text-[#2563EB]" : "text-[#0f172a] hover:bg-[#f8fafc]"}">Home</a>
             <button type="button" class="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium text-[#0f172a] hover:bg-[#f8fafc] transition" data-accordion-trigger="m-industries" aria-expanded="false">
-              <span>Industries</span>
+                <span>Industries</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <div class="hidden pl-2" data-accordion-panel="m-industries">
-              <div class="grid gap-1 py-2">
+              </button>
+              <div class="hidden pl-2" data-accordion-panel="m-industries">
+                <div class="grid gap-1 py-2">
                 ${industries.map((x) => `<a href="${x.href}" class="block px-3 py-2 rounded-lg text-sm text-slate-600 hover:text-[#2563EB] hover:bg-[#f8fafc]">${x.label}</a>`).join("")}
               </div>
-            </div>
+              </div>
 
             <button type="button" class="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium text-[#0f172a] hover:bg-[#f8fafc] transition" data-accordion-trigger="m-products" aria-expanded="false">
-              <span>Products</span>
+                <span>Products</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <div class="hidden pl-2" data-accordion-panel="m-products">
+              </button>
+              <div class="hidden pl-2" data-accordion-panel="m-products">
               <div class="py-2 space-y-4 max-h-[60vh] overflow-y-auto">
                 ${productCategories
-                  .map(
+                    .map(
                     (col) => `
                   <div>
                     <div class="flex items-center gap-2 px-3 py-1.5 text-xs font-semibold text-[#2563EB]">${col.title}</div>
@@ -460,19 +457,19 @@
                     </div>
                   </div>
                 `
-                  )
-                  .join("")}
+                    )
+                    .join("")}
+                </div>
               </div>
-            </div>
 
             <button type="button" class="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium text-[#0f172a] hover:bg-[#f8fafc] transition" data-accordion-trigger="m-services" aria-expanded="false">
-              <span>Services</span>
+                <span>Services</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <div class="hidden pl-2" data-accordion-panel="m-services">
+              </button>
+              <div class="hidden pl-2" data-accordion-panel="m-services">
               <div class="py-2 space-y-4 max-h-[60vh] overflow-y-auto">
                 ${serviceCategories
-                  .map(
+                    .map(
                     (col) => `
                   <div>
                     <div class="flex items-center gap-2 px-3 py-1.5 text-xs font-semibold text-[#2563EB]">${col.title}</div>
@@ -481,10 +478,10 @@
                     </div>
                   </div>
                 `
-                  )
-                  .join("")}
+                    )
+                    .join("")}
+                </div>
               </div>
-            </div>
 
             <div class="px-3 py-1.5 text-xs font-semibold text-[#2563EB]">ERP System</div>
             ${erpSystems.map((x) => `<a href="${x.href}" class="block px-3 py-2 rounded-lg text-sm text-slate-600 hover:text-[#2563EB] hover:bg-[#f8fafc]">${x.label}</a>`).join("")}
@@ -496,12 +493,9 @@
             <div class="hidden pl-2" data-accordion-panel="m-more">
               <div class="space-y-0.5 py-2">
                 ${moreMenuItems.map((x) => `<a href="${x.href}" class="block px-3 py-2 rounded-lg text-sm text-slate-600 hover:text-[#2563EB] hover:bg-[#f8fafc]">${x.label}</a>`).join("")}
-              </div>
+            </div>
             </div>
 
-            <div class="mt-4 pt-4 border-t border-slate-200 flex gap-3">
-              <a href="contact.html" class="flex-1 rounded-lg bg-gradient-to-r from-[#2563EB] to-[#22D3EE] px-4 py-2.5 text-center text-sm font-semibold text-white">Talk to Expert</a>
-            </div>
           </div>
         </div>
       </header>
@@ -543,19 +537,28 @@
                     <span class="${iconCircle}" aria-hidden="true">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                     </span>
-                    <a href="tel:+10000000000" class="text-sm text-slate-300 hover:text-white transition pt-1">+1 (000) 000‑0000</a>
+                    <div class="pt-0.5">
+                      <a href="tel:+9196156415640" class="text-sm text-slate-300 hover:text-white transition">+91-96156415640</a>
+                      <div class="text-xs text-slate-500">Mon-Fri 9am-6pm</div>
+                </div>
                   </li>
                   <li class="flex gap-3">
                     <span class="${iconCircle}" aria-hidden="true">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="m22 6-10 7L2 6"/></svg>
                     </span>
-                    <a href="mailto:hello@f6it.example" class="text-sm text-slate-300 hover:text-white transition pt-1 break-all">hello@f6it.example</a>
+                    <div class="pt-0.5">
+                      <a href="mailto:info@f6it.com" class="text-sm text-slate-300 hover:text-white transition break-all">info@f6it.com</a>
+                      <div class="text-xs text-slate-500">online support</div>
+              </div>
                   </li>
                   <li class="flex gap-3">
                     <span class="${iconCircle}" aria-hidden="true">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                     </span>
-                    <span class="text-sm text-slate-300 pt-0.5 leading-snug">Global delivery · Remote-first team</span>
+                    <div class="pt-0.5">
+                      <div class="text-sm text-slate-300 leading-snug">Gurugram, Haryana</div>
+                      <div class="text-xs text-slate-500 leading-snug">SCO-88, 2nd Floor, Sector 12A Gurugram, Haryana 122001</div>
+                </div>
                   </li>
                 </ul>
               </div>
@@ -576,8 +579,8 @@
                 <a class="${footLink}" href="about.html">About us</a>
                 <a class="${footLink}" href="careers.html">Careers</a>
                 <a class="${footLink}" href="contact.html">FAQ</a>
-                <a class="${footLink}" href="contact.html">Privacy policy</a>
-                <a class="${footLink}" href="contact.html">Terms &amp; conditions</a>
+                <a class="${footLink}" href="privacy-policy.html">Privacy policy</a>
+                <a class="${footLink}" href="terms-conditions.html">Terms &amp; conditions</a>
                 <a class="${footLink}" href="contact.html">Refund policy</a>
                 <a class="${footLink}" href="contact.html">Grievance redressal</a>
                 <a class="${footLink}" href="contact.html">Compliance</a>
@@ -620,15 +623,15 @@
           <div class="mt-14 flex flex-col gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
             <p class="text-xs text-slate-500">© ${year} F6IT. All rights reserved.</p>
             <div class="flex flex-wrap gap-6 text-xs text-slate-500">
-              <a class="hover:text-[#6B30DD] transition" href="contact.html">Privacy</a>
-              <a class="hover:text-[#6B30DD] transition" href="contact.html">Terms</a>
+              <a class="hover:text-[#6B30DD] transition" href="privacy-policy.html">Privacy</a>
+              <a class="hover:text-[#6B30DD] transition" href="terms-conditions.html">Terms</a>
               <a class="hover:text-[#6B30DD] transition" href="contact.html">Security</a>
               <a class="hover:text-[#6B30DD] transition" href="index.html#products">Sitemap</a>
             </div>
           </div>
         </div>
 
-        <a href="https://wa.me/911234567890" target="_blank" rel="noopener noreferrer"
+        <a href="https://wa.me/9196156415640" target="_blank" rel="noopener noreferrer"
           class="fixed bottom-6 right-5 z-[60] flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-black/30 ring-2 ring-white/20 transition hover:scale-105 hover:shadow-xl focus-ring"
           aria-label="Chat on WhatsApp">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
